@@ -2,15 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-MovieDetails.propTypes = {
-  movie: PropTypes.shape({
-    id: PropTypes.string,
-    imagePath: PropTypes.string,
-    storyline: PropTypes.string,
-    title: PropTypes.string,
-  }).isRequired,
-};
-
 const MovieCard = (props) => {
   const { movie } = props;
   const { id, imagePath, storyline, title } = movie;
@@ -25,3 +16,12 @@ const MovieCard = (props) => {
 };
 
 export default MovieCard;
+
+MovieCard.propTypes = {
+  movie: PropTypes.shape({
+    id: PropTypes.number,
+    imagePath: PropTypes.string,
+    storyline: PropTypes.string,
+    title: PropTypes.string,
+  }).isRequired,
+};
