@@ -1,11 +1,11 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 // import movies from '../services/movieData';
 import '../style.css';
 
 class MovieCard extends React.Component {
   render() {
-    const { movie, id, imagePath, rating, title, storyline, subtitle } = this.props.movie;
-    console.log(movie);
+    const { id, imagePath, rating, title, storyline, subtitle } = this.props.movie;
     return (
       <div data-testid="movie-card">
         <div className="movie-card">
@@ -21,5 +21,9 @@ class MovieCard extends React.Component {
     );
   }
 }
+
+MovieCard.propTypes = {
+  movie: PropTypes.object,
+};
 
 export default MovieCard;

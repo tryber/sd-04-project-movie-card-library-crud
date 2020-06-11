@@ -13,10 +13,9 @@ body {
 }
 
 .loading {
-  width: 100%;
-  height: 100%;
   background-color: #343a40;
   color: #007bff;
+  padding: 80%;
 }
 
 .page-title {
