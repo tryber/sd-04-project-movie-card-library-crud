@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const MovieCard = (props) => {
-  // const { movie } = props;
-  const { id, imagePath, storyline, title } = this.props.movie;
+  const { movie } = props;
+  const { id, imagePath, storyline, title } = movie;
   return (
     <div data-testid="movie-card">
       <img src={imagePath} alt="movie" />
