@@ -1,7 +1,8 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
-  return <div>Movie Card Library CRUD ~ Caio Ribeiro </div>;
+  return <BrowserRouter></BrowserRouter>;
 }
 
 export default App;
