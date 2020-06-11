@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MovieCard from '../components/MovieCard';
+// import MovieCard from '../components/MovieCard';TO REMOVE
 
 import * as movieAPI from '../services/movieAPI';
 
@@ -11,7 +11,7 @@ class MovieList extends Component {
 
     return (
       <div data-testid="movie-list">
-        {/* {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)} */} 
+        {/* {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)} */}
       </div>
     );
   }

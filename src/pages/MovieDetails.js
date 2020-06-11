@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import * as movieAPI from '../services/movieAPI';
-import { Loading } from '../components';
+// import { Loading } from '../components'; TO REMOVEEEE
 
 class MovieDetails extends Component {
   render() {
