@@ -2,18 +2,31 @@ import React, { Component } from 'react';
 import MovieCard from '../components/MovieCard';
 
 import * as movieAPI from '../services/movieAPI';
+import Loading from '../components/Loading';
 
 class MovieList extends Component {
-  render() {
-    const { movies } = this.state;
+  constructor(props) {
+    super(props);
 
-    // Render Loading here if the request is still happening
+    this.state = {
+      loading: true,
+    };
+  }
 
+  loadingShow = () => {
+    if (this.state.loading === true) return <Loading />;
     return (
       <div data-testid="movie-list">
-        {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
+        {movies.map((movie) => (
+          <MovieCard key={movie.title} movie={movie} />
+        ))}
       </div>
     );
+  };
+
+  render() {
+    const { movies } = this.state;
+    return this.loadingShow;
   }
 }
 
