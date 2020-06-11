@@ -93,7 +93,9 @@ class MovieForm extends React.Component {
         <select
           id="movie_genre"
           value={genre}
-          onChange={(event) => this.updateMovie('genre', event.target.value)}>
+          onChange={(event) => {
+            this.updateMovie('genre', event.target.value);
+          }}>
           <option value="action">Ação</option>
           <option value="comedy">Comédia</option>
           <option value="thriller">Suspense</option>
@@ -149,10 +151,5 @@ class MovieForm extends React.Component {
     );
   }
 }
-
-MovieForm.propTypes = {
-  movie: PropTypes.any,
-  onSubmit: PropTypes.func,
-};
 
 export default MovieForm;
