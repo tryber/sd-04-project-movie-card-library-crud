@@ -1,7 +1,6 @@
 .movie-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .movie-card {
@@ -14,7 +13,7 @@
   width: 30%;
 }
 
-.movie-card>img {
+.movie-card > img {
   width: 100%;
 }
 
@@ -26,11 +25,11 @@
   padding: 3%;
 }
 
-.card-content>a {
+.card-content > a {
   color: rgb(110, 110, 110);
   text-decoration: none;
 }
 
-.card-content>a:hover {
+.card-content > a:hover {
   color: rgb(63, 63, 63);
 }
