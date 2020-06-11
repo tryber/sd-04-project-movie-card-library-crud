@@ -87,7 +87,7 @@ class MovieDetails extends Component {
       .deleteMovie(id)
       .then((res) => {
         if (res.status === 'OK') {
-          this.setState((state) => ({ ...state, shouldRedirect: true }))
+          this.setState((state) => ({ ...state, shouldRedirect: true }));
         } else {
           console.log('ERRO');
         }

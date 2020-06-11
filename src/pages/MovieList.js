@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Loading, MovieCard } from '../components';
-
-import * as movieAPI from '../services/movieAPI';
 import { Link } from 'react-router-dom';
+
+import { Loading, MovieCard } from '../components';
+import * as movieAPI from '../services/movieAPI';
 
 class MovieList extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class MovieList extends Component {
   componentDidMount() {
     movieAPI
       .getMovies()
-      .then(res => this.setState(state => ({ ...state, movies: res, loading: false })));
+      .then((res) => this.setState((state) => ({ ...state, movies: res, loading: false })));
   }
 
   render() {
@@ -26,7 +26,7 @@ class MovieList extends Component {
     return (
       <div>
         <div className="row justify-content-center" data-testid="movie-list">
-          {movies.map(movie => (
+          {movies.map((movie) => (
             <MovieCard key={movie.title} movie={movie} />
           ))}
         </div>

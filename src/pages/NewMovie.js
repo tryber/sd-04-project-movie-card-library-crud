@@ -14,11 +14,13 @@ class NewMovie extends Component {
   handleSubmit(newMovie) {
     movieAPI
       .createMovie(newMovie)
-      .then((res) =>
-        res === 'OK'
-          ? this.setState((state) => ({ ...state, shouldRedirect: true }))
-          : console.log('ERRO'),
-      );
+      .then((res) => {
+        if (res === 'OK') {
+          this.setState((state) => ({ ...state, shouldRedirect: true }));
+        } else {
+          console.log('ERRO');
+        }
+      });
   }
 
   render() {
