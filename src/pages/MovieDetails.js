@@ -11,8 +11,7 @@ class MovieDetails extends Component {
   }
 
   componentDidMount() {
-    const { match } = this.props;
-    movieAPI.getMovie(match.params.id).then((movie) => {
+    movieAPI.getMovie(this.props.match.params.id).then((movie) => {
       const isLoaded = true;
       this.setState({ movie, isLoaded });
     });
