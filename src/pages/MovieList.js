@@ -15,7 +15,7 @@ class MovieList extends Component {
     movieAPI.getMovies().then((movies) =>
       this.setState({
         movies,
-      })
+      }),
     );
   }
 
