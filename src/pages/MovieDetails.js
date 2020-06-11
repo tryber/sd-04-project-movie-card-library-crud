@@ -1,17 +1,16 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import * as movieAPI from "../services/movieAPI";
-import { Loading } from "../components";
+import * as movieAPI from '../services/movieAPI';
+import { Loading } from '../components';
 
 class MovieDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: "",
-    }
+      movie: '',
+    };
   }
 
-  
   render() {
     // Change the condition to check the state
     if (true) return <Loading />;

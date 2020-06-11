@@ -1,17 +1,12 @@
-import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import "./App.css";
-import {
-  MovieList,
-  NewMovie,
-  EditMovie,
-  MovieDetails,
-  NotFound,
-} from "./pages";
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import './App.css';
+import { MovieList, NewMovie, EditMovie, MovieDetails, NotFound } from './pages';
 
 function App() {
   return (
-    <BrowserRouter>0,
+    <BrowserRouter>
+      0,
       <div>Movie Card Library CRUD</div>
       <Switch>
         <Route exact path="/" component={MovieList} />
