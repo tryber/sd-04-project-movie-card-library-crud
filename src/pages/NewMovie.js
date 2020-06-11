@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 
 import MovieForm from '../components/MovieForm';
 import * as movieAPI from '../services/movieAPI';
-import { Redirect } from 'react-router-dom';
 
 class NewMovie extends Component {
   constructor(props) {
@@ -14,9 +14,9 @@ class NewMovie extends Component {
   handleSubmit(newMovie) {
     movieAPI
       .createMovie(newMovie)
-      .then(res =>
+      .then((res) =>
         res === 'OK'
-          ? this.setState(state => ({ ...state, shouldRedirect: true }))
+          ? this.setState((state) => ({ ...state, shouldRedirect: true }))
           : console.log('ERRO'),
       );
   }
