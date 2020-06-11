@@ -4,7 +4,7 @@ import { Link, Redirect } from 'react-router-dom';
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
 
-const CardHeader = props => {
+const CardHeader = (props) => {
   const { title, subtitle, storyline } = props;
   return (
     <div className="card-body">
@@ -15,7 +15,7 @@ const CardHeader = props => {
   );
 };
 
-const CardList = props => {
+const CardList = (props) => {
   const { genre, rating } = props;
   return (
     <ul className="list-group list-group-flush">
@@ -31,7 +31,7 @@ const CardList = props => {
   );
 };
 
-const CardLinks = props => {
+const CardLinks = (props) => {
   const { id, deleteMovie } = props;
   return (
     <div className="card-body">
@@ -56,21 +56,21 @@ class MovieDetails extends Component {
       loading: true,
       shouldRedirect: false,
     };
-    this.deleteMovie = this.deleteMovie.bind(this)
+    this.deleteMovie = this.deleteMovie.bind(this);
   }
 
   componentDidMount() {
     movieAPI
       .getMovie(this.props.match.params.id)
-      .then(res => this.setState(state => ({ ...state, movie: res, loading: false })));
+      .then((res) => this.setState((state) => ({ ...state, movie: res, loading: false })));
   }
 
   deleteMovie(id) {
     movieAPI
       .deleteMovie(id)
-      .then(res =>
+      .then((res) =>
         res.status === 'OK'
-          ? this.setState(state => ({ ...state, shouldRedirect: true }))
+          ? this.setState((state) => ({ ...state, shouldRedirect: true }))
           : console.log('ERRO'),
       );
   }
