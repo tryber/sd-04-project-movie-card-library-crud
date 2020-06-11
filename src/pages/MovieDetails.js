@@ -37,36 +37,36 @@ class MovieDetails extends Component {
     const { title, storyline, imagePath, genre, rating, subtitle } = this.state.movie;
 
     return (
-      <div data-testid='movie-details'>
-        <div className='card'>
-          <img className='card-img-top' src={`../${imagePath}`} alt='Movie Cover' />
-          <div className='card-body'>
-            <h5 className='card-title'>{title}</h5>
-            <h6 className='card-title'>{subtitle}</h6>
-            <p className='card-text'>{storyline}</p>
+      <div data-testid="movie-details">
+        <div className="card">
+          <img className="card-img-top" src={`../${imagePath}`} alt="Movie Cover" />
+          <div className="card-body">
+            <h5 className="card-title">{title}</h5>
+            <h6 className="card-title">{subtitle}</h6>
+            <p className="card-text">{storyline}</p>
           </div>
-          <ul className='list-group list-group-flush'>
-            <li className='list-group-item'>
+          <ul className="list-group list-group-flush">
+            <li className="list-group-item">
               <strong>Genre: </strong>
               {genre}
             </li>
-            <li className='list-group-item'>
+            <li className="list-group-item">
               <strong>Rating: </strong>
               {rating}
             </li>
           </ul>
-          <div className='card-body'>
-            <Link to={`/movies/${this.props.match.params.id}/edit`} className='card-link'>
+          <div className="card-body">
+            <Link to={`/movies/${this.props.match.params.id}/edit`} className="card-link">
               EDITAR
             </Link>
             <Link
-              to='/'
+              to="/"
               onClick={() => this.deleteMovie(this.props.match.params.id)}
-              className='card-link'
+              className="card-link"
             >
               DELETAR
             </Link>
-            <Link to='/' className='card-link'>
+            <Link to="/" className="card-link">
               VOLTAR
             </Link>
           </div>

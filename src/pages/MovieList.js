@@ -25,13 +25,13 @@ class MovieList extends Component {
 
     return (
       <>
-        <div className='row justify-content-center' data-testid='movie-list'>
+        <div className="row justify-content-center" data-testid="movie-list">
           {movies.map(movie => (
             <MovieCard key={movie.title} movie={movie} />
           ))}
         </div>
-        <div className='row justify-content-center mb-5'>
-          <Link to='/movies/new' className='btn btn-primary'>ADICIONAR CARTÃO</Link>
+        <div className="row justify-content-center mb-5">
+          <Link to="/movies/new" className="btn btn-primary">ADICIONAR CARTÃO</Link>
         </div>
       </>
     );
