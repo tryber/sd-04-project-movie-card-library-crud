@@ -14,15 +14,15 @@ class MovieList extends Component {
     };
   }
 
+  componentDidMount() {
+    this.teste();
+  }
+
   async teste() {
     console.log(this.state);
     this.setState({ movies: await movieAPI.getMovies() });
     this.setState({ loading: false });
     console.log(this.state);
-  }
-
-  componentDidMount() {
-    this.teste();
   }
 
   loadingShow(movies) {
