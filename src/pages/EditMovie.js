@@ -26,10 +26,10 @@ class EditMovie extends Component {
 
   handleSubmit(updatedMovie) {
     movieAPI.updateMovie(updatedMovie).then((res) => {
-      if(res === 'OK') {
-        this.setState((state) => ({ ...state, shouldRedirect: true }))
+      if (res === 'OK') {
+        this.setState((state) => ({ ...state, shouldRedirect: true }));
       } else {
-        console.log('a')
+        console.log('a');
       }
     });
   }
@@ -55,9 +55,9 @@ class EditMovie extends Component {
 EditMovie.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      id:PropTypes.string,
+      id: PropTypes.string,
     }),
-  }),
+  }).isRequired,
 };
 
 export default EditMovie;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
@@ -13,6 +14,12 @@ const CardHeader = (props) => {
       <p className="card-text">{storyline}</p>
     </div>
   );
+};
+
+CardHeader.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  storyline: PropTypes.string.isRequired,
 };
 
 const CardList = (props) => {
@@ -31,6 +38,11 @@ const CardList = (props) => {
   );
 };
 
+CardList.propTypes = {
+  genre: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired,
+};
+
 const CardLinks = (props) => {
   const { id, deleteMovie } = props;
   return (
@@ -46,6 +58,11 @@ const CardLinks = (props) => {
       </Link>
     </div>
   );
+};
+
+CardLinks.propTypes = {
+  id: PropTypes.string.isRequired,
+  deleteMovie: PropTypes.func.isRequired,
 };
 
 class MovieDetails extends Component {
@@ -68,11 +85,13 @@ class MovieDetails extends Component {
   deleteMovie(id) {
     movieAPI
       .deleteMovie(id)
-      .then((res) =>
-        res.status === 'OK'
-          ? this.setState((state) => ({ ...state, shouldRedirect: true }))
-          : console.log('ERRO'),
-      );
+      .then((res) => {
+        if (res.status === 'OK') {
+          this.setState((state) => ({ ...state, shouldRedirect: true }))
+        } else {
+          console.log('ERRO');
+        }
+      });
   }
 
   render() {
@@ -87,12 +106,20 @@ class MovieDetails extends Component {
         <div className="card">
           <img className="card-img-top" src={`../${imagePath}`} alt="Movie Cover" />
           <CardHeader title={title} subtitle={subtitle} storyline={storyline} />
-          <CardList genre={genre} rating={rating} />
+          <CardList genre={genre} rating={Number(rating)} />
           <CardLinks id={id} deleteMovie={this.deleteMovie} />
         </div>
       </div>
     );
   }
 }
+
+MovieDetails.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string,
+    }),
+  }).isRequired,
+};
 
 export default MovieDetails;
