@@ -13,7 +13,7 @@ class MovieList extends Component {
     };
   }
 
-  loadingShow = (movies) => {
+  loadingShow(movies) {
     if (this.state.loading === true) return <Loading />;
     return (
       <div data-testid="movie-list">
@@ -22,7 +22,7 @@ class MovieList extends Component {
         ))}
       </div>
     );
-  };
+  }
 
   teste = async () => {
     console.log(this.state);
