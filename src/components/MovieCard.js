@@ -10,7 +10,7 @@ class MovieCard extends React.Component {
       <div data-testid="movie-card">
         Movie Card
         <div>
-          <img src={imagePath} />
+          <img src={imagePath} alt="img" />
           <span>{title}</span>
         </div>
         <div>
@@ -30,7 +30,7 @@ MovieCard.propTypes = {
     id: PropTypes.number,
     storyline: PropTypes.string,
     ImagePath: PropTypes.string,
-  }),
+  }).isRequired,
 };
 
 export default MovieCard;
