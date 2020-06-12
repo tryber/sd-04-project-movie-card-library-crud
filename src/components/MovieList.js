@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { getMovies } from '../services/movieAPI';
 
 import Loading from './Loading';
+import MovieCard from './MovieCard';
 
 class MovieList extends Component {
   constructor(props) {
@@ -23,12 +24,16 @@ class MovieList extends Component {
   };
 
   render() {
-    const { isLoading } = this.state;
+    const { isLoading, movies } = this.state;
     return (
       <div>
         <h1>Movie Library</h1>
         {isLoading ? <Loading /> : null}
-        <div data-testid="movie-list"></div>
+        <div data-testid="movie-list">
+          {movies.map((movie) => (
+            <MovieCard movieData={movie} />
+          ))}
+        </div>
       </div>
     );
   }
