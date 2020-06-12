@@ -31,7 +31,7 @@ class MovieList extends Component {
         {isLoading ? <Loading /> : null}
         <div data-testid="movie-list">
           {movies.map((movie) => (
-            <MovieCard movieData={movie} />
+            <MovieCard key={movie.id} movieData={movie} />
           ))}
         </div>
       </div>

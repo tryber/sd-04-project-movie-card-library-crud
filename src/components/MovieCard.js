@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
+import movies from '../services/movieData';
 
-class MovieCard extends React.Component {
+class MovieCard extends Component {
   render() {
-    return <div data-testid="movie-card">Movie Card</div>;
+    const { title } = this.props.movieData;
+
+    return (
+      <div data-testid="movie-card">
+        <div>{title}</div>
+      </div>
+    );
   }
 }
 
