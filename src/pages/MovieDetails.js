@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
+import { Link } from 'react-router-dom';
+
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -21,6 +23,8 @@ class MovieDetails extends Component {
   render() {
     // Change the condition to check the state
     const { isLoading, movie } = this.state;
+    const { id } = this.props.match.params;
+
     if (!isLoading) return <Loading />;
 
     const { title, storyline, imagePath, genre, rating, subtitle } = movie;
@@ -33,6 +37,10 @@ class MovieDetails extends Component {
         <p>{`Storyline: ${storyline}`}</p>
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
+
+        <Link  to="/">Voltar</Link>
+        
+        <Link to={`/movies/${id}/edit`}>EDITAR</Link>
       </div>
     );
   }

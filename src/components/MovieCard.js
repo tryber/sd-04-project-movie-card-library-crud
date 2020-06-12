@@ -7,10 +7,10 @@ class MovieCard extends React.Component {
     super(props);
     const { title, imagePath, storyline, id } = this.props.movie;
     this.state = {
-      title: title,
-      imagePath: imagePath,
-      storyline: storyline,
-      id: id,
+      title,
+      imagePath,
+      storyline,
+      id,
     };
   }
 
@@ -21,7 +21,6 @@ class MovieCard extends React.Component {
         <h4>{this.state.title}</h4>
         <p>{this.state.storyline}</p>
         <Link to={`movies/${this.state.id}`}>VER DETALHES</Link>
-        {/* {console.log(movie)} */}
       </div>
     );
   }
