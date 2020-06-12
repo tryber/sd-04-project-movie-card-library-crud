@@ -21,8 +21,6 @@ class MovieList extends Component {
 
   render() {
     const { movies } = this.state;
-
-    // if (!movies) return <Loading />
     return (movies) ?
       (
         <div data-testid="movie-list">
@@ -30,11 +28,6 @@ class MovieList extends Component {
         </div>
       ) :
         <Loading />;
-    // return (
-    //   <div data-testid="movie-list">
-    //     {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
-    //   </div>
-    // );
   }
 }
 
