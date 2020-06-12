@@ -1,7 +1,8 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+
 import MovieList from './pages/MovieList';
 import MovieDetails from './pages/MovieDetails';
-import { Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
