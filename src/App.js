@@ -8,7 +8,7 @@ import { MovieList, MovieDetails, NewMovie, EditMovie, NotFound } from './pages'
 function App() {
   return (
     <BrowserRouter>
-      <div className="container">
+      <div className="container h-100">
         <Switch>
           <Route exact path="/" component={MovieList} />
           <Route exact path="/movies/new" component={NewMovie} />

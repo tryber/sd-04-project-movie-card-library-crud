@@ -45,7 +45,7 @@ class EditMovie extends Component {
     }
 
     return (
-      <div data-testid="edit-movie">
+      <div data-testid="edit-movie" className="row justify-content-center align-items-center h-100">
         {status === 'ok' && <MovieForm movie={movie} onSubmit={this.handleSubmit} />}
       </div>
     );
