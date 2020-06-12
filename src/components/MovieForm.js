@@ -10,12 +10,12 @@ class MovieForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  setRedirect = () => {
+  setRedirect()  {
     this.setState({
       redirect: true,
     });
   };
-  renderRedirect = () => {
+  renderRedirect() {
     if (this.state.redirect) {
       return <Redirect to="/" />;
     }

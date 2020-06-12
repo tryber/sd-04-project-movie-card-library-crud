@@ -43,7 +43,7 @@ export const updateMovie = (updatedMovie) => {
 };
 
 export const createMovie = (movieData) => {
-    console.log("here API",movieData)
+    // console.log("here API",movieData)
   let movies = readMovies();
   const nextId = movies[movies.length - 1].id + 1;
   const newMovie = { ...movieData, id: nextId };

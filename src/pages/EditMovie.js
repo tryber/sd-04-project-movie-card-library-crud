@@ -22,7 +22,8 @@ class EditMovie extends Component {
   }
 
   render() {
-    const { status, shouldRedirect, movies } = this.state;
+    // const { status, shouldRedirect, movies } = this.state;
+    const { shouldRedirect, movies } = this.state;
     const { match } = this.props;
     const movie = movies[match.params.id - 1];
     if (shouldRedirect) {
@@ -42,4 +43,7 @@ class EditMovie extends Component {
   }
 }
 
+MovieForm.propTypes = {
+  match: PropTypes.string,
+};
 export default EditMovie;

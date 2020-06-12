@@ -13,7 +13,7 @@ class MovieDetails extends Component {
   }
 
   componentDidMount() {
-    getMovies().then(movies => this.setState({ movies }));
+    getMovies().then((movies) => this.setState({ movies }));
   }
 
   render() {
@@ -34,10 +34,14 @@ class MovieDetails extends Component {
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
         <Link to={`/movies/${movie.id}/edit`}>EDITAR</Link>
-        <Link to={`/`}>VOLTAR</Link>
+        <Link to={"/"}>VOLTAR</Link>
       </div>
     );
   }
 }
+
+MovieForm.propTypes = {
+  match: PropTypes.string,
+};
 
 export default MovieDetails;

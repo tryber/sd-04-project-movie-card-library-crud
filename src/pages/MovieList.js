@@ -13,18 +13,18 @@ class MovieList extends Component {
 
   componentDidMount() {
     // console.log("getMovies",getMovies());
-    getMovies().then(movies => 
-      this.setState({movies}))
-   }
+    getMovies().then((movies) => this.setState({ movies }));
+  }
 
   render() {
-
     const { movies } = this.state;
     // Render Loading here if the request is still happening
-    if (this.state.movies === "") return 'Carregando...';
+    if (this.state.movies === '') return 'Carregando...';
     return (
       <div data-testid="movie-list">
-        {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
+        {movies.map(movie => (
+          <MovieCard key={movie.title} movie={movie} />
+        ))}
       </div>
     );
   }
