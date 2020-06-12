@@ -46,7 +46,7 @@ MovieDetails.propTypes = {
 };
 
 MovieDetails.defaultProps = {
-  movie: '',
+  match: '',
 };
 
 export default MovieDetails;

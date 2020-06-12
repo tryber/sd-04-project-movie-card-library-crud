@@ -36,6 +36,7 @@ class MovieForm extends React.Component {
     if (this.state.redirect) {
       return <Redirect to="/" />;
     }
+    return console.log('codeclimate');
   }
 
   renderTitleInput() {

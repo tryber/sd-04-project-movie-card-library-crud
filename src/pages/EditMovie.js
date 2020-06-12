@@ -48,7 +48,7 @@ EditMovie.propTypes = {
 };
 
 EditMovie.defaultProps = {
-  movie: '',
+  match: '',
 };
 
 export default EditMovie;
