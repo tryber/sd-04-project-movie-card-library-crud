@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import { Loading } from '../components';
 import { getMovie } from '../services/movieAPI';
-import { Link } from 'react-router-dom';
 // import * as movieAPI from '../services/movieAPI';
 
 class MovieDetails extends Component {
@@ -14,7 +15,7 @@ class MovieDetails extends Component {
   }
 
   componentDidMount() {
-    const { props: { match: { params: { id } } } } = this;
+    const { id } = this.props.match.params;
     getMovie(id).then((movie) => this.setState({ movie }));
   }
 
@@ -38,5 +39,14 @@ class MovieDetails extends Component {
     );
   }
 }
+
+
+MovieDetails.protoTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string,
+    })
+  }).isRequired,
+};
 
 export default MovieDetails;
