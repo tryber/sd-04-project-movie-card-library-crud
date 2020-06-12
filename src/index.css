@@ -55,12 +55,19 @@ code {
   padding-top: 10px;
 }
 
-.buttons > a {
+.buttons > button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.buttons > a, .buttons > button {
+  font-size: 1em;
   margin-right: 20px;
   color: rgb(110, 110, 110);
   text-decoration: none;
 }
 
-.buttons > a:hover {
+.buttons > a:hover, .buttons > button:hover {
   color: rgb(63, 63, 63);
 }

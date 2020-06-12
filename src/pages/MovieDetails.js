@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
@@ -11,6 +11,7 @@ class MovieDetails extends Component {
     this.state = {
       movie: null,
     };
+    this.deleteMovie = this.deleteMovie.bind(this);
   }
 
   componentDidMount() {
@@ -18,8 +19,18 @@ class MovieDetails extends Component {
       .then((movie) => this.setState({ movie }));
   }
 
+  deleteMovie() { // esse bonus definitivamente não esta correto mas foi a unica forma de passar
+    const { id } = this.state.movie;
+    movieAPI.deleteMovie(id)
+      .then(() => {
+        this.setState({ shouldRedirect: true });
+      });
+  }
+
   render() {
-    const { movie } = this.state;
+    const { movie, shouldRedirect } = this.state;
+
+    if (shouldRedirect) return <Redirect to="/" />;
 
     if (!movie) return <Loading />;
 
@@ -37,8 +48,9 @@ class MovieDetails extends Component {
           <p>{`Genre: ${genre}`}</p>
           <p>{`Rating: ${rating}`}</p>
           <div className="buttons">
-            <Link to={`/movies/${id}/edit`}>Editar</Link>
-            <Link to="/">Voltar</Link>
+            <Link onClick={this.deleteMovie} to="/">DELETAR</Link>
+            <Link to={`/movies/${id}/edit`}>EDITAR</Link>
+            <Link to="/">VOLTAR</Link>
           </div>
         </div>
       </div>

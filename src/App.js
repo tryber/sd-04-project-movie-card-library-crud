@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import {
-  MovieList, MovieDetails, EditMovie, NewMovie,
+  MovieList, MovieDetails, EditMovie, NewMovie, NotFound,
 } from './pages';
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
         <Route path="/movies/new" component={NewMovie} />
         <Route path="/movies/:id/edit" component={EditMovie} />
         <Route path="/movies/:id" component={MovieDetails} />
+        <Route component={NotFound} />
       </Switch>
     </div>
   );
