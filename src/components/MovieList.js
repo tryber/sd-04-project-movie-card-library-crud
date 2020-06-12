@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class MovieLibrary extends Component {
+class MovieList extends Component {
   render() {
     return (
       <div>
@@ -10,4 +10,4 @@ class MovieLibrary extends Component {
   }
 }
 
-export default MovieLibrary;
+export default MovieList;
