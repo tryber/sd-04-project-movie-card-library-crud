@@ -102,8 +102,8 @@ class MovieDetails extends Component {
     if (this.state.loading) return <Loading />;
 
     return (
-      <div 
-        data-testid="movie-details" 
+      <div
+        data-testid="movie-details"
         className="row justify-content-center align-items-center h-100"
       >
         <div className="card w-75">
