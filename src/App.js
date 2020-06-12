@@ -1,8 +1,16 @@
 import React from 'react';
+import { BrowserRouter as Router, BrowserRouter } from 'react-router-dom';
+import { Loading, MovieCard, MovieForm } from './components/index';
+import './App.css'
 
 function App() {
   return (
-      <div>Movie Card Library CRUD</div>
+      <Router >
+        <Loading />
+        <MovieCard />
+        <MovieForm />
+      </Router>
+
   );
 }
 
