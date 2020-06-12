@@ -102,7 +102,10 @@ class MovieDetails extends Component {
     if (this.state.loading) return <Loading />;
 
     return (
-      <div data-testid="movie-details" className="row justify-content-center align-items-center h-100">
+      <div 
+        data-testid="movie-details" 
+        className="row justify-content-center align-items-center h-100"
+      >
         <div className="card w-75">
           <img className="card-img-top" src={`../${imagePath}`} alt="Movie Cover" />
           <CardHeader title={title} subtitle={subtitle} storyline={storyline} />

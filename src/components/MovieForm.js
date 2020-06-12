@@ -82,7 +82,7 @@ class MovieForm extends React.Component {
           rows={6}
           value={storyline}
           onChange={(event) => this.updateMovie('storyline', event.target.value)}
-        /> 
+        />
       </div>
     );
   }
