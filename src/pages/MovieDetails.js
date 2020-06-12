@@ -15,15 +15,22 @@ class MovieDetails extends Component {
   }
 
   componentDidMount() {
-    const { id } = this.props.match.params;
-    getMovie(id).then((movie) => this.setState({ movie }));
+    getMovie(this.props.match.params.id).then((movie) => this.setState({ movie }));
   }
 
   render() {
     const { movie } = this.state;
     if (!movie) return <Loading />;
-    
-    const { id, title, storyline, imagePath, genre, rating, subtitle } = movie;
+
+    const {
+      id,
+      title,
+      storyline,
+      imagePath,
+      genre,
+      rating,
+      subtitle,
+    } = movie;
 
     return (
       <div data-testid="movie-details">
@@ -41,11 +48,11 @@ class MovieDetails extends Component {
 }
 
 
-MovieDetails.protoTypes = {
+MovieDetails.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string,
-    })
+    }),
   }).isRequired,
 };
 
