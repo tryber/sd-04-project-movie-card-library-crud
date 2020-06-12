@@ -26,6 +26,7 @@ export const getMovie = (movieId) => {
 };
 
 export const updateMovie = (updatedMovie) => {
+  // console.log("here API",updatedMovie)
   const movies = readMovies().map((movie) => {
     if (movie.id === parseInt(updatedMovie.id, 10)) {
       return { ...movie, ...updatedMovie };
@@ -42,6 +43,7 @@ export const updateMovie = (updatedMovie) => {
 };
 
 export const createMovie = (movieData) => {
+    console.log("here API",movieData)
   let movies = readMovies();
   const nextId = movies[movies.length - 1].id + 1;
   const newMovie = { ...movieData, id: nextId };
