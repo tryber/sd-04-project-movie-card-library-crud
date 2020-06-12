@@ -35,7 +35,7 @@ class EditMovie extends Component {
   }
 }
 
-EditMovie.protoTypes = {
+EditMovie.PropTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string.isRequired,
