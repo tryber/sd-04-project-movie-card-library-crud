@@ -15,7 +15,7 @@ class EditMovie extends Component {
   }
 
   componentDidMount() {
-    getMovies().then(movies => this.setState({ movies }));
+    getMovies().then((movies) => this.setState({ movies }));
   }
 
   handleSubmit(updatedMovie) {
@@ -43,7 +43,7 @@ class EditMovie extends Component {
   }
 }
 
-MovieForm.propTypes = {
+EditMovie.propTypes = {
   match: PropTypes.string,
 };
 export default EditMovie;

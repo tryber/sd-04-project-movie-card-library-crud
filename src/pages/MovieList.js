@@ -22,7 +22,7 @@ class MovieList extends Component {
     if (this.state.movies === '') return 'Carregando...';
     return (
       <div data-testid="movie-list">
-        {movies.map(movie => (
+        {movies.map((movie) => (
           <MovieCard key={movie.title} movie={movie} />
         ))}
       </div>
