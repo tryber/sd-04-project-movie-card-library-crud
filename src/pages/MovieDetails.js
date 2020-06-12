@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React, { Component } from 'react';
 
 import * as movieAPI from '../services/movieAPI';
@@ -47,6 +48,12 @@ class MovieDetails extends Component {
       </div>
     );
   }
+}
+
+MovieDetails.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.any
+  })
 }
 
 export default MovieDetails;
