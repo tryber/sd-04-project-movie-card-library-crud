@@ -44,6 +44,11 @@ class EditMovie extends Component {
 }
 
 EditMovie.propTypes = {
-  match: PropTypes.string,required,
+  match: PropTypes.string,
 };
+
+EditMovie.defaultProps = {
+  movie: '',
+};
+
 export default EditMovie;
