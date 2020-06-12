@@ -45,7 +45,7 @@ class MovieDetails extends Component {
   }
 }
 
-MovieDetails.prototypes = {
+MovieDetails.protoTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string.isRequired,
