@@ -4,7 +4,7 @@ import MovieCard from '../components/MovieCard';
 import { getMovies } from '../services/movieAPI';
 import { Loading } from '../components';
 
-import * as movieAPI from '../services/movieAPI';
+// import * as movieAPI from '../services/movieAPI';
 
 class MovieList extends Component {
   constructor(props) {
