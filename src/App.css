@@ -201,34 +201,34 @@ label {
 @keyframes load {
 
   12.5% {
-    text-shadow: 30px 30px 3px black, -30px -30px 3px black;
+    text-shadow: 30px 30px 3px black , -30px -30px 3px black;
   }
 
   25% {
-    text-shadow: 30px 0 3px blue, -30px 0px 3px red;
+    text-shadow: 30px 0 3px blue , -30px 0 3px red;
   }
 
   37.5% {
-    text-shadow: 30px -30px 3px red, -30px 30px 3px blue;
+    text-shadow: 30px -30px 3px red , -30px 30px 3px blue;
   }
 
   50% {
-    text-shadow: 0 -30px 3px green, 0 30px 3px purple;
+    text-shadow: 0 -30px 3px green , 0 30px 3px purple;
   }
 
   62.5% {
-    text-shadow: -30px -30px 3px yellow, 30px 30px 3px violet;
+    text-shadow: -30px -30px 3px yellow , 30px 30px 3px violet;
   }
 
   75% {
-    text-shadow: -30px 0 3px purple, 30px 0 3px green;
+    text-shadow: -30px 0 3px purple , 30px 0 3px green;
   }
 
   87.5% {
-    text-shadow: -30px 30px 3px orange, 30px -30px 3px lightblue;
+    text-shadow: -30px 30px 3px orange , 30px -30px 3px lightblue;
   }
 
   100% {
-    text-shadow: 0 30px 3px darkblue, 0 -30px 3px darkred;
+    text-shadow: 0 30px 3px darkblue , 0 -30px 3px darkred;
   }
 }
