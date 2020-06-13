@@ -1,5 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
+import { updateMovie } from '../services/movieAPI';
 
 class MovieForm extends React.Component {
   constructor(props) {
@@ -8,13 +10,33 @@ class MovieForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  setRedirect() {
+    this.setState({
+      redirect: true,
+    });
+  }
+
   handleSubmit() {
     const { onSubmit } = this.props;
     onSubmit(this.state);
+    // console.log(onSubmit);
+    updateMovie(this.state);
+    this.setState({
+      redirect: true,
+    });
+    return this.state;
   }
 
   updateMovie(field, newValue) {
+    // console.log("here local Update")
     this.setState({ [field]: newValue });
+  }
+
+  renderRedirect() {
+    if (this.state.redirect) {
+      return <Redirect to="/" />;
+    }
+    return console.log('codeclimate');
   }
 
   renderTitleInput() {
@@ -127,10 +149,7 @@ class MovieForm extends React.Component {
   renderSubmitButton() {
     return (
       <div>
-        <button
-          type="button"
-          onClick={this.handleSubmit}
-        >
+        <button type="button" onClick={this.handleSubmit}>
           Submit
         </button>
       </div>
@@ -149,6 +168,7 @@ class MovieForm extends React.Component {
           {this.renderRatingInput()}
           {this.renderSubmitButton()}
         </form>
+        {this.renderRedirect()}
       </div>
     );
   }

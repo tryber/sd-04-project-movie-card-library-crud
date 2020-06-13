@@ -42,6 +42,7 @@ export const updateMovie = (updatedMovie) => {
 };
 
 export const createMovie = (movieData) => {
+    // console.log("here API",movieData)
   let movies = readMovies();
   const nextId = movies[movies.length - 1].id + 1;
   const newMovie = { ...movieData, id: nextId };
@@ -56,6 +57,7 @@ export const createMovie = (movieData) => {
 };
 
 export const deleteMovie = (movieId) => {
+  // console.log("here API delete")
   let movies = readMovies();
   movies = movies.filter((movie) => movie.id !== parseInt(movieId, 10));
   saveMovies(movies);
