@@ -164,7 +164,7 @@ MovieForm.propTypes = {
     genre: PropTypes.string,
   }),
   onSubmit: PropTypes.func.isRequired,
-}
+};
 
 MovieForm.defaultProps = {
   movie: {

@@ -27,9 +27,9 @@ class NewMovie extends Component {
   render() {
     const { status, shouldRedirect } = this.state;
 
-    if (shouldRedirect) return <Redirect to="/" />
+    if (shouldRedirect) return <Redirect to="/" />;
 
-    if (status === 'loading') return <Loading />
+    if (status === 'loading') return <Loading />;
 
     return (
       <div data-testid="new-movie">
