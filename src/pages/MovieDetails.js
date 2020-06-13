@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
+import PropTypes from 'prop-types';
 
 class MovieDetails extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       isLoaded: false,
@@ -15,7 +16,7 @@ class MovieDetails extends Component {
   componentDidMount() {
     const id = this.props.match.params.id;
     movieAPI.getMovie(id)
-      .then(result => this.setState({ movie: result, isLoaded: true }));
+      .then((result) => this.setState({ movie: result, isLoaded: true }));
   }
 
   render() {
@@ -36,5 +37,11 @@ class MovieDetails extends Component {
     );
   }
 }
+
+MovieDetails.propTypes = {
+  match: PropTypes.shape({
+    id: PropTypes.string,
+  }).isRequired,
+};
 
 export default MovieDetails;
