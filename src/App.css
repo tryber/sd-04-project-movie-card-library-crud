@@ -165,7 +165,6 @@ body {
   background-color: #1479e6;
 }
 
-/* Configuração de Formulários */
 .form-pos {
   background-color: rgb(229, 226, 226);
   box-shadow: 0 0 10px black;
@@ -187,4 +186,49 @@ body {
 
 label {
   font-size: 15pt;
+}
+
+.loading {
+  align-items: center;
+  animation: load 2s linear;
+  display: flex;
+  font-size: 33pt;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+}
+
+@keyframes load {
+
+  12.5% {
+    text-shadow: 30px 30px 3px black, -30px -30px 3px black;
+  }
+
+  25% {
+    text-shadow: 30px 0 3px blue, -30px 0px 3px red;
+  }
+
+  37.5% {
+    text-shadow: 30px -30px 3px red, -30px 30px 3px blue;
+  }
+
+  50% {
+    text-shadow: 0 -30px 3px green, 0 30px 3px purple;
+  }
+
+  62.5% {
+    text-shadow: -30px -30px 3px yellow, 30px 30px 3px violet;
+  }
+
+  75% {
+    text-shadow: -30px 0 3px purple, 30px 0 3px green;
+  }
+
+  87.5% {
+    text-shadow: -30px 30px 3px orange, 30px -30px 3px lightblue;
+  }
+
+  100% {
+    text-shadow: 0 30px 3px darkblue, 0 -30px 3px darkred;
+  }
 }
