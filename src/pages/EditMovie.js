@@ -18,8 +18,8 @@ class EditMovie extends Component {
 
   async componentDidMount() {
     const movie = await movieAPI.getMovie(this.state.id);
-    const then = () => this.setState({ movie, loading: false });
-    then();
+    const thenEdit = () => this.setState({ movie, loading: false });
+    thenEdit();
   }
 
   async handleSubmit(updatedMovie) {
