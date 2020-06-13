@@ -30,8 +30,7 @@ class MovieList extends Component {
         {/* <Link to="/movies/new">ADICIONAR CARTÃO</Link> */}
       </div>
     );
-
   }
-};
+}
 
 export default MovieList;
