@@ -12,7 +12,7 @@ body:visited {
 
 header {
   align-items: center;
-  background-color:navy;
+  background-color: navy;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -29,7 +29,7 @@ header {
   text-decoration: none;
 }
 
-.header-nav:visited{
+.header-nav:visited {
   text-decoration: none;
 }
 
@@ -37,17 +37,17 @@ header {
   align-items: center;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: wrap;
   justify-content: space-between;
 }
 
 .movie-card {
   align-items: center;
   border-radius: 5px;
-  border:  1px solid black;
+  border: 1px solid black;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: wrap;
   justify-content: center;
   margin: 5% auto;
   max-width: 25%;
