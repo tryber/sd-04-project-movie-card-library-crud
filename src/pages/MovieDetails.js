@@ -1,51 +1,81 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
+import PropTypes from 'prop-types';
+
 
 class MovieDetails extends Component {
   constructor(props) {
     super(props);
 
-    const { id } = this.props.match.params.id;
+    const { id } = this.props.match.params
+    const { movie } = this.props;
+
     this.state = {
+      movie,
       id,
       loading: true,
+      shouldRiderict: false,
     };
   }
-
+  
   async componentDidMount() {
-    const moviesAPI = await movieAPI.getMovies(this.state.id);
-    this.setState({ movies: moviesAPI, loading: false });
+    const movie = await movieAPI.getMovie(this.state.id);
+    this.setState({ movie, loading: false });
   }
 
   render() {
+    const { movie, loading, shouldRiderict } = this.state;
+    
+    if (loading) return <Loading />;
 
-    const id = this.props.match.params.id;
-    console.log(id);
-    console.log(this.state.movies);
+    if (shouldRiderict) return <Redirect to="/" />;
 
-    if (!this.state.movies) return <Loading />;
     else {
-    const { title, storyline, imagePath, genre, rating, subtitle } = this.state.movies[id];
-    console.log('Entrou');
-    return (
+      const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
+
+      return (
         <div data-testid="movie-details">
-        <img alt="Movie Cover" src={`../${imagePath}`} />
-        <h1>{`${title}`}</h1>
-        <p>{`Subtitle: ${subtitle}`}</p>
-        <p>{`Storyline: ${storyline}`}</p>
-        <p>{`Genre: ${genre}`}</p>
-        <p>{`Rating: ${rating}`}</p>
-        <div className="flex-line">
-          <Link to="/movies/?{id}/edit">EDITAR</Link>
-          <Link to="/">VOLTAR</Link>
-        </div>  
-      </div>
-    )
+          <img alt="Movie Cover" src={`../${imagePath}`} />
+          <h1>{`${title}`}</h1>
+          <p>{`Subtitle: ${subtitle}`}</p>
+          <p>{`Storyline: ${storyline}`}</p>
+          <p>{`Genre: ${genre}`}</p>
+          <p>{`Rating: ${rating}`}</p>
+          <div className="flex-line">
+            <Link to={`/movies/${id}/edit`} >EDITAR</Link>
+            <Link to="/">VOLTAR</Link>
+            <Link
+              to="/"
+              onClick={() => {
+                movieAPI.deleteMovie(id);
+                this.setState({ shouldRiderict: true });
+              }}>DELETAR</Link>
+          </div>  
+        </div>
+      )
     }
   }
 }
 
 
 export default MovieDetails;
+
+MovieDetails.defaultProps = {
+    movie: {
+      title: '',
+      storyline: '',
+      imagePath: '',
+      genre: '',
+      rating: 0,
+      subtitle: '',
+      id: '',
+    },
+};
+
+MovieDetails.propTypes = {
+  match: PropTypes.shape({
+    id: PropTypes.number,
+  }).isRequired,
+};
