@@ -12,6 +12,7 @@ class MovieDetails extends Component {
       shouldRedirect: false,
       movie: null,
     };
+    this.delMovie = this.delMovie.bind(this);
   }
 
   componentDidMount() {
@@ -19,13 +20,13 @@ class MovieDetails extends Component {
       .then((movie) => this.setState({ movie }));
   }
 
-  delMovie = () => {
+  delMovie() {
     const { id } = this.state.movie;
     movieAPI.deleteMovie(id)
       .then(() => {
         this.setState({ shouldRedirect: true })
       });
-  };
+  }
 
   render() {
     const { movie, shouldRedirect } = this.state;
