@@ -14,11 +14,11 @@ class NewMovie extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentWillMount() {
-    setTimeout(() => {
-      this.setState({ status: null });
-    }, 1000);
-  }
+  // componentWillMount() {
+  //   setTimeout(() => {
+  //     this.setState({ status: null });
+  //   }, 1000);
+  // }
 
   handleSubmit(newMovie) {
     createMovie(newMovie)
