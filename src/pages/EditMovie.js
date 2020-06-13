@@ -7,7 +7,7 @@ import * as movieAPI from '../services/movieAPI';
 class EditMovie extends Component {
   constructor(props) {
     super(props);
-    const id = this.props.match.params.id
+    const id = this.props.match.params.id;
     this.state = {
       id,
       loading: true,

@@ -21,7 +21,7 @@ class MovieDetails extends Component {
 
   async componentDidMount() {
     const movie = await movieAPI.getMovie(this.state.id);
-    const thenDetails = () => this.setState({ movie, loading: false })
+    const thenDetails = () => this.setState({ movie, loading: false });
     thenDetails();
   }
 
@@ -80,5 +80,5 @@ MovieDetails.propTypes = {
     params: PropTypes.shape({
       id: PropTypes.number,
     }),
-  }).isRequired
+  }).isRequired,
 };
