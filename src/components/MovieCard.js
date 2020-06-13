@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import movies from '../services/movieData';
 
 class MovieCard extends Component {
   render() {
