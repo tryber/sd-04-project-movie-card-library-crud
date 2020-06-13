@@ -7,8 +7,9 @@ import * as movieAPI from '../services/movieAPI';
 class EditMovie extends Component {
   constructor(props) {
     super(props);
+    const id = this.props.match.params.id
     this.state = {
-      movie: {},
+      id,
       loading: true,
       shouldRedirect: false,
     };
@@ -16,10 +17,10 @@ class EditMovie extends Component {
   }
 
   async componentDidMount() {
-    const movie = await movieAPI.getMovie(this.props.match.params.id);
-    const then = () => this.setState({ movie, loading: false })
+    const movie = await movieAPI.getMovie(this.state.id);
+    const then = () => this.setState({ movie, loading: false });
     then();
-   }
+  }
 
   async handleSubmit(updatedMovie) {
     await movieAPI.updateMovie(updatedMovie);
