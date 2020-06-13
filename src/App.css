@@ -36,8 +36,7 @@ header {
 .movie-list {
   align-items: center;
   display: flex;
-  flex-direction: row;
-  flex-flow: wrap;
+  flex-flow: wrap, row;
   justify-content: space-between;
 }
 
@@ -46,8 +45,7 @@ header {
   border: 1px solid black;
   border-radius: 5px;
   display: flex;
-  flex-direction: row;
-  flex-flow: wrap;
+  flex-flow: wrap, row;
   justify-content: center;
   margin: 5% auto;
   max-width: 25%;
