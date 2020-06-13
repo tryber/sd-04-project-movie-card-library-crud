@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 class MovieCard extends React.Component {
   render() {
-    const { title, id, storyline, imagePath: image} = this.props.movie;
+    const { title, id, storyline, imagePath: image } = this.props.movie;
     return (
       <div data-testid="movie-card" className="movie-card">
         <img className="movie-card-image" src={image} alt={title} />
@@ -12,7 +12,7 @@ class MovieCard extends React.Component {
         <p>{storyline}</p>
         <Link to={`/movies/${id}`}>VER DETALHES</Link>
       </div>
-    )
+    );
   }
 }
 

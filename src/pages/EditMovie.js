@@ -7,19 +7,19 @@ import PropTypes from 'prop-types';
 class EditMovie extends Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       movie: {},
       loading: true,
-      shouldRedirect: false
+      shouldRedirect: false,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  
+
   async componentDidMount() {
     const movie = await movieAPI.getMovie(this.props.match.params.id);
     this.setState({ movie, loading: false });
   }
-  
+
   async handleSubmit(updatedMovie) {
     await movieAPI.updateMovie(updatedMovie);
     this.setState({ shouldRedirect: true });
@@ -28,12 +28,11 @@ class EditMovie extends Component {
   render() {
     const { loading, shouldRedirect, movie } = this.state;
     if (shouldRedirect) {
-      return <Redirect to="/" />
+      return <Redirect to="/" />;
     }
 
     if (loading) return <Loading />;
-    
-    else { 
+    else {
       return (
         <div data-testid="edit-movie">
           <MovieForm movie={movie} onSubmit={this.handleSubmit} />
