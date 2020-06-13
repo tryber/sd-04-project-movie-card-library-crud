@@ -37,7 +37,7 @@ class MovieDetails extends Component {
     if (this.state.redirect) {
       return <Redirect to="/" />;
     }
-    return console.log('codeclimate');
+    return console.log('codeclimate request');
   }
 
   render() {
