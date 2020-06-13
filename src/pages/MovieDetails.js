@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
 import { Loading } from '../components';
 import { getMovie, deleteMovie } from '../services/movieAPI';
-// import * as movieAPI from '../services/movieAPI';
+import '../App.css';
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -36,16 +36,18 @@ class MovieDetails extends Component {
     const { id, title, storyline, imagePath, genre, rating, subtitle } = movie;
 
     return (
-      <div data-testid="movie-details">
-        <img alt="Movie Cover" src={`../${imagePath}`} />
-        <p>{`Title: ${title}`}</p>
-        <p>{`Subtitle: ${subtitle}`}</p>
-        <p>{`Storyline: ${storyline}`}</p>
-        <p>{`Genre: ${genre}`}</p>
-        <p>{`Rating: ${rating}`}</p>
-        <Link to={`/movies/${id}/edit`}>EDITAR</Link>
-        <Link onClick={this.delMovie} to="/">DELETAR</Link>
-        <Link to="/">VOLTAR</Link>
+      <div className="movie-card-details" data-testid="movie-details">
+        <img className="movie-card-image" alt="Movie Cover" src={`../${imagePath}`} />
+        <div className="movie-card-body">
+          <p className="movie-card-title">{`Title: ${title}`}</p>
+          <p className="movie-card-subtitle">{`Subtitle: ${subtitle}`}</p>
+          <p className="movie-card-storyline">{`Storyline: ${storyline}`}</p>
+          <p className="genre">{`Genre: ${genre}`}</p>
+          <p className="rating">{`Rating: ${rating}`}</p>
+          <Link className="buttons bt-action" to={`/movies/${id}/edit`}>EDITAR</Link>
+          <Link className="buttons bt-del" onClick={this.delMovie} to="/">DELETAR</Link>
+          <Link className="buttons bt-back" to="/">VOLTAR</Link>
+        </div>
       </div>
     );
   }

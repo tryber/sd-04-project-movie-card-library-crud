@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { MovieForm, Loading } from '../components';
-import { getMovie } from '../services/movieAPI';
+import { getMovie, updateMovie } from '../services/movieAPI';
 // import * as movieAPI from '../services/movieAPI';
 
 class EditMovie extends Component {
@@ -22,7 +22,8 @@ class EditMovie extends Component {
   }
 
   handleSubmit(updatedMovie) {
-    this.setState({ shouldRedirect: true });
+    updateMovie(updatedMovie)
+      .then((shouldRedirect) => this.setState({ shouldRedirect }));
   }
 
   render() {
