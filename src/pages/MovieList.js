@@ -10,7 +10,7 @@ class MovieList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movies: null,
+      movies: [],
       loading: true,
     };
   }
@@ -24,11 +24,13 @@ class MovieList extends Component {
     const { movies, loading } = this.state;
     if (loading) return <Loading />;
     return (
-      <div data-testid="movie-list">
-        {movies.map((movie) => (
-          <MovieCard key={movie.title} movie={movie} />
-        ))}
-        <Link to="/movies/new">ADICIONAR CARTÃO</Link>
+      <div>
+        <div data-testid="movie-list">
+          {movies.map((movie) => (<MovieCard key={movie.title} movie={movie} />))}
+        </div>
+        <div>
+          <Link to="/movies/new">ADICIONAR CARTÃO</Link>
+        </div>
       </div>
     );
   }
