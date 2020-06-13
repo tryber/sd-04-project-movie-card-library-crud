@@ -43,8 +43,8 @@ header {
 
 .movie-card {
   align-items: center;
-  border-radius: 5px;
   border: 1px solid black;
+  border-radius: 5px;
   display: flex;
   flex-direction: row;
   flex-flow: wrap;
@@ -62,7 +62,7 @@ header {
   font-size: 0.5em;
 }
 
-.movie-card h1 {
+.movie-card-h1 {
   font-size: 0.8em;
 }
 
