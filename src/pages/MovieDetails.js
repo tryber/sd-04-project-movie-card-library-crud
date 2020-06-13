@@ -32,7 +32,6 @@ class MovieDetails extends Component {
   }
 
   render() {
-    // Change the condition to check the state
     const { movie, isLoaded, shouldRiderict } = this.state;
     if (shouldRiderict) return <Redirect to="/" />;
     if (isLoaded) {
