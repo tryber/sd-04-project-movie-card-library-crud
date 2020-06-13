@@ -17,8 +17,9 @@ class EditMovie extends Component {
 
   async componentDidMount() {
     const movie = await movieAPI.getMovie(this.props.match.params.id);
-    this.setState({ movie, loading: false });
-  }
+    const then = () => this.setState({ movie, loading: false })
+    then();
+   }
 
   async handleSubmit(updatedMovie) {
     await movieAPI.updateMovie(updatedMovie);
