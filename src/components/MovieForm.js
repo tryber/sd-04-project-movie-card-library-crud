@@ -79,7 +79,7 @@ class MovieForm extends React.Component {
         <label htmlFor="movie_storyline">Sinopse</label>
         <textarea
           id="movie_storyline"
-          value={storyline ? storyline: 'Insira a sinopse'}
+          value={storyline}
           className="form-txtArea"
           onChange={(event) => this.updateMovie('storyline', event.target.value)}
         />

@@ -2,11 +2,6 @@
 body {
   background-color: whitesmoke;
   box-sizing: border-box;
-}
-
-body {
-  background-color: whitesmoke;
-  box-sizing: border-box;
   font-size: 16px;
 }
 
@@ -105,19 +100,22 @@ body {
   padding: 0 20px;
 }
 
-.buttons,
-.form-input,
-.form-txtArea,
-.form-select {
+.buttons , .form-input , .form-txtArea , .form-select {
   border: none;
   border-radius: 5px;
   box-shadow: 3px 3px 5px black;
   color: white;
   margin: 9px 10px;
-  outline: none;
   padding: 8px;
   text-decoration: none;
   top: 10px;
+}
+
+.buttons:focus,
+.form-input:focus,
+.form-txtArea:focus,
+.form-select:focus {
+  outline: none;
 }
 
 .buttons:active {
@@ -133,7 +131,7 @@ body {
 }
 
 .bt-del {
-  background-color: #BD2F16;
+  background-color: #bd2f16;
 }
 
 .bt-del:hover {
@@ -177,7 +175,6 @@ label {
   color: black;
   font-size: 12pt;
   height: 23px;
-  outline: none;
   text-align: center;
   width: 300px;
 }
@@ -189,5 +186,5 @@ label {
 }
 
 .form-select {
-  color: black
+  color: black;
 }

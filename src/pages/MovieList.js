@@ -22,7 +22,7 @@ class MovieList extends Component {
     return (movies) ? (
       <div>
         <div className="page-op">
-          <Link className="buttons bt-action"  to="/movies/new">ADICIONAR CARTÃO</Link>
+          <Link className="buttons bt-action" to="/movies/new">ADICIONAR CARTÃO</Link>
         </div>
         <div data-testid="movie-list" className="movie-list">
           {movies.map((movie) => (<MovieCard key={movie.title} movie={movie} />))}
