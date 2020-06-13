@@ -35,6 +35,7 @@ class MovieDetails extends Component {
       <div>
         <div data-testid="movie-details">
           <img alt="Movie Cover" src={`../${imagePath}`} />
+          <p>{`Title: ${title}`}</p>
           <p>{`Subtitle: ${subtitle}`}</p>
           <p>{`Storyline: ${storyline}`}</p>
           <p>{`Genre: ${genre}`}</p>
@@ -43,6 +44,7 @@ class MovieDetails extends Component {
         <div>
           <Link to={`/movies/${id}/edit`}>EDITAR</Link>
           <Link to="/">VOLTAR</Link>
+          <Link to="/" onClick={() => movieAPI.deleteMovie(id)}>DELETAR</Link>
         </div>
       </div>
     );
