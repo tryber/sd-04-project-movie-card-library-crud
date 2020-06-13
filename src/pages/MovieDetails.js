@@ -13,6 +13,11 @@ class MovieDetails extends Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  componentDidMount() {
+    getMovies().then((movies) => this.setState({ movies }));
+  }
+
   setRedirect() {
     this.setState({
       redirect: true,
@@ -30,13 +35,9 @@ class MovieDetails extends Component {
 
   renderRedirect() {
     if (this.state.redirect) {
-      return <Redirect to='/' />;
+      return <Redirect to="/" />;
     }
     return console.log('codeclimate');
-  }
-
-  componentDidMount() {
-    getMovies().then(movies => this.setState({ movies }));
   }
 
   render() {

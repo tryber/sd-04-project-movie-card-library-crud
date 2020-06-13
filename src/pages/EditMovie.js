@@ -9,7 +9,7 @@ class EditMovie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movies: '',
+      movies: ' ',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -30,7 +30,7 @@ class EditMovie extends Component {
       // Redirect
     }
 
-    if (this.state.movies === '') return 'Carregando...';
+    if (this.state.movies === ' ') return 'Carregando...';
     // if (status === 'loading') {
       // render Loading
     // }

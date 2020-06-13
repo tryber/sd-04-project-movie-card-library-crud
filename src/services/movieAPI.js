@@ -57,7 +57,7 @@ export const createMovie = (movieData) => {
 };
 
 export const deleteMovie = (movieId) => {
-    console.log("here API delete")
+  // console.log("here API delete")
   let movies = readMovies();
   movies = movies.filter((movie) => movie.id !== parseInt(movieId, 10));
   saveMovies(movies);
