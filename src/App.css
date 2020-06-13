@@ -62,7 +62,7 @@ header {
   font-size: 0.5em;
 }
 
-.movie-card h3 {
+.movie-card h1 {
   font-size: 0.8em;
 }
 
@@ -71,4 +71,11 @@ header {
   color: white;
   margin: 0;
   width: 100%;
+}
+
+.flex-line {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
 }
