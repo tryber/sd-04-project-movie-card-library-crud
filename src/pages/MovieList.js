@@ -10,27 +10,21 @@ class MovieList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movies: [],
-      loading: true,
+      movies: null,
     };
   }
 
   componentDidMount() {
-    getMovies()
-      .then((movies) => this.setState({ movies, loading: false }));
+    getMovies().then((movies) => this.setState({ movies }));
   }
 
   render() {
-    const { movies, loading } = this.state;
-    if (loading) return <Loading />;
+    const { movies } = this.state;
+    if (!movies) return <Loading />;
     return (
-      <div>
-        <div data-testid="movie-list">
-          {movies.map((movie) => (<MovieCard key={movie.title} movie={movie} />))}
-        </div>
-        <div>
-          <Link to="/movies/new">ADICIONAR CARTÃO</Link>
-        </div>
+      <div data-testid="movie-list">
+        {movies.map((movie) => (<MovieCard key={movie.title} movie={movie} />))}
+        <Link to="/movies/new">ADICIONAR CARTÃO</Link>
       </div>
     );
   }

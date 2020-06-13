@@ -5,16 +5,14 @@ import { MovieList, NewMovie, EditMovie, MovieDetails, NotFound } from './pages'
 function App() {
   return (
     <BrowserRouter>
-      <div>
-        <div>Movie Card Library CRUD</div>
-        <Switch>
-          <Route exact path="/" component={MovieList} />
-          <Route exact path="/movies/new" component={NewMovie} />
-          <Route exact path="/movies/:id/edit" component={EditMovie} />
-          <Route exact path="/movies/:id" component={MovieDetails} />
-          <Route component={NotFound} />
-        </Switch>
-      </div>
+      <div>Movie Card Library CRUD</div>
+      <Switch>
+        <Route exact path="/movies/new" component={NewMovie} />
+        <Route exact path="/movies/:id" component={MovieDetails} />
+        <Route exact path="/" component={MovieList} />
+        <Route exact path="/movies/:id/edit" component={EditMovie} />
+        <Route path="/" component={NotFound} />
+      </Switch>
     </BrowserRouter>
   );
 }
