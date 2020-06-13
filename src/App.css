@@ -23,8 +23,8 @@ img {
 }
 
 .card-body {
-  text-align: justify;
   min-height: 50px;
+  text-align: justify;
 }
 
 .card-link {

@@ -14,7 +14,7 @@ class MovieList extends Component {
 
   componentDidMount() {
     movieAPI.getMovies()
-      .then(data => {
+      .then((data) => {
         this.setState({ isLoaded: true, movies: data });
       });
   }
@@ -22,16 +22,14 @@ class MovieList extends Component {
   render() {
     const { isLoaded, movies } = this.state;
 
-    if (!isLoaded) return <div>Carregando...</div>
-    else {
-      return (
-        <div data-testid="movie-list">
-          <div className="main">
-            {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
-          </div>
+    if (!isLoaded) return <div>Carregando...</div>;
+    return (
+      <div data-testid="movie-list">
+        <div className="main">
+          {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
         </div>
-      );
-    }
+      </div>
+    );
   }
 }
 
