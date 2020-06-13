@@ -111,12 +111,31 @@ body {
   top: 10px;
 }
 
-.buttons:focus,
+.form-input {
+  border-radius: 7px;
+  color: black;
+  font-size: 12pt;
+  height: 23px;
+  text-align: center;
+  width: 300px;
+}
+
+.form-txtArea {
+  color: black;
+  height: 100px;
+  width: 320px;
+}
+
+.form-select {
+  color: black;
+}
+
+/* .buttons:focus,
 .form-input:focus,
 .form-txtArea:focus,
 .form-select:focus {
   outline: none;
-}
+} */
 
 .buttons:active {
   box-shadow: 1px 1px 1px black;
@@ -168,23 +187,4 @@ body {
 
 label {
   font-size: 15pt;
-}
-
-.form-input {
-  border-radius: 7px;
-  color: black;
-  font-size: 12pt;
-  height: 23px;
-  text-align: center;
-  width: 300px;
-}
-
-.form-txtArea {
-  color: black;
-  height: 100px;
-  width: 320px;
-}
-
-.form-select {
-  color: black;
 }
