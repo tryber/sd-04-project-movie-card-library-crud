@@ -31,33 +31,31 @@ class MovieDetails extends Component {
     if (loading) return <Loading />;
 
     if (shouldRiderict) return <Redirect to="/" />;
-    else {
-      const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
+    const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
 
-      return (
-        <div data-testid="movie-details">
-          <img alt="Movie Cover" src={`../${imagePath}`} />
-          <h1>{`${title}`}</h1>
-          <p>{`Subtitle: ${subtitle}`}</p>
-          <p>{`Storyline: ${storyline}`}</p>
-          <p>{`Genre: ${genre}`}</p>
-          <p>{`Rating: ${rating}`}</p>
-          <div className="flex-line">
-            <Link to={`/movies/${id}/edit`}>EDITAR</Link>
-            <Link to="/">VOLTAR</Link>
-            <Link
-              to="/"
-              onClick={() => {
-                movieAPI.deleteMovie(id);
-                this.setState({ shouldRiderict: true });
-              }}
-            >
-              DELETAR
-            </Link>
-          </div>
+    return (
+      <div data-testid="movie-details">
+        <img alt="Movie Cover" src={`../${imagePath}`} />
+        <h1>{`${title}`}</h1>
+        <p>{`Subtitle: ${subtitle}`}</p>
+        <p>{`Storyline: ${storyline}`}</p>
+        <p>{`Genre: ${genre}`}</p>
+        <p>{`Rating: ${rating}`}</p>
+        <div className="flex-line">
+          <Link to={`/movies/${id}/edit`}>EDITAR</Link>
+          <Link to="/">VOLTAR</Link>
+          <Link
+            to="/"
+            onClick={() => {
+              movieAPI.deleteMovie(id);
+              this.setState({ shouldRiderict: true });
+            }}
+          >
+            DELETAR
+          </Link>
         </div>
-      );
-    }
+      </div>
+    );
   }
 }
 
@@ -81,4 +79,5 @@ MovieDetails.propTypes = {
       id: PropTypes.number,
     }),
   }).isRequired,
+  movie: PropTypes.object.isRequired
 };
