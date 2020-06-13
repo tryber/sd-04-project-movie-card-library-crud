@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { getMovies } from '../services/movieAPI';
+import { getMovies, deleteMovie } from '../services/movieAPI';
 import * as movieAPI from '../services/movieAPI';
 // import { Loading } from '../components';
 
@@ -11,10 +11,32 @@ class MovieDetails extends Component {
     this.state = {
       movies: '',
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  setRedirect() {
+    this.setState({
+      redirect: true,
+    });
+  }
+
+  handleSubmit() {
+    console.log('id', this.props.match.params.id);
+    deleteMovie(this.props.match.params.id);
+    this.setState({
+      redirect: true,
+    });
+    return this.state;
+  }
+
+  renderRedirect() {
+    if (this.state.redirect) {
+      return <Redirect to='/' />;
+    }
+    return console.log('codeclimate');
   }
 
   componentDidMount() {
-    getMovies().then((movies) => this.setState({ movies }));
+    getMovies().then(movies => this.setState({ movies }));
   }
 
   render() {
@@ -36,6 +58,8 @@ class MovieDetails extends Component {
         <p>{`Rating: ${rating}`}</p>
         <Link to={`/movies/${movie.id}/edit`}>EDITAR</Link>
         <Link to={'/'}>VOLTAR</Link>
+        <Link to={'/'} onClick={this.handleSubmit}>DELETAR </Link>
+        {this.renderRedirect()}
       </div>
     );
   }
