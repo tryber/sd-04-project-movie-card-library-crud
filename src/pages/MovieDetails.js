@@ -12,7 +12,15 @@ class MovieDetails extends Component {
     const { movie } = this.props;
 
     this.state = {
-      movie,
+      movie: {
+        title: '',
+        storyline: '',
+        imagePath: '',
+        genre: '',
+        rating: 0,
+        subtitle: '',
+        id: '',
+      },
       id,
       loading: true,
       shouldRiderict: false,
@@ -62,15 +70,7 @@ class MovieDetails extends Component {
 export default MovieDetails;
 
 MovieDetails.defaultProps = {
-  movie: {
-    title: '',
-    storyline: '',
-    imagePath: '',
-    genre: '',
-    rating: 0,
-    subtitle: '',
-    id: '',
-  },
+  
 };
 
 MovieDetails.propTypes = {
@@ -79,5 +79,4 @@ MovieDetails.propTypes = {
       id: PropTypes.number,
     }),
   }).isRequired,
-  movie: PropTypes.object.isRequired
 };
