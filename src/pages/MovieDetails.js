@@ -24,13 +24,13 @@ class MovieDetails extends Component {
     const { id } = this.state.movie;
     movieAPI.deleteMovie(id)
       .then(() => {
-        this.setState({ shouldRedirect: true })
+        this.setState({ shouldRedirect: true });
       });
   }
 
   render() {
     const { movie, shouldRedirect } = this.state;
-    if (shouldRedirect) return <Redirect to="/" />
+    if (shouldRedirect) return <Redirect to="/" />;
     if (!movie) return <Loading />;
 
     const { id, title, storyline, imagePath, genre, rating, subtitle } = movie;
