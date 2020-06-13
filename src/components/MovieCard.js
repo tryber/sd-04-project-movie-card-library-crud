@@ -6,15 +6,15 @@ class MovieCard extends React.Component {
     const { id, title, storyline, imagePath } = this.props.movie;
     return (
       <div className="card" data-testid="movie-card">
-        <img src={imagePath} alt="movie" />
+        <img src={this.props.imagePath} alt="movie" />
         <div>
-          {title}
+          {this.props.title}
         </div>
         <div className="card-body">
-          {storyline}
+          {this.props.storyline}
         </div>
         <div className="card-link">
-          <Link to={`/movies/${id}`}>VER DETALHES</Link>
+          <Link to={`/movies/${this.props.id}`}>VER DETALHES</Link>
         </div>
       </div>
     );
