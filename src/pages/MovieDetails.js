@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
-
 import { Loading } from '../components';
-import * as movieAPI from '../services/movieAPI';
+import { getMovie, deleteMovie } from '../services/movieAPI';
+// import * as movieAPI from '../services/movieAPI';
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -16,13 +16,13 @@ class MovieDetails extends Component {
   }
 
   componentDidMount() {
-    movieAPI.getMovie(this.props.match.params.id)
+    getMovie(this.props.match.params.id)
       .then((movie) => this.setState({ movie }));
   }
 
   delMovie() {
     const { id } = this.state.movie;
-    movieAPI.deleteMovie(id)
+    deleteMovie(id)
       .then(() => {
         this.setState({ shouldRedirect: true });
       });
