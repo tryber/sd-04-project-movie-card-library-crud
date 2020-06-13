@@ -9,7 +9,6 @@ class MovieDetails extends Component {
     super(props);
 
     const { id } = this.props.match.params;
-    const { movie } = this.props;
 
     this.state = {
       movie: {
