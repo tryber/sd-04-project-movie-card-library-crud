@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import MovieForm from '../components/MovieForm';
 import * as movieAPI from '../services/movieAPI';
-import { Redirect } from 'react-router-dom';
 
 class NewMovie extends Component {
   constructor(props) {
     super(props);
-    this.state = { status: '' }
+    this.state = { status: '' };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(newMovie) {
     movieAPI.createMovie(newMovie)
-    .then(status => this.setState({status}))
+    .then((status) => this.setState({ status }));
   }
 
   render() {
