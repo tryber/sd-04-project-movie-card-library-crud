@@ -32,13 +32,12 @@ class EditMovie extends Component {
     }
 
     if (loading) return <Loading />;
-    else {
-      return (
-        <div data-testid="edit-movie">
-          <MovieForm movie={movie} onSubmit={this.handleSubmit} />
-        </div>
-      );
-    }
+
+    return (
+      <div data-testid="edit-movie">
+        <MovieForm movie={movie} onSubmit={this.handleSubmit} />
+      </div>
+    );
   }
 }
 

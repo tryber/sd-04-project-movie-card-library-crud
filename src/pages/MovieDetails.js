@@ -76,6 +76,8 @@ MovieDetails.defaultProps = {
 
 MovieDetails.propTypes = {
   match: PropTypes.shape({
-    id: PropTypes.number,
-  }).isRequired,
+    params: PropTypes.shape({
+      id: PropTypes.number,
+    }),
+  }).isRequired
 };
