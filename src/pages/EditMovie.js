@@ -19,7 +19,7 @@ class EditMovie extends Component {
   componentDidMount() {
     const { id } = this.props.match.params;
     movieAPI.getMovie(id)
-    .then((movie) => this.setState({ movie, status: "loaded" }));
+    .then((movie) => this.setState({ movie, status: 'loaded' }));
   }
 
   handleSubmit(updatedMovie) {
@@ -53,6 +53,6 @@ EditMovie.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.any,
   }).isRequired,
-}
+};
 
 export default EditMovie;
