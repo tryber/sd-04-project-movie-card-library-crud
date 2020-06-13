@@ -11,3 +11,63 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie-card, .movie-details {
+  align-items: center;
+  background-color: rgb(228, 228, 228);
+  box-shadow: gray 5px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.movie-card {
+  width: 30%;
+}
+
+.movie-details {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.movie-card > img,
+.movie-details > img {
+  width: 100%;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  height: 45%;
+  width: 93%;
+  justify-content: space-between;
+  padding: 3%;
+}
+
+.buttons {
+  border-top: 2px solid rgb(219, 219, 219);
+  padding-top: 10px;
+}
+
+.buttons > button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.buttons > a, .buttons > button {
+  font-size: 1em;
+  margin-right: 20px;
+  color: rgb(110, 110, 110);
+  text-decoration: none;
+}
+
+.buttons > a:hover, .buttons > button:hover {
+  color: rgb(63, 63, 63);
+}

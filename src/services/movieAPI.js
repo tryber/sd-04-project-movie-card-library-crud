@@ -59,7 +59,6 @@ export const deleteMovie = (movieId) => {
   let movies = readMovies();
   movies = movies.filter((movie) => movie.id !== parseInt(movieId, 10));
   saveMovies(movies);
-
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve({ status: 'OK' });
