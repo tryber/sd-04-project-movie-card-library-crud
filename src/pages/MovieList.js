@@ -21,7 +21,6 @@ class MovieList extends Component {
       <Loading />
     ) : (
       <div data-testid="movie-list">
-        {console.log(this.state.movies)}
         {movies.map((movie) => (
           <MovieCard key={movie.title} movie={movie} />
         ))}

@@ -19,7 +19,7 @@ class MovieDetails extends Component {
 
   render() {
     const { needLoad, movie } = this.state;
-    const { title, storyline, imagePath, genre, rating, subtitle, id} = movie;
+    const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
     return needLoad ? (
       <Loading />
     ) : (
@@ -34,6 +34,9 @@ class MovieDetails extends Component {
         </Link>
         <Link className="link" to="/">
           VOLTAR
+        </Link>
+        <Link className="" to="/" onClick={() => movieAPI.deleteMovie(id)}>
+          DELETAR
         </Link>
       </div>
     );
