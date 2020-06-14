@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import MovieForm from '../components/MovieForm';
 import * as movieAPI from '../services/movieAPI';
+import PropTypes from 'prop-types';
 
 class NewMovie extends Component {
   constructor(props) {
@@ -33,3 +33,9 @@ class NewMovie extends Component {
   }
 }
 export default NewMovie;
+
+NewMovie.propTypes = {
+  history: PropTypes.objectOf(PropTypes
+    .oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]))
+    .isRequired,
+};
