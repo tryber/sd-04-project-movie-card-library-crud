@@ -4,6 +4,7 @@ import MovieList from './pages/MovieList';
 import NewMovie from './pages/NewMovie';
 import MovieDetails from './pages/MovieDetails';
 import EditMovie from './pages/EditMovie';
+import Error from './pages/error';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Route exact path="/movies/:id" component={MovieDetails} />
         <Route exact path="/movies/:id/edit" component={EditMovie} />
         <Route exact path="/" component={MovieList} />
-        <Route component={MovieList} />
+        <Route component={Error} />
       </Switch>
     </Router>
   );
