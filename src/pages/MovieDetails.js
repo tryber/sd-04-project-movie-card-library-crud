@@ -12,7 +12,6 @@ class MovieDetails extends Component {
 
     this.state = {
       isLoading: true,
-      shouldRedirect: false,
       movie: [],
     };
   }
