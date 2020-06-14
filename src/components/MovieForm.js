@@ -127,10 +127,7 @@ class MovieForm extends React.Component {
   renderSubmitButton() {
     return (
       <div>
-        <button
-          type="button"
-          onClick={this.handleSubmit}
-        >
+        <button type="button" onClick={this.handleSubmit}>
           Submit
         </button>
       </div>
@@ -140,7 +137,7 @@ class MovieForm extends React.Component {
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={() => this.handleSubmit()}>
           {this.renderTitleInput()}
           {this.renderSubtitleInput()}
           {this.renderImagePathInput()}
