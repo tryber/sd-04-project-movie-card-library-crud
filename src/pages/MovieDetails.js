@@ -7,18 +7,20 @@ class MovieDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: "",
-    }
+      movie: '',
+    };
   }
   render() {
     // Change the condition to check the state
+    const { movie } = this.state;
+    const { title, storyline, imagePath, genre, rating, subtitle } = movie;
+
     if (true) return <Loading />;
 
-    const { title, storyline, imagePath, genre, rating, subtitle } = movie;
-    const { movie } = this.state
     return (
       <div data-testid="movie-details">
         <img alt="Movie Cover" src={`../${imagePath}`} />
+        <p>{`Title: ${title}`}</p>
         <p>{`Subtitle: ${subtitle}`}</p>
         <p>{`Storyline: ${storyline}`}</p>
         <p>{`Genre: ${genre}`}</p>
