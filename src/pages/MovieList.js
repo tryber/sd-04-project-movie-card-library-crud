@@ -16,7 +16,7 @@ class MovieList extends Component {
   componentDidMount() {
     getMovies()
       .then((movies) => this.setState({ movies }));
-}
+  }
 
   render() {
     const { movies } = this.state;
