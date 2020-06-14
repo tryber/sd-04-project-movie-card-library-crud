@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../constants/routes';
 
-import { getMovie } from '../services/movieAPI';
+import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
 
 class MovieDetails extends Component {
@@ -12,6 +12,7 @@ class MovieDetails extends Component {
 
     this.state = {
       isLoading: true,
+      shouldRedirect: false,
       movie: [],
     };
   }
@@ -19,11 +20,22 @@ class MovieDetails extends Component {
   componentDidMount = () => {
     const { match } = this.props;
 
-    getMovie(match.params.id).then((movie) => {
+    movieAPI.getMovie(match.params.id).then((movie) => {
       this.setState({
         isLoading: false,
         movie,
       });
+    });
+  };
+
+  deleteMovie = () => {
+    const { movie } = this.state;
+    const { history } = this.props;
+
+    movieAPI.deleteMovie(movie.id).then((response) => {
+      if (response.status === 'OK') {
+        history.push('/');
+      }
     });
   };
 
@@ -42,6 +54,9 @@ class MovieDetails extends Component {
         <p>{`Rating: ${movie.rating}`}</p>
         <Link to={ROUTES.ROOT}>VOLTAR</Link>
         <Link to={ROUTES.UPDATE_MOVIE.replace(':id', movie.id)}>EDITAR</Link>
+        <Link to={ROUTES.ROOT} onClick={() => this.deleteMovie()}>
+          DELETAR
+        </Link>
       </div>
     );
   }
