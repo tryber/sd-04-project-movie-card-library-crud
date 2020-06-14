@@ -40,7 +40,7 @@ class EditMovie extends Component {
       history.push('/');
     }
 
-    if (status === 'loading') {
+    if (status === true) {
       return <Loading />;
     }
 
