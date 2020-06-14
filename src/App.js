@@ -4,6 +4,7 @@ import MovieList from './pages/MovieList';
 import MovieDetails from './pages/MovieDetails';
 import EditMovie from './pages/EditMovie';
 import NewMovie from './pages/NewMovie';
+
 function App() {
   return (
     <BrowserRouter>
