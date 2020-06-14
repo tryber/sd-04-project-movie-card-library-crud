@@ -6,9 +6,6 @@ import Loading from '../components/Loading';
 import * as movieAPI from '../services/movieAPI';
 
 class MovieDetails extends Component {
-  static defaultProps = {
-    match : {},
-  }
   constructor(props) {
     super(props);
 

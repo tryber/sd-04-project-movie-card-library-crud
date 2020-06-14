@@ -49,4 +49,5 @@ EditMovie.propTypes = {
     params: propTypes.shape({
       id: propTypes.string,
     }),
-}
+  }),
+};

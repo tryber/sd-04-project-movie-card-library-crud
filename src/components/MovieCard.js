@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 import propTypes from 'prop-types';
 
 class MovieCard extends React.Component {
-  static defaultProps = {
-    movie : {},
-  }
   render() {
     const { movie } = this.props;
     const { id, imagePath, storyline, title } = movie;
