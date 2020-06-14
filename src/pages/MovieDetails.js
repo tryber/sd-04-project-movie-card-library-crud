@@ -1,15 +1,13 @@
+
 import React, { Component } from 'react';
 
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
 
 class MovieDetails extends Component {
-  
-   render() {
-    const { id } = this.props.match.params
-    const movie = movieAPI.getMovie(id);
+  render() {
     // Change the condition to check the state
-    if (!movie) return <Loading />;
+    if (true) return <Loading />;
 
     const { title, storyline, imagePath, genre, rating, subtitle } = movie;
 
