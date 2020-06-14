@@ -5,7 +5,7 @@ import Loading from '../components/Loading';
 
 class MovieDetails extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = { movie: {
       title: '',
@@ -17,20 +17,20 @@ class MovieDetails extends Component {
       storyline: '',
       bookmarked: '',
     },
-    loading: true,
-  }
+      loading: true,
+    };
   }
 
   componentDidMount() {
     const searchId = this.props.match.params.id;
-    movieAPI.getMovie(searchId).then(movie => this.setState({ movie, loading: false }))
+    movieAPI.getMovie(searchId).then((movie) => this.setState({ movie, loading: false }));
   }
 
   render() {
     // Change the condition to check the state
     const { movie, loading } = this.state;
     const { storyline, imagePath, genre, rating, subtitle } = movie;
-    if (loading) return <Loading />
+    if (loading) return <Loading />;
     return (
       <div data-testid="movie-details">
         <img alt="Movie Cover" src={`../${imagePath}`} />
