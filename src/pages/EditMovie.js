@@ -51,3 +51,9 @@ EditMovie.propTypes = {
     }),
   }),
 };
+
+EditMovie.defaultProps = {
+  match: {
+    params: { id: '' },
+  },
+};
