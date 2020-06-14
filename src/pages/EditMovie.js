@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
-import { MovieForm } from '../components';
-import * as movieAPI from '../services/movieAPI';
-import { Loading } from '../components';
 import { Redirect } from 'react-router-dom';
+
+import * as movieAPI from '../services/movieAPI';
+import { MovieForm } from '../components';
+import { Loading } from '../components';
 
 class EditMovie extends Component {
   constructor(props) {
@@ -23,14 +23,12 @@ class EditMovie extends Component {
   }
 
   handleSubmit(updatedMovie) {
-    movieAPI
-      .updateMovie(updatedMovie)
-      .then(() => this.setState({ shouldRedirect: true }));
+    movieAPI.updateMovie(updatedMovie).then(() => this.setState({ shouldRedirect: true }));
   }
 
   render() {
     const { loading, shouldRedirect, movie } = this.state;
-    
+
     if (shouldRedirect) return <Redirect to="/" />;
 
     if (loading) return <Loading />;
