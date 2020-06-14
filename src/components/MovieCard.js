@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class MovieCard extends React.Component {
+  constructor(props) {
+    super(props)
+  }
   render() {
     const { movie } = this.props;
     const { id, imagePath, storyline, title } = movie;
