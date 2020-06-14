@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import propTypes from 'prop-types';
 
 class MovieCard extends React.Component {
+  static defaultProps = {
+    movie : {},
+  }
   render() {
     const { movie } = this.props;
     const { id, imagePath, storyline, title } = movie;
@@ -20,5 +23,5 @@ class MovieCard extends React.Component {
 export default MovieCard;
 
 MovieCard.propTypes = {
-  movie: propTypes.object,
+  movie: propTypes.shape({}),
 };

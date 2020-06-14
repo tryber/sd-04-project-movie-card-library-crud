@@ -1,11 +1,14 @@
 
 import React, { Component } from 'react';
-import Loading from '../components/Loading';
 import { Link } from 'react-router-dom';
 import propTypes from 'prop-types';
+import Loading from '../components/Loading';
 import * as movieAPI from '../services/movieAPI';
 
 class MovieDetails extends Component {
+  static defaultProps = {
+    match : {},
+  }
   constructor(props) {
     super(props);
 
