@@ -31,17 +31,18 @@ class MovieDetails extends Component {
   render() {
     // Change the condition to check the state
     const { movie, loading } = this.state;
-    const { id, storyline, imagePath, genre, rating, subtitle } = movie;
+    const { title, id, storyline, imagePath, genre, rating, subtitle } = movie;
     if (loading) return <Loading />;
     return (
       <div data-testid="movie-details">
-        <Link to="/">Voltar</Link>
         <img alt="Movie Cover" src={`../${imagePath}`} />
+        <p>{`Title: ${title}`}</p>
         <p>{`Subtitle: ${subtitle}`}</p>
         <p>{`Storyline: ${storyline}`}</p>
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
-        <Link to={`/movies/${id}/edit`}>Editar</Link>
+        <Link to="/">VOLTAR</Link>
+        <Link to={`/movies/${id}/edit`}>EDITAR</Link>
         <Link to="/" onClick={() => movieAPI.deleteMovie(id)}>DELETAR</Link>
       </div>
     );
