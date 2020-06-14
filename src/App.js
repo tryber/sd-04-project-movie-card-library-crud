@@ -9,8 +9,8 @@ function App() {
     <Router>
       <div>Movie Card Library CRUD</div>
       <Switch>
-        <Route exact path={ROUTES.ROOT} component={MovieList}></Route>
-        <Route exact path={ROUTES.GET_MOVIE} component={MovieDeatils}></Route>
+        <Route exact path={ROUTES.ROOT} component={MovieList} />
+        <Route exact path={ROUTES.GET_MOVIE} component={MovieDeatils} />
       </Switch>
     </Router>
   );

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import * as ROUTES from '../constants/routes';
 import Loading from './Loading';
 import { getMovie } from '../services/movieAPI';
@@ -15,9 +16,9 @@ class MovieDetails extends Component {
   }
 
   componentDidMount = () => {
-    const { id } = this.props.match.params;
+    const { match } = this.props;
 
-    getMovie(id).then((movie) => {
+    getMovie(match.params.id).then((movie) => {
       this.setState({
         isLoading: false,
         movie,
@@ -43,5 +44,21 @@ class MovieDetails extends Component {
     );
   }
 }
+
+MovieDetails.propTypes = {
+  match: {
+    params: {
+      id: PropTypes.number,
+    },
+  },
+};
+
+MovieDetails.defaultProps = {
+  match: {
+    params: {
+      id: 0,
+    },
+  },
+};
 
 export default MovieDetails;
