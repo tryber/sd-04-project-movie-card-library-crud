@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import MovieCard from '../components/MovieCard';
 import { Link } from 'react-router-dom';
 import { Loading } from '../components';
 import { getMovies } from '../services/movieAPI';
-//import * as movieAPI from '../services/movieAPI';
+import MovieCard from '../components/MovieCard';
+// import * as movieAPI from '../services/movieAPI';
 
 class MovieList extends Component {
   constructor(props) {
@@ -13,9 +13,9 @@ class MovieList extends Component {
     };
   }
 
-componentDidMount() {
-  getMovies()
-    .then((movies) => this.setState({ movies }));
+  componentDidMount() {
+    getMovies()
+      .then((movies) => this.setState({ movies }));
 }
 
   render() {

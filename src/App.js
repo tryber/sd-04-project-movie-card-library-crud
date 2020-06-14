@@ -7,7 +7,7 @@ function App() {
   return (
   <Router>
     <div>Movie Card Library CRUD</div>
-    <Link to={"/movies/new"}>ADICIONAR CARTÃO</Link>
+    <Link to={'/movies/new'}>ADICIONAR CARTÃO</Link>
     <Switch>
       <Route exact path="/movies/:id/" component={MovieDetails} />
       <Route exact path="/movies/new" component={NewMovie} />
