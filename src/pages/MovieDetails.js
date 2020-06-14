@@ -1,9 +1,9 @@
 
 import React, { Component } from 'react';
-import * as movieAPI from '../services/movieAPI';
 import Loading from '../components/Loading';
 import { Link } from 'react-router-dom';
 import propTypes from 'prop-types';
+import * as movieAPI from '../services/movieAPI';
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -35,7 +35,7 @@ class MovieDetails extends Component {
     if (loading) return <Loading />;
     return (
       <div data-testid="movie-details">
-        <Link to={`/`}>Voltar</Link>
+        <Link to="/">Voltar</Link>
         <img alt="Movie Cover" src={`../${imagePath}`} />
         <p>{`Subtitle: ${subtitle}`}</p>
         <p>{`Storyline: ${storyline}`}</p>
