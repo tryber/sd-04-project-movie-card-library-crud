@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 
 class Loading extends Component {
-
   render() {
-    function carregando () {
-      return <p>Carregando...</p>
+    function carregando() {
+      return <p>Carregando...</p>;
     }
-    return (
-      <div>{carregando()}</div>
-    );
+    return <div>{carregando()}</div>;
   }
 }
 
