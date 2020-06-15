@@ -7,33 +7,34 @@ class MovieList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movies: '',
-      loading: true,
+      loading: true, // inicialmente, a mensagem de loading é o estado setado
+      movies: '', // inicialmente, o "movies" é vazio
     };
   }
 
+  // Ao renderizar o componente, o "loading" deve sumir e o estado "movies" deve ser o que
+  // for retornado da requisição
   componentDidMount() {
-    movieAPI.getMovies().then((e) =>
+    movieAPI.getMovies().then((response) =>
       this.setState({
-        movies: e,
         loading: false,
+        movies: response,
       }),
     );
   }
-
   render() {
     const { movies, loading } = this.state;
+
     if (loading === true) {
       return <Loading />;
-    } else {
-      return (
-        <div data-testid="movie-list">
-          {movies.map((movie) => (
-            <MovieCard key={movie.title} movie={movie} />
-          ))}
-        </div>
-      );
     }
+    return (
+      <div data-testid="movie-list">
+        {movies.map((movie) => (
+          <MovieCard key={movie.title} movie={movie} />
+        ))}
+      </div>
+    );
   }
 }
 
