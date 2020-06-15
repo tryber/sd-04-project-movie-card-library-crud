@@ -1,8 +1,12 @@
 import React from 'react';
-//Inicio de Projeto
+import { BrowserRouter } from 'react-router-dom';
+
+
 function App() {
   return (
-      <div>Movie Card Library CRUD</div>
+    <BrowserRouter>
+        MINHA CRUD
+    </BrowserRouter>
   );
 }
 
