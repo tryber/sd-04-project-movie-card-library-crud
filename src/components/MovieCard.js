@@ -14,7 +14,7 @@ class MovieCard extends React.Component {
         <span>{rating}</span>
         <span>{genre}</span>
         <div>
-          <Link to={`/${id}`}>VER DETALHES</Link>
+          <Link to={`movies/${id}`}>VER DETALHES</Link>
         </div>
       </div>
     );
@@ -22,13 +22,15 @@ class MovieCard extends React.Component {
 }
 
 MovieCard.PropTypes = {
-  id: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
-  storyline: PropTypes.string.isRequired,
-  rating: PropTypes.number,
-  imagePath: PropTypes.string.isRequired,
-  genre: PropTypes.string,
+  movie: PropTypes.shape({  
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string.isRequired,
+    storyline: PropTypes.string.isRequired,
+    rating: PropTypes.number,
+    imagePath: PropTypes.string.isRequired,
+    genre: PropTypes.string,
+  }),
 };
 
 export default MovieCard;
