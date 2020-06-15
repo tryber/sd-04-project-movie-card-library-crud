@@ -4,8 +4,6 @@ import MovieCard from '../components/MovieCard';
 import Loading from '../components/Loading';
 import * as movieAPI from '../services/movieAPI';
 
-const { getMovies } = movieAPI;
-
 class MovieList extends Component {
   constructor(props) {
     super(props);
