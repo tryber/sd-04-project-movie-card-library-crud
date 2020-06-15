@@ -1,14 +1,32 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom';
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
 
 class MovieDetails extends Component {
-  render() {
-    // Change the condition to check the state
-    if (true) return <Loading />;
+  constructor(props) {
+    super(props);
+    this.state = {
+      movie = [],
+      loadead = false,
+    }
+  }
+ 
+  componentDidMount() {
+    this.getThoseMovies();
+  }
 
-    const { title, storyline, imagePath, genre, rating, subtitle } = movie;
+  async getThoseMovies() {
+    const data = await movieAPI.getMovies();
+    this.setState({ movie: data, loadead: true });
+  }
+
+  render() {
+    const { movie, loadead } = this.state
+    // Change the condition to check the state
+    if (!loadead) return <Loading />;
+
+    const {id, title, storyline, imagePath, genre, rating, subtitle } = movie;
 
     return (
       <div data-testid="movie-details">
@@ -17,6 +35,10 @@ class MovieDetails extends Component {
         <p>{`Storyline: ${storyline}`}</p>
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
+        <div>
+          <Link to={`/movies/${id}/edit`}>EDITAR</Link>
+          <Link to="/">VOLTAR</Link>
+        </div>
       </div>
     );
   }
