@@ -38,17 +38,17 @@ class MovieDetails extends Component {
 
     return (
       <div data-testid="movie-details">
-        <div>
-          <img alt="Movie Cover" src={`../${imagePath}`} />
+        <img alt="Movie Cover" src={`../${imagePath}`} />
+        <div className="movie-card-body">
+          <p>{`Title: ${title}`}</p>
+          <p>{`Subtitle: ${subtitle}`}</p>
+          <p>{`Storyline: ${storyline}`}</p>
+          <p>{`Genre: ${genre}`}</p>
+          <p>{`Rating: ${rating}`}</p>
+          <Link to={`/movies/${id}/edit`}>EDITAR</Link>
+          <Link onClick={this.delMovie} to="/">DELETAR</Link>
+          <Link to="/">VOLTAR</Link>
         </div>
-        <p>{`Title: ${title}`}</p>
-        <p>{`Subtitle: ${subtitle}`}</p>
-        <p>{`Storyline: ${storyline}`}</p>
-        <p>{`Genre: ${genre}`}</p>
-        <p>{`Rating: ${rating}`}</p>
-        <Link to={`/movies/${id}/edit`}>EDITAR</Link>
-        <Link onClick={this.delMovie} to="/">DELETAR</Link>
-        <Link to="/">VOLTAR</Link>
       </div>
     );
   }
