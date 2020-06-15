@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { MovieForm, Loading } from '../components';
-import { getMovies, updateMovie } from '../services/movieAPI';
+import { getMovie, updateMovie } from '../services/movieAPI';
 // import * as movieAPI from '../services/movieAPI';
 
 class EditMovie extends Component {
@@ -17,13 +17,13 @@ class EditMovie extends Component {
   }
 
   componentDidMount() {
-    getMovies(this.props.match.params.id)
+    getMovie(this.props.match.params.id)
       .then((movie) => this.setState({ movie, status: null }));
   }
 
-  handleSubmit() {
-    updateMovie(updateMovie)
-      .then((shouldRedirect) => this.state({ shouldRedirect }));
+  handleSubmit(updatedMovie) {
+    updateMovie(updatedMovie)
+      .then(() => this.setState({ shouldRedirect: true }));
   }
 
   render() {
