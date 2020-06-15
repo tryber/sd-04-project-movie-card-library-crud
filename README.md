@@ -123,18 +123,18 @@ Ao clicar neste link, faça uma requisição utilizando a função `deleteMovie`
 
 ### ANTES DE COMEÇAR A DESENVOLVER:
 
-1. Clone o repositório
+* 1. Clone o repositório
   * `git clone git@github.com:tryber/sd-04-project-movie-card-library-crud.git`.
   * Entre na pasta do repositório que você acabou de clonar:
     * `cd sd-04-project-movie-card-library-crud`
 
-2. Instale as dependências e inicialize o projeto
+* 2. Instale as dependências e inicialize o projeto
   * Instale as dependências:
     * `npm install`
   * Inicialize o projeto:
     * `npm start` (uma nova página deve abrir no seu navegador com um texto simples)
 
-3. Crie uma branch a partir da branch `master`
+* 3. Crie uma branch a partir da branch `master`
   * Verifique que você está na branch `master`
     * Exemplo: `git branch`
   * Se não estiver, mude para a branch `master`
@@ -143,7 +143,7 @@ Ao clicar neste link, faça uma requisição utilizando a função `deleteMovie`
     * Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
     * Exemplo: `git checkout -b joaozinho-movie-card-library-crud`
 
-4. Faça alterações em algum dos componentes que precisam de implementação, por exemplo o `App` em `src/`:
+* 4. Faça alterações em algum dos componentes que precisam de implementação, por exemplo o `App` em `src/`:
 ```jsx
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -160,7 +160,7 @@ function App() {
 export default App;
 ```
 
-5. Adicione as mudanças ao _stage_ do Git e faça um `commit`
+* 5. Adicione as mudanças ao _stage_ do Git e faça um `commit`
   * Verifique que as mudanças ainda não estão no _stage_
     * Exemplo: `git status` (deve aparecer listado o arquivo _src/App.js_ em vermelho)
   * Adicione o arquivo alterado ao _stage_ do Git
@@ -172,10 +172,10 @@ export default App;
         * `git commit -m 'iniciando o projeto. VAMOS COM TUDO :rocket:'` (fazendo o primeiro commit)
         * `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
 
-6. Adicione a sua branch com o novo `commit` ao repositório remoto
+* 6. Adicione a sua branch com o novo `commit` ao repositório remoto
   * Usando o exemplo anterior: `git push -u origin joaozinho-movie-card-library-crud`
 
-7. Crie um novo `Pull Request` _(PR)_
+7* . Crie um novo `Pull Request` _(PR)_
   * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-04-project-movie-card-library-crud/pulls)
   * Clique no botão verde _"New pull request"_
   * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
