@@ -12,7 +12,7 @@ class MovieList extends Component {
       loadead: false,
     };
   }
-  
+
   componentDidMount() {
     this.getMovies();
   }
