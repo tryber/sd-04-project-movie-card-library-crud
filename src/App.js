@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import './App.css';
-// import MovieList from './pages/MovieList';
+import MovieList from './pages/MovieList';
 import NewMovie from './pages/NewMovie';
-// import MovieDetails from './pages/MovieDetails';
+import MovieDetails from './pages/MovieDetails';
 import EditMovie from './pages/EditMovie';
+import NotFound from './pages/NotFound';
 
 // function App() {
 class App extends Component {
@@ -17,22 +18,23 @@ class App extends Component {
               <Link to="/">Lista de Filmes</Link>
             </li>
             <li>
-              <Link to="/movies/:id">Novo Filme</Link>
+              <Link to="/pages/:id">Novo Filme</Link>
             </li>
             <li>
-              <Link to="/movies/new">Detalhes</Link>
+              <Link to="/pages/new">Detalhes</Link>
             </li>
             <li>
-              <Link to="/movies/:id/edit">Editar Filme</Link>
+              <Link to="/pages/:id/edit">Editar Filme</Link>
             </li>
           </ul>
         </header>
         <main>
           <Switch>
-            {/* <Route exact path="/" component={MovieList} /> */}
-            <Route exact path="/movies/:id" component={NewMovie} />
-            {/* <Route exact path="/movies/new" component={MovieDetails} /> */}
-            <Route exact path="/movies/:id/edit" component={EditMovie} />
+            <Route exact path="/" component={MovieList} />
+            <Route exact path="/pages/:id" component={NewMovie} />
+            <Route exact path="/pages/new" component={MovieDetails} />
+            <Route exact path="/pages/:id/edit" component={EditMovie} />
+            <Route exact path="/pages/error" component={NotFound} />
           </Switch>
         </main>
       </BrowserRouter>
