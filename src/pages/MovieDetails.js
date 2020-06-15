@@ -23,7 +23,6 @@ class MovieDetails extends Component {
     if (!this.state.loaded) return <Loading />;
 
     const {
-      title,
       storyline,
       imagePath,
       genre,
