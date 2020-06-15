@@ -9,9 +9,9 @@ class MovieDetails extends Component {
     this.state = {
       movie: [],
       loadead: false,
-    }
+    };
   }
- 
+
   componentDidMount() {
     this.getThoseMovies();
   }
@@ -22,15 +22,16 @@ class MovieDetails extends Component {
   }
 
   render() {
-    const { movie, loadead } = this.state
+    const { movie, loadead } = this.state;
     // Change the condition to check the state
     if (!loadead) return <Loading />;
 
-    const {id, title, storyline, imagePath, genre, rating, subtitle } = movie;
+    const { id, title, storyline, imagePath, genre, rating, subtitle } = movie;
 
     return (
       <div data-testid="movie-details">
         <img alt="Movie Cover" src={`../${imagePath}`} />
+        <p>{`Title: ${title}`}</p>
         <p>{`Subtitle: ${subtitle}`}</p>
         <p>{`Storyline: ${storyline}`}</p>
         <p>{`Genre: ${genre}`}</p>
