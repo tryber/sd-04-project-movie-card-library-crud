@@ -24,7 +24,6 @@ class MovieDetails extends Component {
     // Change the condition to check the state
     const { isLoaded, movie } = this.props;
     if (!isLoaded) return <Loading />;
-    
     const { title, storyline, imagePath, genre, rating, subtitle } = movie;
 
     return (
@@ -40,8 +39,8 @@ class MovieDetails extends Component {
 }
 
 MovieDetails.propTypes = {
-  isLoaded: PropTypes.bool,
-  movie: PropTypes.any
-}
+  isLoaded: PropTypes.bool.isRequired,
+  movie: PropTypes.array.isRequired,
+};
 
 export default MovieDetails;
