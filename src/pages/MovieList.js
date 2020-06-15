@@ -16,11 +16,12 @@ class MovieList extends Component {
   }
 
   componentDidMount() {
+    // movieAPI.getMovies().then((movies) => this.setState({movies, loaded: true }));
     this.getMoviesInfo();
   }
 
   async getMoviesInfo() {
-    const list = await getMovies();
+    const list = await movieAPI.getMovies();
     this.setState({ movies: list, loaded: true });
   }
 
