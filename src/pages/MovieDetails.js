@@ -1,8 +1,8 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import * as movieAPI from '../services/movieAPI';
 import Loading from '../components/Loading';
-import PropTypes from 'prop-types';
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -15,6 +15,12 @@ class MovieDetails extends Component {
     this.delMovie = this.delMovie.bind(this);
   }
 
+  componentDidMount() {
+    movieAPI
+      .getMovie(this.props.match.params.id)
+      .then((movie) => this.setState({ movie }));
+  }
+
   delMovie() {
     const { id } = this.state.movie;
     movieAPI.deleteMovie(id)
@@ -23,12 +29,6 @@ class MovieDetails extends Component {
       });
   }
 
-  componentDidMount() {
-    movieAPI
-      .getMovie(this.props.match.params.id)
-      .then((movie) => this.setState({ movie }));
-  }
-  
   render() {
     const { movie, loading, shouldRedirect } = this.state;
 

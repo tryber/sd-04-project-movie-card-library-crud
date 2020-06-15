@@ -9,5 +9,3 @@ class Loading extends Component {
 }
 
 export default Loading;
-
-// COMPONENTE COMPLETO
