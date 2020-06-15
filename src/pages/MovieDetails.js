@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
-import MovieList from './MovieList';
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -13,7 +13,11 @@ class MovieDetails extends Component {
     };
   }
 
-  async componentDidMount() {
+  componentDidMount() {
+    this.getMoviesInfo();
+  }
+
+  async getMoviesInfo() {
     const { id } = this.props.match.params;
     const movie = await movieAPI.getMovie(id);
     this.setState({ loaded: true, movie, id });

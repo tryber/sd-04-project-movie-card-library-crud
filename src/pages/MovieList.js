@@ -15,10 +15,15 @@ class MovieList extends Component {
     };
   }
 
-  async componentDidMount() {
+  componentDidMount() {
+    this.getMoviesInfo();
+  }
+
+  async getMoviesInfo() {
     const list = await getMovies();
     this.setState({ movies: list, loaded: true });
   }
+
   render() {
     const { movies, loaded } = this.state;
 
