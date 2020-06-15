@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
 import * as movieAPI from '../services/movieAPI';
@@ -40,7 +40,7 @@ class MovieDetails extends Component {
 
 MovieDetails.propTypes = {
   isLoaded: PropTypes.bool.isRequired,
-  movie: PropTypes.array.isRequired,
+  movie: PropTypes.object.isRequired,
 };
 
 export default MovieDetails;
