@@ -8,7 +8,6 @@ function App() {
         <div>Movie Card Library CRUD</div>
         <MovieList />
       </Router>
-      
   );
 }
 

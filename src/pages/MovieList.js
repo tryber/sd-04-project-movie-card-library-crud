@@ -5,14 +5,13 @@ import * as movieAPI from '../services/movieAPI';
 
 class MovieList extends Component {
   constructor(props) {
-    super(props)
-  
+    super(props);
     this.state = {
       movies: [],
       loadead: false,
-    }
+    };
   }
-  
+
   componentDidMount() {
     this.getMovies();
   }
@@ -25,8 +24,7 @@ class MovieList extends Component {
   render() {
     const { movies, loadead } = this.state;
 
-    if (!loadead) return <Loading />
-    
+    if (!loadead) return <Loading />;
     return (
       <div data-testid="movie-list">
         {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
