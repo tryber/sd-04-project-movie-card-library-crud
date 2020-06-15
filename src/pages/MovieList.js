@@ -9,7 +9,7 @@ class MovieList extends Component {
     super(props);
     this.state = {
       movies: [],
-      loading: true
+      loading: true,
     };
   }
 
@@ -17,10 +17,10 @@ class MovieList extends Component {
     // função getMovies chamada assim que o componente é montado
 
     movieAPI.getMovies().then((movies) => {
-      this.setState({ 
-      movies: movies,
-      loading: false
-    });
+      this.setState({
+        movies,
+        loading: false,
+      });
       // console.log(this.state.movies)
     });
   }
