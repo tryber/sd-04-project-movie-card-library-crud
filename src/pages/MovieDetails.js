@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
+import MovieList from './MovieList';
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -22,13 +23,7 @@ class MovieDetails extends Component {
     // Change the condition to check the state
     if (!this.state.loaded) return <Loading />;
 
-    const {
-      storyline,
-      imagePath,
-      genre,
-      rating,
-      subtitle,
-    } = this.state.movie;
+    const { storyline, imagePath, genre, rating, subtitle } = this.state.movie;
 
     return (
       <div data-testid="movie-details">
@@ -43,5 +38,15 @@ class MovieDetails extends Component {
     );
   }
 }
+
+MovieDetails.defaultProps = {
+  match: null,
+};
+
+MovieDetails.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.object,
+  }),
+};
 
 export default MovieDetails;

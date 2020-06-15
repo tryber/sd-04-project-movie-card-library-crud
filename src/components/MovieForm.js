@@ -155,6 +155,11 @@ class MovieForm extends React.Component {
   }
 }
 
+MovieForm.defaultProps = {
+  movie: null,
+  onSubmit: null,
+};
+
 MovieForm.propTypes = {
   movie: PropTypes.shape({
     id: PropTypes.number,

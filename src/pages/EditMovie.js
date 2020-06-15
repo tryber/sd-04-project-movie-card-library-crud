@@ -16,7 +16,7 @@ class EditMovie extends Component {
   }
 
   componentDidMount() {
-    this.EditMovie()
+    this.EditMovie();
   }
 
   async EditMovie() {
@@ -43,6 +43,10 @@ class EditMovie extends Component {
     );
   }
 }
+
+EditMovie.defaultProps = {
+  match: null,
+};
 
 EditMovie.propTypes = {
   match: PropTypes.shape({
