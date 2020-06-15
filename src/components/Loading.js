@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 
 class Loading extends Component {
+
   render() {
+    function carregando () {
+      return <p>Carregando...</p>
+    }
     return (
-      <div>Loading message</div>
+      <div>{carregando()}</div>
     );
   }
 }
