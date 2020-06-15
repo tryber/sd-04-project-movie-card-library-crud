@@ -1,7 +1,18 @@
-import React from "react";
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { MovieList, MovieDetails, NewMovie, EditMovie } from './pages/index';
 
 function App() {
-  return <div>Movie Card Library CRUD!</div>;
+  return (
+    <Router>
+      <Switch>
+        <Route path="/" component={MovieList} />
+        <Route path="/movies/:id" component={MovieDetails} />
+        <Route path="/movies/new" component={NewMovie} />
+        <Route path="/movies/:id/edit" component={EditMovie} />
+      </Switch>
+    </Router>
+  );
 }
 
 export default App;
