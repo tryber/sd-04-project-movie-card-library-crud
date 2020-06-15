@@ -4,6 +4,7 @@ import MovieList from './pages/MovieList';
 import NewMovie from './pages/NewMovie';
 import EditMovie from './pages/MovieDetails';
 import NotFound from './pages/NotFound';
+import MovieDetails from './pages/MovieDetails';
 
 function App() {
   return (
