@@ -4,17 +4,18 @@ import MovieList from './pages/MovieList';
 import MovieDetails from './pages/MovieDetails';
 import NewMovie from './pages/NewMovie';
 import EditMovie from './pages/EditMovie';
+import './App.css';
 
 
 function App() {
   return (
       <BrowserRouter>
-        <div>Movie Card Library CRUD</div>
+        <div className="page-title">Movie Card Library CRUD</div>
         <Switch>
           <Route exact path="/" component={MovieList} />
-          <Route path="/movie/:id" component={MovieDetails} />
-          <Route path="/movie/new" component={NewMovie} />
-          <Route path="/movie/:id/edit" component={EditMovie} />
+          <Route path="/movies/:id" component={MovieDetails} />
+          <Route path="/movies/new" component={NewMovie} />
+          <Route path="/movies/:id/edit" component={EditMovie} />
         </Switch>
       </BrowserRouter>
   );
