@@ -1,11 +1,16 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import MovieList from './pages/MovieList';
 
 function App() {
   return (
     <BrowserRouter>
-        MINHA CRUD
+      <Switch>
+        <Route exact path="/" component={MovieList} />
+        <Route exact path="/movies/new" component={MovieList} />
+        <Route exact path="/movies/:id" component={MovieList} />
+        <Route exact path="/movies/:id/edit" component={MovieList} />
+      </Switch>
     </BrowserRouter>
   );
 }
