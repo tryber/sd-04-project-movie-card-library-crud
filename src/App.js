@@ -12,31 +12,23 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <header>
+        {/* <header>
           <ul>
-            <li>
-              <Link to="/">Lista de Filmes</Link>
-            </li>
-            <li>
-              <Link to="/pages/:id">Novo Filme</Link>
-            </li>
-            <li>
-              <Link to="/pages/new">Detalhes</Link>
-            </li>
-            <li>
-              <Link to="/pages/:id/edit">Editar Filme</Link>
-            </li>
+            <li><Link to="/">Lista de Filmes</Link></li>
+            <li><Link to="/pages/:id">Novo Filme</Link></li>
+            <li><Link to="/pages/new">Detalhes</Link></li>
+            <li><Link to="/pages/:id/edit">Editar Filme</Link></li>
           </ul>
-        </header>
-        <main>
-          <Switch>
-            <Route exact path="/" component={MovieList} />
-            <Route exact path="/pages/:id" component={NewMovie} />
-            <Route exact path="/pages/new" component={MovieDetails} />
-            <Route exact path="/pages/:id/edit" component={EditMovie} />
-            <Route exact path="/pages/error" component={NotFound} />
-          </Switch>
-        </main>
+        </header> */}
+        {/* <main> */}
+        <Switch>
+          <Route exact path="/" component={MovieList} />
+          <Route exact path="/pages/:id" component={NewMovie} />
+          <Route exact path="/pages/new" component={MovieDetails} />
+          <Route exact path="/pages/:id/edit" component={EditMovie} />
+          <Route component={NotFound} />
+        </Switch>
+        {/* </main> */}
       </BrowserRouter>
     );
   }
