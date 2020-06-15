@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
 
@@ -9,6 +9,7 @@ class MovieDetails extends Component {
     super(props);
     this.state = {
       movie: '',
+      shouldRedirect: false,
     };
   }
 
@@ -19,9 +20,17 @@ class MovieDetails extends Component {
       });
   }
 
+  deleteCard(id) {
+    movieAPI.deleteMovie(id)
+      .then(() => {
+        this.setState({ shouldRedirect: true });
+      });
+  }
+
   render() {
-    const { movie } = this.state;
+    const { movie, shouldRedirect } = this.state;
     if (movie === '') return <Loading />;
+    if (shouldRedirect === true) return <Redirect />;
     const { title, id, storyline, imagePath, genre, rating, subtitle } = movie;
     return (
       <div data-testid="movie-details">
@@ -34,6 +43,8 @@ class MovieDetails extends Component {
         <Link to={`/movies/${id}/edit`}>EDITAR</Link>
         <br />
         <Link to="/">VOLTAR</Link>
+        <br />
+        <Link onClick={() => this.deleteCard(id)} to="/">DELETAR</Link>
       </div>
     );
   }
@@ -46,6 +57,5 @@ MovieDetails.propTypes = {
     }).isRequired,
   }).isRequired,
 };
-
 
 export default MovieDetails;
