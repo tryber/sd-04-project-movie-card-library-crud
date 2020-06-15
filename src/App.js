@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import './App.css';
-import { BrowserRouter, Switch, Route, Link, Redirect } from 'react-router-dom';
-import MovieList from './pages/MovieList';
+// import MovieList from './pages/MovieList';
 import NewMovie from './pages/NewMovie';
 // import MovieDetails from './pages/MovieDetails';
 import EditMovie from './pages/EditMovie';
