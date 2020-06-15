@@ -17,8 +17,9 @@ class MovieDetails extends Component {
   }
 
   async getThoseMovies() {
-    const data = await movieAPI.getMovies();
-    this.setState({ movie: data, loadead: true });
+    const { id } = this.props.match.params;
+    const data = await movieAPI.getMovies(id);
+    this.setState({ movie: data, loadead: true, id });
   }
 
   render() {
@@ -26,7 +27,7 @@ class MovieDetails extends Component {
     // Change the condition to check the state
     if (!loadead) return <Loading />;
 
-    const { id, title, storyline, imagePath, genre, rating, subtitle } = movie;
+    const { id, title, storyline, imagePath, genre, rating, subtitle } = this.state.movie;
 
     return (
       <div data-testid="movie-details">
