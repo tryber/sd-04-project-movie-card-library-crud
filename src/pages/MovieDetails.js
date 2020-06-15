@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React, { Component } from 'react';
 
 import * as movieAPI from '../services/movieAPI';
@@ -21,7 +22,7 @@ class MovieDetails extends Component {
   }
   render() {
     // Change the condition to check the state
-    const { isLoaded, movie} = this.props;
+    const { isLoaded, movie } = this.props;
     if (!isLoaded) return <Loading />;
     
     const { title, storyline, imagePath, genre, rating, subtitle } = movie;
@@ -36,6 +37,11 @@ class MovieDetails extends Component {
       </div>
     );
   }
+}
+
+MovieDetails.propTypes = {
+  isLoaded: PropTypes.bool,
+  movie: PropTypes.any
 }
 
 export default MovieDetails;

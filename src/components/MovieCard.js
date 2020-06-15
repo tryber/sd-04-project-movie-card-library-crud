@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -26,6 +26,14 @@ class MovieCard extends React.Component {
       </div>
     );
   }
+}
+
+MovieCard.propTypes = {
+  id: PropTypes.number,
+  title: PropTypes.string,
+  storyline: PropTypes.string,
+  imagePath: PropTypes.string,
+  movie: PropTypes.any
 }
 
 export default MovieCard;
