@@ -8,18 +8,24 @@ class MovieList extends Component {
     super(props)
   
     this.state = {
-      movies: '',
+      movies: [],
+      loadead: false,
     }
   }
   
   componentDidMount() {
-    this.setState({ movies: movieAPI.getMovies() });
+    this.getMovies();
+  }
+
+  async getMovies() {
+    const data = await movieAPI.getMovies();
+    this.setState({ movies: data, loadead: true });
   }
 
   render() {
-    const { movies } = this.state;
+    const { movies, loadead } = this.state;
 
-    if (movies === '') return <Loading />
+    if (!loadead) return <Loading />
     
     return (
       <div data-testid="movie-list">
