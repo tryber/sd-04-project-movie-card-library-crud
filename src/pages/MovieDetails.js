@@ -13,9 +13,9 @@ class MovieDetails extends Component {
 
   componentDidMount() {
     movieAPI.getMovie()
-    .then(res => {
+    .then(() => {
       this.setState({
-        isLoaded:true,
+        isLoaded: true,
       });
     });
   }
@@ -23,7 +23,7 @@ class MovieDetails extends Component {
     // Change the condition to check the state
     if (false) return <Loading />;
 
-    const { title, storyline, imagePath, genre, rating, subtitle } = this.props;
+    const { title, storyline, imagePath, genre, rating, subtitle } = movie;
 
     return (
       <div data-testid="movie-details">
