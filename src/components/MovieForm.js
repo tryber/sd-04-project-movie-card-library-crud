@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 class MovieForm extends React.Component {
   constructor(props) {
@@ -129,7 +128,7 @@ class MovieForm extends React.Component {
       <div>
         <button
           type="button"
-          onClick={this.handleSubmit}
+          onClick={() => this.handleSubmit()}
         >
           Submit
         </button>
