@@ -209,136 +209,136 @@ describe('4 - Movie details component', () => {
   });
 });
 
-// describe('5 - Edit movie component', () => {
+describe('5 - Edit movie component', () => {
 
-//   it('each edit movie page should have a loading screen', async () => {
-//     for(const movie of readMovies()) {
-//       await cleanup();
-//       const { unmount, getByText } = renderPath(`/movies/${movie.id}/edit`);
-//       expect(getByText('Carregando...'));
+  it('each edit movie page should have a loading screen', async () => {
+    for(const movie of readMovies()) {
+      await cleanup();
+      const { unmount, getByText } = renderPath(`/movies/${movie.id}/edit`);
+      expect(getByText('Carregando...'));
 
-//     }
-//   });
+    }
+  });
   
-//   it('each edit movie page should have a form filled with current movie info', async () => {
-//     for(const movie of readMovies()) {
-//       const { container, unmount, getByText, getAllByText, getByAltText, getByDisplayValue, getAllByDisplayValue } = renderPath(`/movies/${movie.id}/edit`);
-//       await waitFor(() => movieAPI.getMovie(movie.id - 1))
-//       expect(getAllByDisplayValue(readMovies()[movie.id - 1].title, { exact: false }).length).toBeGreaterThanOrEqual(1);
-//       expect(getAllByDisplayValue(readMovies()[movie.id - 1].subtitle, { exact: false }).length).toBeGreaterThanOrEqual(1);
-//       expect(getByDisplayValue(readMovies()[movie.id - 1].storyline, { exact: false })).toBeTruthy;
-//       const image = readMovies()[movie.id - 1].imagePath;
-//       expect(getAllByDisplayValue(image, { exact: false })).toBeTruthy;
-//       expect(getAllByDisplayValue(genres[readMovies()[movie.id - 1].genre], { exact: false }))
-//     }
-//   });
+  it('each edit movie page should have a form filled with current movie info', async () => {
+    for(const movie of readMovies()) {
+      const { container, unmount, getByText, getAllByText, getByAltText, getByDisplayValue, getAllByDisplayValue } = renderPath(`/movies/${movie.id}/edit`);
+      await waitFor(() => movieAPI.getMovie(movie.id - 1))
+      expect(getAllByDisplayValue(readMovies()[movie.id - 1].title, { exact: false }).length).toBeGreaterThanOrEqual(1);
+      expect(getAllByDisplayValue(readMovies()[movie.id - 1].subtitle, { exact: false }).length).toBeGreaterThanOrEqual(1);
+      expect(getByDisplayValue(readMovies()[movie.id - 1].storyline, { exact: false })).toBeTruthy;
+      const image = readMovies()[movie.id - 1].imagePath;
+      expect(getAllByDisplayValue(image, { exact: false })).toBeTruthy;
+      expect(getAllByDisplayValue(genres[readMovies()[movie.id - 1].genre], { exact: false }))
+    }
+  });
   
  
-//   it('each edit page form should update movie', async () => {
-//     for(const movie of readMovies()) {
-//       await cleanup();
-//       const { container, getByLabelText, getByRole } = renderPath(`/movies/${movie.id}/edit`)
-//       await waitFor(() => movieAPI.getMovie(movie.id))
-//       const titleInput = getByLabelText('Título');
-//       const subTitleInput = getByLabelText('Subtítulo');
-//       const imageInput = getByLabelText('Imagem');
-//       const synopsisInput = getByLabelText('Sinopse');
-//       const genreInput = getByLabelText('Gênero');
-//       const evaluationInput = getByLabelText('Avaliação');
-//       const formButton = getByRole('button');
+  it('each edit page form should update movie', async () => {
+    for(const movie of readMovies()) {
+      await cleanup();
+      const { container, getByLabelText, getByRole } = renderPath(`/movies/${movie.id}/edit`)
+      await waitFor(() => movieAPI.getMovie(movie.id))
+      const titleInput = getByLabelText('Título');
+      const subTitleInput = getByLabelText('Subtítulo');
+      const imageInput = getByLabelText('Imagem');
+      const synopsisInput = getByLabelText('Sinopse');
+      const genreInput = getByLabelText('Gênero');
+      const evaluationInput = getByLabelText('Avaliação');
+      const formButton = getByRole('button');
       
-//       fireEvent.change(titleInput, { target: { value: 'test title ' + movie.id } })
-//       fireEvent.change(subTitleInput, { target: { value: 'test subtitle ' + movie.id } })
-//       fireEvent.change(imageInput, { target: { value: 'testimage' + movie.id } })
-//       fireEvent.change(synopsisInput, { target: { value: 'test synopsis ' + movie.id } })
-//       fireEvent.change(genreInput, { target: { value: 'comedy' } })
-//       fireEvent.change(evaluationInput, { target: { value: movie.id.toString() } })
+      fireEvent.change(titleInput, { target: { value: 'test title ' + movie.id } })
+      fireEvent.change(subTitleInput, { target: { value: 'test subtitle ' + movie.id } })
+      fireEvent.change(imageInput, { target: { value: 'testimage' + movie.id } })
+      fireEvent.change(synopsisInput, { target: { value: 'test synopsis ' + movie.id } })
+      fireEvent.change(genreInput, { target: { value: 'comedy' } })
+      fireEvent.change(evaluationInput, { target: { value: movie.id.toString() } })
       
-//       await waitFor(() => fireEvent.click(formButton));
+      await waitFor(() => fireEvent.click(formButton));
       
-//       await waitFor(() => movieAPI.getMovies())
-//       expect(window.location.pathname).toBe('/');
-//       expect(screen.getByText(`test title ${movie.id}`));
-//       expect(screen.getByText(`test synopsis ${movie.id}`));
+      await waitFor(() => movieAPI.getMovies())
+      expect(window.location.pathname).toBe('/');
+      expect(screen.getByText(`test title ${movie.id}`));
+      expect(screen.getByText(`test synopsis ${movie.id}`));
 
-//       fireEvent.click(screen.getAllByText('VER DETALHES')[movie.id - 1]);
-//       await waitFor(() => movieAPI.getMovie(movie.id));
-//       expect(screen.getAllByText(readMovies()[movie.id - 1].title, { exact: false }).length).toBeGreaterThanOrEqual(1);
-//       expect(screen.getAllByText(readMovies()[movie.id - 1].subtitle, { exact: false }).length).toBeGreaterThanOrEqual(1);
-//       expect(screen.getAllByText(readMovies()[movie.id - 1].storyline, { exact: false })).toBeTruthy;
-//       const image = screen.getByAltText('Movie Cover', { exact: false });
-//       expect(image.src).toBe('http://localhost/' + readMovies()[movie.id - 1].imagePath);
-//       expect(screen.getAllByText(readMovies()[movie.id - 1].genre, { exact: false }))
-//     }
+      fireEvent.click(screen.getAllByText('VER DETALHES')[movie.id - 1]);
+      await waitFor(() => movieAPI.getMovie(movie.id));
+      expect(screen.getAllByText(readMovies()[movie.id - 1].title, { exact: false }).length).toBeGreaterThanOrEqual(1);
+      expect(screen.getAllByText(readMovies()[movie.id - 1].subtitle, { exact: false }).length).toBeGreaterThanOrEqual(1);
+      expect(screen.getAllByText(readMovies()[movie.id - 1].storyline, { exact: false })).toBeTruthy;
+      const image = screen.getByAltText('Movie Cover', { exact: false });
+      expect(image.src).toBe('http://localhost/' + readMovies()[movie.id - 1].imagePath);
+      expect(screen.getAllByText(readMovies()[movie.id - 1].genre, { exact: false }))
+    }
    
-//   });
+  });
  
-// })
+})
 
-// describe('6 - New movie component', () => {
-//   it('should exist a new movie link @ home', async () => {
-//     const { unmount } = renderPath('/');
-//     await waitFor(() => movieAPI.getMovies());
-//     const addMovie = screen.getByText('ADICIONAR CARTÃO');
-//     expect(addMovie);
-//     expect(addMovie.href).toBe('http://localhost/movies/new');
-//     unmount();
-//   })
-//   it('should create a new movie', async () => {
-//     await cleanup();
-//     renderPath('/movies/new')
+describe('6 - New movie component', () => {
+  it('should exist a new movie link @ home', async () => {
+    const { unmount } = renderPath('/');
+    await waitFor(() => movieAPI.getMovies());
+    const addMovie = screen.getByText('ADICIONAR CARTÃO');
+    expect(addMovie);
+    expect(addMovie.href).toBe('http://localhost/movies/new');
+    unmount();
+  })
+  it('should create a new movie', async () => {
+    await cleanup();
+    renderPath('/movies/new')
     
-//     const titleInput = screen.getByLabelText('Título');
-//     const subTitleInput = screen.getByLabelText('Subtítulo');
-//     const imageInput = screen.getByLabelText('Imagem');
-//     const synopsisInput = screen.getByLabelText('Sinopse');
-//     const genreInput = screen.getByLabelText('Gênero');
-//     const evaluationInput = screen.getByLabelText('Avaliação');
-//     const formButton = screen.getByRole('button');
+    const titleInput = screen.getByLabelText('Título');
+    const subTitleInput = screen.getByLabelText('Subtítulo');
+    const imageInput = screen.getByLabelText('Imagem');
+    const synopsisInput = screen.getByLabelText('Sinopse');
+    const genreInput = screen.getByLabelText('Gênero');
+    const evaluationInput = screen.getByLabelText('Avaliação');
+    const formButton = screen.getByRole('button');
 
-//     fireEvent.change(titleInput, { target: { value: 'newTitle'} })
-//     fireEvent.change(subTitleInput, { target: { value: 'newSubtitle'} })
-//     fireEvent.change(imageInput, { target: { value: 'newImage'} })
-//     fireEvent.change(synopsisInput, { target: { value: 'newSynopsis'} })
-//     fireEvent.change(genreInput, { target: { value: 'thriller' } })
-//     fireEvent.change(evaluationInput, { target: { value: 5} })
-//     fireEvent.click(formButton);
+    fireEvent.change(titleInput, { target: { value: 'newTitle'} })
+    fireEvent.change(subTitleInput, { target: { value: 'newSubtitle'} })
+    fireEvent.change(imageInput, { target: { value: 'newImage'} })
+    fireEvent.change(synopsisInput, { target: { value: 'newSynopsis'} })
+    fireEvent.change(genreInput, { target: { value: 'thriller' } })
+    fireEvent.change(evaluationInput, { target: { value: 5} })
+    fireEvent.click(formButton);
 
-//     await waitFor(() => movieAPI.getMovies())
-//     expect(window.location.pathname).toBe('/');
-//     await cleanup();
-//     renderPath('/');
-//     await waitFor(() => movieAPI.getMovies());
-//     expect(screen.getByText(`newTitle`));
-//     expect(screen.getByText(`newSynopsis`));
-//     expect(screen.getAllByTestId('movie-card').length).toBe(6);
+    await waitFor(() => movieAPI.getMovies())
+    expect(window.location.pathname).toBe('/');
+    await cleanup();
+    renderPath('/');
+    await waitFor(() => movieAPI.getMovies());
+    expect(screen.getByText(`newTitle`));
+    expect(screen.getByText(`newSynopsis`));
+    expect(screen.getAllByTestId('movie-card').length).toBe(6);
     
-//   })
-// })
+  })
+})
 
-// describe('Bonus - Delete Movie', () => {
-//   it('movie details should have delete button', async () => {
-//     for(const movie of readMovies()) {
-//       const { container, unmount, findByText } = renderPath('/movies/' + movie.id);
-//       await waitFor(() => movieAPI.getMovie(movie.id));
-//       const deleteButton = await findByText('DELETAR')
-//       expect(deleteButton.href).toBe('http://localhost/');
-//       unmount();
-//     }
-//   })
+describe('Bonus - Delete Movie', () => {
+  it('movie details should have delete button', async () => {
+    for(const movie of readMovies()) {
+      const { container, unmount, findByText } = renderPath('/movies/' + movie.id);
+      await waitFor(() => movieAPI.getMovie(movie.id));
+      const deleteButton = await findByText('DELETAR')
+      expect(deleteButton.href).toBe('http://localhost/');
+      unmount();
+    }
+  })
 
-//   it('delete button should delete a movie', async () => {
-//     resetStorage();
-//     const deletedMovie = readMovies()[2];
-//     renderPath('/movies/3');
-//     const deleteButton = await screen.findByText('DELETAR');
-//     fireEvent.click(deleteButton);
-//     await waitFor(() => movieAPI.getMovies());
-//     expect(window.location.pathname).toBe('/');
-//     await cleanup();
-//     const { container } = renderPath('/');
-//     await waitFor(() => movieAPI.getMovies());
-//     expect(screen.getAllByTestId('movie-card').length).toBe(4);
-//     expect(screen.queryByText(deletedMovie.title)).toBeNull();
-//   })
-// })
+  it('delete button should delete a movie', async () => {
+    resetStorage();
+    const deletedMovie = readMovies()[2];
+    renderPath('/movies/3');
+    const deleteButton = await screen.findByText('DELETAR');
+    fireEvent.click(deleteButton);
+    await waitFor(() => movieAPI.getMovies());
+    expect(window.location.pathname).toBe('/');
+    await cleanup();
+    const { container } = renderPath('/');
+    await waitFor(() => movieAPI.getMovies());
+    expect(screen.getAllByTestId('movie-card').length).toBe(4);
+    expect(screen.queryByText(deletedMovie.title)).toBeNull();
+  })
+})
