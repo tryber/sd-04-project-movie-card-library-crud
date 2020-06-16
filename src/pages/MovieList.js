@@ -1,4 +1,4 @@
-import Link from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import React, { Component } from 'react';
 import MovieCard from '../components/MovieCard';
 import Loading from '../components/Loading';
@@ -8,37 +8,30 @@ class MovieList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true, // inicialmente, a mensagem de loading é o estado setado
-      movies: '', // inicialmente, o "movies" é vazio
+      loading: true,
+      movies: [],
     };
   }
 
-  // Ao renderizar o componente, o "loading" deve sumir e o estado "movies" deve ser o que
-  // for retornado da requisição
   componentDidMount() {
-    movieAPI.getMovies().then((response) =>
+    movieAPI.getMovies().then((movies) =>
       this.setState({
         loading: false,
-        movies: response,
+        movies,
       }),
     );
   }
+
   render() {
     const { movies, loading } = this.state;
 
-    if (loading === true) {
-      return <Loading />;
-    }
+    if (loading) return <Loading />;
     return (
-      <div>
-        <div>
-          <Link to="/movies/new">ADICIONAR CARTÃO</Link>
-        </div>
-        <div data-testid="movie-list">
-          {movies.map((movie) => (
-            <MovieCard key={movie.title} movie={movie} />
-          ))}
-        </div>
+      <div data-testid="movie-list">
+        {movies.map((movie) => (
+          <MovieCard key={movie.title} movie={movie} />
+        ))}
+        <Link to="/movies/new">ADICIONAR CARTÃO</Link>
       </div>
     );
   }

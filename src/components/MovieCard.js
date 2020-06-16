@@ -4,39 +4,33 @@ import PropTypes from 'prop-types';
 
 class MovieCard extends React.Component {
   render() {
-    const { movie } = this.props;
-    const { title, subtitle, imagePath, storyline, id } = movie;
+    const { title, subtitle, storyline, imagePath, id } = this.props.movie;
+
     return (
-      <div className="movie-card" data-testid="movie-card">
-        <img alt="Movie Cover" className="movie-card-image" src={imagePath} />
-        <div className="movie-card-body">
-          <h4 className="movie-card-title">{title}</h4>
-          <h5 className="movie-card-subtitle">{subtitle}</h5>
-          <p className="movie-card-storyline">{storyline}</p>
+      <div data-testid="movie-card">
+        <div>
+          <img src={imagePath} alt="Movie Cover" />
+          <span>{title}</span>
+          <span>{subtitle}</span>
         </div>
-        <Link className="link" to={`movies/${id}`}>
-          VER DETALHES
-        </Link>
+        <div>
+          <p>{storyline}</p>
+        </div>
+        <div>
+          <Link to={`/movies/${id}`}>VER DETALHES</Link>
+        </div>
       </div>
     );
   }
 }
 
-MovieCard.defaultProps = {
-  movie: {
-    id: 0,
-    title: '',
-    storyline: '',
-    imagePath: '',
-  },
-};
-
 MovieCard.propTypes = {
   movie: PropTypes.shape({
-    id: PropTypes.number,
-    title: PropTypes.string,
-    storyline: PropTypes.string,
-    imagePath: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string.isRequired,
+    storyline: PropTypes.string.isRequired,
+    imagePath: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
   }).isRequired,
 };
 
