@@ -14,21 +14,25 @@ class MovieDetails extends Component {
   }
 
   componentDidMount() {
-    this.getThoseMovies();
+    this.getThisMovie();
   }
 
-  async getThoseMovies() {
+  async getThisMovie() {
     const { id } = this.props.match.params;
-    const data = await movieAPI.getMovies(id);
-    this.setState({ movie: data, loadead: true, id });
+    const movie = await movieAPI.getMovie(id);
+    this.setState({ movie, loadead: true, id });
+  }
+
+  removeThisMovie = () => {
+    const { id } = this.props.match.params;
+    movieAPI.deleteMovie(id);
   }
 
   render() {
-    const { movie, loadead } = this.state;
     // Change the condition to check the state
-    if (!loadead) return <Loading />;
+    if (!this.state.loadead) return <Loading />;
 
-    const { id, title, storyline, imagePath, genre, rating, subtitle } = this.state.movie;
+    const { title, storyline, imagePath, genre, rating, subtitle } = this.state.movie;
 
     return (
       <div data-testid="movie-details">
@@ -39,8 +43,11 @@ class MovieDetails extends Component {
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
         <div>
-          <Link to={`/movies/${id}/edit`}>EDITAR</Link>
+          <Link to={`/movies/${this.state.id}/edit`}>EDITAR</Link>
           <Link to="/">VOLTAR</Link>
+          <Link to="/" onClick={this.removeThisMovie}>
+          DELETAR
+          </Link>
         </div>
       </div>
     );
