@@ -1,7 +1,13 @@
 import data from './movieData';
 
+// o local storage só aceita salvar string por isso usamos o JSON.stringify
+// o localStorage é uma arquivo (tipo aqueles de metal)
+// o setItem criar uma gaveta e essa gaveta vai se chamar movies e dentro dela....
+// vai ter o stringão
 localStorage.setItem('movies', JSON.stringify(data));
 
+// aqui o JSON.parse transforma o stringão novamente em um array de objeto
+// é o caminho de volta
 const readMovies = () => JSON.parse(localStorage.getItem('movies'));
 
 const saveMovies = (movies) => localStorage.setItem('movies', JSON.stringify(movies));
