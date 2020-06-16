@@ -11,13 +11,18 @@ class MovieDetails extends Component {
       movie: {},
       isLoaded: true,
       idEdit: '0', // para armazenar o id do movie que vem por url
-    }
+    };
+    this.getMovieAPI = this.getMovieAPI.bind(this);
   }
 
+  async getMovieAPI() {
+  const { id } = this.props.match.params; // pegando o id da URL
+  const movieResult = await movieAPI.getMovie(id);
+  this.setState({ movie: movieResult, isLoaded: false, idEdit: id });
+}
+
   async componentDidMount() {
-    const {id} = this.props.match.params; // pegando o id da URL
-    const movieResult = await movieAPI.getMovie(id); // depoois voltar aqui arrumar
-    this.setState({ movie: movieResult, isLoaded: false, idEdit: id });
+   this.getMovieAPI();
   }
 
   render() {
@@ -37,7 +42,7 @@ class MovieDetails extends Component {
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
         <Link to={linkEdit} >EDITAR</Link>
-        <Link to='/' >VOLTAR</Link>
+        <Link to="/" >VOLTAR</Link>
       </div>
     );
   }

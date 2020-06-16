@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MovieCard, Loading } from '../components/index';
+import { MovieCard, Loading } from '../components/';
 
 import * as movieAPI from '../services/movieAPI';
 
@@ -9,12 +9,18 @@ class MovieList extends Component {
     this.state = {
       movies: [],
       isLoaded: true,
-    }
+    };
+
+    this.getMoviesAPI = this.getMoviesAPI.bind(this);
+  }
+  
+  async getMoviesAPI() {
+    const moviesResult = await movieAPI.getMovies();
+    this.setState({ movies: moviesResult, isLoaded: false });
   }
 
   async componentDidMount() {
-    const moviesResult = await movieAPI.getMovies();
-    this.setState({ movies: moviesResult, isLoaded: false });
+    this.getMoviesAPI();
   }
 
   render() {

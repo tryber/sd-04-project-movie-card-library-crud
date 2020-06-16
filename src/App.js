@@ -1,10 +1,9 @@
+import React, { Component } from 'react';
+// import { index, movies, NewMovie, EditMovie } from './pages/';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import { MovieList, MovieDetails, EditMovie } from './pages/index';
 import './App.css';
-
-import React, { Component } from 'react';
-// import { index, movies, NewMovie, EditMovie } from './pages/';
 
 class App extends Component {
   render() {
@@ -12,9 +11,10 @@ class App extends Component {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={MovieList} />
-           <Route exact path="/movies/:id" component={MovieDetails} />
-          {/*<Route path="/movies/new" component={NewMovie} />*/}
-          <Route exact path="/movies/:id/edit" component={EditMovie} /> 
+          <Route exact path="/movies/:id/edit" component={EditMovie} />
+          <Route strict path="/movies/:id" component={MovieDetails} />
+          {/* <Route path="/movies/new" component={NewMovie} /> */}
+          
         </Switch>
       </BrowserRouter>
     );
@@ -22,5 +22,3 @@ class App extends Component {
 }
 
 export default App;
-
-
