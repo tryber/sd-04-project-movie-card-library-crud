@@ -3,3 +3,31 @@ body {
   box-sizing: border-box;
 }
 
+img {
+  max-width: 500px;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: auto;
+  padding: 10px 30px;
+  width: 80vw;
+}
+
+.card {
+  padding: 20px;
+  text-align: justify;
+  width: 500px;
+}
+
+.card-body {
+  min-height: 50px;
+  text-align: justify;
+}
+
+.card-link {
+  padding: 2px;
+  text-align: center;
+}
