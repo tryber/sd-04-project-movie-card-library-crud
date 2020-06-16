@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Loading from "../components/Loading";
 import MovieForm from "../components/MovieForm";
 import * as movieAPI from "../services/movieAPI";
 
@@ -9,7 +8,6 @@ class NewMovie extends Component {
     super(props);
     this.state = {
       shouldRedirect: false,
-      isLoading: true,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -21,11 +19,8 @@ class NewMovie extends Component {
   }
 
   render() {
-    const { isLoading, shouldRedirect } = this.state;
+    const { shouldRedirect } = this.state;
     const { history } = this.props;
-    console.log("Props:", this.props);
-
-    if (isLoading) return <Loading />;
 
     if (shouldRedirect) {
       history.push("/");

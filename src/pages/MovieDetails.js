@@ -8,7 +8,6 @@ class MovieDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoading: true,
       movie: {
         title: "",
         subtitle: "",
@@ -19,6 +18,7 @@ class MovieDetails extends Component {
         storyline: "",
         bookmarked: "",
       },
+      isLoading: true,
       shouldRedirect: false,
     };
   }
@@ -57,7 +57,7 @@ class MovieDetails extends Component {
               this.setState({ shouldRedirect: true });
             }}
           >
-            DELETE
+            DELETAR
           </Link>
         </div>
       );
@@ -68,9 +68,7 @@ class MovieDetails extends Component {
 
 MovieDetails.propTypes = {
   match: PropTypes.shape({
-    params: PropTypes.shape({
-      id: PropTypes.string.isRequired,
-    }).isRequired,
+    id: PropTypes.number,
   }).isRequired,
 };
 
