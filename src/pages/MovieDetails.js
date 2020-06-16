@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
@@ -10,24 +11,23 @@ class MovieDetails extends Component {
     this.state = {
       loading: true,
       movie: {},
-    }
+    };
     // console.log(this.props);
   }
 
   componentDidMount() {
-    //console.log(this.props.match.params);
+    // console.log(this.props.match.params);
 
-    let movieId = this.props.match.params.id;
+    const movieId = this.props.match.params.id;
     movieAPI.getMovie(movieId).then((movie) => {
       this.setState({
         loading: false,
-        movie: movie,
+        movie,
       });
     });
   }
-  
+
   render() {
-    // Change the condition to check the state
     const { loading, movie } = this.state;
     if (loading === true) return <Loading />;
 
@@ -51,5 +51,11 @@ class MovieDetails extends Component {
     );
   }
 }
+
+MovieDetails.propTypes = {
+  match: PropTypes.object,
+  params: PropTypes.object,
+  id: PropTypes.string,
+};
 
 export default MovieDetails;
