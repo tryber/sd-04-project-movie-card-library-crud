@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import MovieCard from '../components/MovieCard';
 // import movies from '../services/movieData.js';
 import * as movieAPI from '../services/movieAPI';
 import Loading from '../components/Loading.js';
-import { Link } from 'react-router-dom';
 
 class MovieList extends Component {
   constructor(props) {
