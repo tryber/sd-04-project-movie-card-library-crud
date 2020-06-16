@@ -7,7 +7,7 @@ class EditMovie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoading: true,
+      loading: true,
       shouldRedirect: false,
       movie: null
     };
@@ -16,10 +16,8 @@ class EditMovie extends Component {
 
   componentDidMount() {
     const { match } = this.props;
-    movieAPI
-    .getMovie(match.params.id)
-    .then((movie) => {
-      return this.setState({ isLoading: false, movie });
+    movieAPI.getMovie(match.params.id).then(movie => {
+      return this.setState({ loading: false, movie });
     });
   }
 
@@ -30,14 +28,14 @@ class EditMovie extends Component {
   }
 
   render() {
-    const { isLoading, shouldRedirect, movie } = this.state;
+    const { loading, shouldRedirect, movie } = this.state;
     const { history } = this.props;
 
     if (shouldRedirect) {
       history.push("/");
     }
 
-    if (isLoading) {
+    if (loading) {
       return <Loading />;
     }
 
