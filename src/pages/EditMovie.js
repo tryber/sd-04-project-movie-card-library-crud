@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { MovieForm, Loading } from '../components';
 import * as movieAPI from '../services/movieAPI';
+import { Link } from 'react-router-dom';
 
 class EditMovie extends Component {
   constructor(props) {
@@ -25,12 +26,17 @@ class EditMovie extends Component {
   }
 
   handleSubmit(updatedMovie) {
+    console.log(updatedMovie);
+    movieAPI.updateMovie(updatedMovie).then(response => { // para pegar resposta do update movies
+      if(response === 'OK') {
+        this.setState({ shouldRedirect: true })
+      }});
   }
 
   render() {
     const { status, shouldRedirect, movie } = this.state;
     if (shouldRedirect) { // depois ver como funciona isto
-      // Redirect
+      return <Link to="/" />; // ver como fazer isso
     }
 
     if (status === 'loading') {
