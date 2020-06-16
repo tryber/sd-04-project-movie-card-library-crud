@@ -12,7 +12,7 @@ import GlobalStyle from './styles/global';
 
 function App() {
   return (
-    <>
+    <React.Fragment>
       <GlobalStyle />
       <BrowserRouter>
         <HeaderStyle>
@@ -27,7 +27,7 @@ function App() {
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
-    </>
+    </React.Fragment>
   );
 }
 

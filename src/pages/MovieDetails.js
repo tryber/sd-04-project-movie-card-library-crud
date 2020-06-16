@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link, Redirect } from 'react-router-dom';
 import { MovieCardStyle, MovieListStyle } from '../styles/styles';
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
-import { Link, Redirect } from 'react-router-dom';
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -18,20 +18,10 @@ class MovieDetails extends Component {
   }
 
   render() {
-    // Change the condition to check the state
     const { movie, loading, redirect } = this.state;
     if (loading) return <Loading />;
     if (redirect) return <Redirect to="/" />;
-    const {
-      title,
-      storyline,
-      imagePath,
-      genre,
-      rating,
-      subtitle,
-      id,
-    } = movie;
-
+    const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
     return (
       <div data-testid="movie-details">
         <MovieListStyle>
