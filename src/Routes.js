@@ -5,7 +5,8 @@ import {
   NewMovie,
   EditMovie,
   MovieDetails,
-  NotFound } from "./pages/index";
+  NotFound
+} from "./pages/index";
 
 function Routes() {
   return (

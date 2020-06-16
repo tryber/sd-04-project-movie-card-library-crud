@@ -9,14 +9,18 @@ class EditMovie extends Component {
     this.state = {
       isLoading: true,
       shouldRedirect: false,
-      movie: null,
+      movie: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
     const { match } = this.props;
-    movieAPI.getMovie(match.params.id).then(movie => this.setState({ isLoading: false, movie }));
+    movieAPI
+    .getMovie(match.params.id)
+    .then((movie) => {
+      return this.setState({ isLoading: false, movie });
+    });
   }
 
   handleSubmit(updatedMovie) {
@@ -49,7 +53,7 @@ EditMovie.propTypes = {
   history: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool])
   ).isRequired,
-  match: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object])).isRequired,
+  match: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object])).isRequired
 };
 
 export default EditMovie;

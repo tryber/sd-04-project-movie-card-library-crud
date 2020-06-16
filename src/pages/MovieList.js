@@ -9,17 +9,17 @@ class MovieList extends Component {
     super(props);
     this.state = {
       movies: null,
-      isLoading: true,
+      isLoading: true
     };
   }
 
   componentDidMount() {
-    movieAPI.getMovies().then((moviesArray) =>
+    movieAPI.getMovies().then(moviesArray =>
       this.setState({
         movies: moviesArray,
-        isLoading: false,
+        isLoading: false
       })
-    );
+    )
   }
 
   render() {
@@ -32,9 +32,9 @@ class MovieList extends Component {
           <Link to="/movies/new">ADICIONAR CARTÃO</Link>
         </div>
         <div data-testid="movie-list">
-          {movies.map((movie) => (
+          {movies.map((movie) => {return (
             <MovieCard key={movie.title} movie={movie} />
-          ))}
+          })}
         </div>
       </div>
     );

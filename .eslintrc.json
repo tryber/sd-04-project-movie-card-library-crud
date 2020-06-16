@@ -9,6 +9,7 @@
   },
   "parser": "babel-eslint",
   "rules": {
+    "comma-dangle": ["error", "never"],
     "arrow-body-style": ["error", "always"],
     "no-console": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],

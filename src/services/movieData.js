@@ -8,7 +8,7 @@ const movies = [
     rating: 4.5,
     imagePath: "images/Kingsglaive_Final_Fantasy_XV.jpg",
     bookmarked: true,
-    genre: "action",
+    genre: "action"
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const movies = [
     rating: 4.5,
     imagePath: "images/Final_Fantasy_Spirits_Within.jpg",
     bookmarked: false,
-    genre: "fantasy",
+    genre: "fantasy"
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const movies = [
     rating: 5,
     imagePath: "images/Kingsglaive_Final_Fantasy_XV.jpg",
     bookmarked: false,
-    genre: "comedy",
+    genre: "comedy"
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ const movies = [
     rating: 3.8,
     imagePath: "images/Appleseed_Alpha.jpg",
     bookmarked: true,
-    genre: "action",
+    genre: "action"
   },
   {
     id: 5,
@@ -52,8 +52,8 @@ const movies = [
     rating: 4.2,
     imagePath: "images/Resident_Evil_Vendetta.jpg",
     bookmarked: true,
-    genre: "fantasy",
-  },
+    genre: "fantasy"
+  }
 ];
 
 export default movies;

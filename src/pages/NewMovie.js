@@ -7,7 +7,7 @@ class NewMovie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      shouldRedirect: false,
+      shouldRedirect: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -36,8 +36,8 @@ class NewMovie extends Component {
 
 NewMovie.propTypes = {
   history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
-  }).isRequired,
+    push: PropTypes.func.isRequired
+  }).isRequired
 };
 
 export default NewMovie;

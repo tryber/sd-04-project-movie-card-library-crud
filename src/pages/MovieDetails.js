@@ -16,10 +16,10 @@ class MovieDetails extends Component {
         id: "",
         rating: 0,
         storyline: "",
-        bookmarked: "",
+        bookmarked: ""
       },
       isLoading: true,
-      shouldRedirect: false,
+      shouldRedirect: false
     };
   }
 
@@ -28,7 +28,7 @@ class MovieDetails extends Component {
     movieAPI.getMovie(match.params.id).then((movie) => {
       this.setState({
         isLoading: false,
-        movie,
+        movie
       });
     });
   }
@@ -39,7 +39,16 @@ class MovieDetails extends Component {
     if (shouldRedirect) return <Redirect to="/" />;
 
     if (!isLoading) {
-      const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
+      const {
+        title,
+        storyline,
+        imagePath,
+        genre,
+        rating,
+        subtitle,
+        id
+      } = movie;
+      
       return (
         <div data-testid="movie-details">
           <img alt="Movie Cover" src={`../${imagePath}`} />
@@ -68,8 +77,8 @@ class MovieDetails extends Component {
 
 MovieDetails.propTypes = {
   match: PropTypes.shape({
-    id: PropTypes.number,
-  }).isRequired,
+    id: PropTypes.number
+  }).isRequired
 };
 
 export default MovieDetails;
