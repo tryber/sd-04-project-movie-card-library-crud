@@ -11,10 +11,10 @@ class MovieDetails extends Component {
     this.state = { movie: null, loading: true, redirect: false };
   }
 
-  async componentDidMount() {
-    const { match } = this.props;
-    const data2 = await movieAPI.getMovie(match.params.id);
-    this.setState({ movie: data2, loading: false });
+  componentDidMount() {
+    movieAPI.getMovie(this.props.match.params.id).then((movie) => {
+      this.setState({ movie, loading: false });
+    });
   }
 
   render() {
@@ -53,7 +53,7 @@ class MovieDetails extends Component {
 MovieDetails.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      id: PropTypes.number,
+      id: PropTypes.string,
     }),
   }).isRequired,
 };

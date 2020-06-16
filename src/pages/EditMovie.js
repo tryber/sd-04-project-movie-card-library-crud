@@ -12,10 +12,10 @@ class EditMovie extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  async componentDidMount() {
-    const { match } = this.props;
-    const data3 = await movieAPI.getMovie(match.params.id);
-    await this.setState({ movie: data3, loading: false });
+  componentDidMount() {
+    movieAPI.getMovie(this.props.match.params.id).then((movie) => {
+      this.setState({ movie, loading: false });
+    });
   }
 
   async handleSubmit(updatedMovie) {
@@ -42,7 +42,7 @@ class EditMovie extends Component {
 EditMovie.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      id: PropTypes.number,
+      id: PropTypes.string,
     }),
   }).isRequired,
 };
