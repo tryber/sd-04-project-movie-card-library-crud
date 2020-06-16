@@ -1,8 +1,8 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Loading } from '../components';
 import { MovieForm } from '../components';
 import * as movieAPI from '../services/movieAPI';
-import PropTypes from 'prop-types';
 
 class EditMovie extends Component {
   constructor(props) {
@@ -51,7 +51,7 @@ class EditMovie extends Component {
 }
 
 EditMovie.propTypes = {
-  id: PropTypes.string,
-}
+  match: PropTypes.object,
+};
 
 export default EditMovie;
