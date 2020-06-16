@@ -12,7 +12,8 @@ class MovieDetails extends Component {
   }
 
   componentDidMount() {
-    movieAPI.getMovie(this.props.match.params.id).then((movie) => {
+    const { match } = this.props;
+    movieAPI.getMovie(match.params.id).then((movie) => {
       this.setState({ movie, loading: false });
     });
   }
@@ -52,9 +53,7 @@ class MovieDetails extends Component {
 
 MovieDetails.propTypes = {
   match: PropTypes.shape({
-    params: PropTypes.shape({
-      id: PropTypes.string,
-    }),
+    id: PropTypes.string,
   }).isRequired,
 };
 
