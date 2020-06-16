@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { Link } from "react-router-dom";
 import * as movieAPI from "../services/movieAPI";
-import { Loading } from "../components";
+import Loading from "../components/Loading";
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -14,19 +14,21 @@ class MovieDetails extends Component {
   }
 
   componentDidMount() {
-    movieAPI.getMovie(this.props.match.params.id).then((movieObj) => {
+    movieAPI.getMovie(this.props.match.params.id).then((movie) => {
       this.setState({
         isLoading: false,
-        movie: movieObj,
+        movie,
       });
     });
   }
 
   render() {
     const { isLoading, movie } = this.state;
+
     if (isLoading) return <Loading />;
 
-    const { id, title, storyline, imagePath, genre, rating, subtitle } = movie;
+    const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
+
     return (
       <div data-testid="movie-details">
         <img alt="Movie Cover" src={`../${imagePath}`} />
