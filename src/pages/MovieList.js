@@ -30,8 +30,8 @@ class MovieList extends Component {
     const { itsLoading, movies, error } = this.state;
 
     // Render Loading here if the request is still happening
-    if (error) return <div>Erro: {error.message}</div>
-    if (itsLoading) return <Loading />
+    if (error) return <div>Erro: {error.message}</div>;
+    if (itsLoading) return <Loading />;
     return (
       <div data-testid="movie-list">
         {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
