@@ -12,7 +12,6 @@ import GlobalStyle from './styles/global';
 
 function App() {
   return (
-    //:D
     <React.Fragment>
       <GlobalStyle />
       <BrowserRouter>
