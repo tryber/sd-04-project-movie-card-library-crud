@@ -3,6 +3,7 @@ import MovieCard from '../components/MovieCard';
 // import movies from '../services/movieData.js';
 import * as movieAPI from '../services/movieAPI';
 import Loading from '../components/Loading.js';
+import { Link } from 'react-router-dom';
 
 class MovieList extends Component {
   constructor(props) {
@@ -20,10 +21,10 @@ class MovieList extends Component {
         itsLoading: false,
         movies: data,
       }),
-      (error) => this.setState({
-        itsLoading: false,
-        error,
-      }));
+        (error) => this.setState({
+          itsLoading: false,
+          error,
+        }));
   }
 
   render() {
@@ -34,7 +35,12 @@ class MovieList extends Component {
     if (itsLoading) return <Loading />;
     return (
       <div data-testid="movie-list">
-        {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
+        {movies.map((movie) => (
+          <div key={movie.title}>
+            <MovieCard movie={movie} />
+            <Link to={`/movies/${movie.id}`}>VER DETALHES</Link>
+          </div>
+        ))}
       </div>
     );
   }
