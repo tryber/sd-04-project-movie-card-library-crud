@@ -12,7 +12,7 @@ class MovieList extends Component {
   }
 
   componentDidMount() {
-    movieAPI.getMovies().then((json) => this.setState({ movie: json }));
+    movieAPI.getMovies().then((response) => this.setState({ movies: response }));
   }
   render() {
     const { movies } = this.state;
