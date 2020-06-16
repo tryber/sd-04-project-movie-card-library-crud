@@ -14,7 +14,6 @@ class App extends Component {
           <Route exact path="/movies/:id/edit" component={EditMovie} />
           <Route strict path="/movies/:id" component={MovieDetails} />
           {/* <Route path="/movies/new" component={NewMovie} /> */}
-          
         </Switch>
       </BrowserRouter>
     );

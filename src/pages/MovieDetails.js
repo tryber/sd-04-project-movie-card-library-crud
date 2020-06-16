@@ -15,14 +15,14 @@ class MovieDetails extends Component {
     this.getMovieAPI = this.getMovieAPI.bind(this);
   }
 
-  async getMovieAPI() {
-  const { id } = this.props.match.params; // pegando o id da URL
-  const movieResult = await movieAPI.getMovie(id);
-  this.setState({ movie: movieResult, isLoaded: false, idEdit: id });
-}
-
   async componentDidMount() {
-   this.getMovieAPI();
+    this.getMovieAPI();
+  }
+
+  async getMovieAPI() {
+    const { id } = this.props.match.params; // pegando o id da URL
+    const movieResult = await movieAPI.getMovie(id);
+    this.setState({ movie: movieResult, isLoaded: false, idEdit: id });
   }
 
   render() {
