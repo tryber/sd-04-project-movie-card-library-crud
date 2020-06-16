@@ -28,7 +28,7 @@ class MovieForm extends React.Component {
           type="text"
           className="validate"
           value={title}
-          onChange={(event) => {
+          onChange={event => {
             return this.updateMovie("title", event.target.value);
           }}
         />
@@ -47,7 +47,7 @@ class MovieForm extends React.Component {
           id="movie_subtitle"
           type="text"
           value={subtitle}
-          onChange={(event) => {
+          onChange={event => {
             return this.updateMovie("subtitle", event.target.value);
           }}
         />
@@ -66,7 +66,7 @@ class MovieForm extends React.Component {
           id="movie_image"
           type="text"
           value={imagePath}
-          onChange={(event) => {
+          onChange={event => {
             return this.updateMovie("imagePath", event.target.value);
           }}
         />
@@ -83,7 +83,7 @@ class MovieForm extends React.Component {
         <textarea
           id="movie_storyline"
           value={storyline}
-          onChange={(event) => {
+          onChange={event => {
             return this.updateMovie("storyline", event.target.value);
           }}
         />
@@ -101,7 +101,7 @@ class MovieForm extends React.Component {
         <select
           id="movie_genre"
           value={genre}
-          onChange={(event) => {
+          onChange={event => {
             return this.updateMovie("genre", event.target.value);
           }}
         >
@@ -127,7 +127,7 @@ class MovieForm extends React.Component {
           min={0}
           max={5}
           value={rating}
-          onChange={(event) => {
+          onChange={event => {
             return this.updateMovie("rating", event.target.value);
           }}
         />

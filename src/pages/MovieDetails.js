@@ -25,8 +25,8 @@ class MovieDetails extends Component {
 
   componentDidMount() {
     const { match } = this.props;
-    movieAPI.getMovie(match.params.id).then((movie) => {
-      this.setState({
+    movieAPI.getMovie(match.params.id).then(movie => {
+      return this.setState({
         isLoading: false,
         movie
       });
@@ -39,30 +39,20 @@ class MovieDetails extends Component {
     if (shouldRedirect) return <Redirect to="/" />;
 
     if (!isLoading) {
-      const {
-        title,
-        storyline,
-        imagePath,
-        genre,
-        rating,
-        subtitle,
-        id
-      } = movie;
-      
       return (
         <div data-testid="movie-details">
-          <img alt="Movie Cover" src={`../${imagePath}`} />
-          <p>{`Title: ${title}`}</p>
-          <p>{`Subtitle: ${subtitle}`}</p>
-          <p>{`Storyline: ${storyline}`}</p>
-          <p>{`Genre: ${genre}`}</p>
-          <p>{`Rating: ${rating}`}</p>
-          <Link to={`/movies/${id}/edit`}>EDITAR</Link>
+          <img alt="Movie Cover" src={`../${movie.imagePath}`} />
+          <p>{`Title: ${movie.title}`}</p>
+          <p>{`Subtitle: ${movie.subtitle}`}</p>
+          <p>{`Storyline: ${movie.storyline}`}</p>
+          <p>{`Genre: ${movie.genre}`}</p>
+          <p>{`Rating: ${movie.rating}`}</p>
+          <Link to={`/movies/${movie.id}/edit`}>EDITAR</Link>
           <Link to="/">VOLTAR</Link>
           <Link
             to="/"
             onClick={() => {
-              movieAPI.deleteMovie(id);
+              movieAPI.deleteMovie(movie.id);
               this.setState({ shouldRedirect: true });
             }}
           >
@@ -77,7 +67,9 @@ class MovieDetails extends Component {
 
 MovieDetails.propTypes = {
   match: PropTypes.shape({
-    id: PropTypes.number
+    params: PropTypes.shape({
+      id: PropTypes.number
+    })
   }).isRequired
 };
 
