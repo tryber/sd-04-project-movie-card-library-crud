@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import Loading from "../components/Loading";
 import MovieForm from "../components/MovieForm";
 import * as movieAPI from "../services/movieAPI";
@@ -24,11 +25,11 @@ class NewMovie extends Component {
     const { history } = this.props;
     console.log("Props:", this.props);
 
+    if (isLoading) return <Loading />;
+
     if (shouldRedirect) {
       history.push("/");
     }
-
-    if (isLoading) return <Loading />;
 
     return (
       <div data-testid="new-movie">
@@ -37,4 +38,11 @@ class NewMovie extends Component {
     );
   }
 }
+
+NewMovie.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
+
 export default NewMovie;
