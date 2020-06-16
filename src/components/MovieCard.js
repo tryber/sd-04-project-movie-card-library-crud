@@ -17,7 +17,7 @@ MovieCard.propTypes = {
   movie: PropTypes.shape({
     title: PropTypes.string,
     storyline: PropTypes.string,
-  }),
+  }).isRequired,
 };
 
 export default MovieCard;
