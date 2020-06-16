@@ -11,6 +11,7 @@ class MovieDetails extends Component {
       movie: [],
       loadead: false,
     };
+    this.removeThisMovie = this.removeThisMovie.bind(this);
   }
 
   componentDidMount() {
@@ -23,7 +24,7 @@ class MovieDetails extends Component {
     this.setState({ movie, loadead: true, id });
   }
 
-  removeThisMovie = () => {
+  removeThisMovie() {
     const { id } = this.props.match.params;
     movieAPI.deleteMovie(id);
   }
