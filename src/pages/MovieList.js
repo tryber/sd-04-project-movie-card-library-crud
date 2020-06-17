@@ -24,7 +24,6 @@ class MovieList extends Component {
 
   render() {
     const { movies, isLoaded } = this.state;
-    console.log(this.state);
     if (isLoaded) {
       return (
         <React.Fragment>
