@@ -7,31 +7,21 @@ import MovieDetails from './pages/MovieDetails';
 import EditMovie from './pages/EditMovie';
 import NotFound from './pages/NotFound';
 
-// function App() {
-class App extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        {/* <header>
-          <ul>
-            <li><Link to="/">Lista de Filmes</Link></li>
-            <li><Link to="/pages/:id">Novo Filme</Link></li>
-            <li><Link to="/pages/new">Detalhes</Link></li>
-            <li><Link to="/pages/:id/edit">Editar Filme</Link></li>
-          </ul>
-        </header> */}
-        {/* <main> */}
-        <Switch>
-          <Route exact path="/" component={MovieList} />
-          <Route exact path="/movies/:id" component={MovieDetails} />
-          <Route exact path="/movies/new" component={NewMovie} />
-          <Route exact path="/movies/:id/edit" component={EditMovie} />
-          <Route component={NotFound} />
-        </Switch>
-        {/* </main> */}
-      </BrowserRouter>
-    );
-  }
+function App() {
+  // class App extends Component {
+  // render() {
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={MovieList} />
+        <Route exact path="/movies/:id" component={MovieDetails} />
+        <Route exact path="/movies/new" component={NewMovie} />
+        <Route exact path="/movies/:id/edit" component={EditMovie} />
+        <Route component={NotFound} />
+      </Switch>
+    </BrowserRouter>
+  );
+  // }
 }
 
 export default App;
