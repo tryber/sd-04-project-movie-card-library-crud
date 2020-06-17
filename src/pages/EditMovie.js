@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import { Redirect } from "react-router-dom";
 
 import { MovieForm, Loading } from '../components';
 import * as movieAPI from '../services/movieAPI';
-import { Link } from 'react-router-dom';
 
 class EditMovie extends Component {
   constructor(props) {
@@ -36,7 +36,7 @@ class EditMovie extends Component {
   render() {
     const { status, shouldRedirect, movie } = this.state;
     if (shouldRedirect) { // depois ver como funciona isto
-      return <Link to="/" />; // ver como fazer isso
+      return <Redirect to="/" />
     }
 
     if (status === 'loading') {

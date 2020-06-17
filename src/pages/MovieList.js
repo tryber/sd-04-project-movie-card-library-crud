@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { MovieCard, Loading } from '../components/';
+import { Link } from 'react-router-dom';
 
 import * as movieAPI from '../services/movieAPI';
 
@@ -29,6 +30,7 @@ class MovieList extends Component {
     return (
       isLoaded ? <Loading /> :
       <div data-testid="movie-list">
+        <Link to="/movies/new">ADICIONAR CARTÃO</Link>
         {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
       </div>
     );

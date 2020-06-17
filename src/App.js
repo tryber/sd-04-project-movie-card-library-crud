@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import { index, movies, NewMovie, EditMovie } from './pages/';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import { MovieList, MovieDetails, EditMovie } from './pages/index';
+import { MovieList, MovieDetails, EditMovie, NewMovie } from './pages/index';
 import './App.css';
 
 class App extends Component {
@@ -12,8 +12,8 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={MovieList} />
           <Route exact path="/movies/:id/edit" component={EditMovie} />
+          <Route exact path="/movies/new" component={NewMovie} />
           <Route strict path="/movies/:id" component={MovieDetails} />
-          {/* <Route path="/movies/new" component={NewMovie} /> */}
         </Switch>
       </BrowserRouter>
     );
