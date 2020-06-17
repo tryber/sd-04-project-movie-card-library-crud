@@ -13,22 +13,21 @@ class MovieList extends Component {
 
   componentDidMount() {
     movieAPI
-      .getMovies()
+      .getMovies(this.props.match.params.id)
       .then((data) => this.setState({ movies: data, loading: false }));
   }
 
   render() {
     const { movies } = this.state;
-    console.log(this.state);
     return this.state.loading ? (
       <Loading />
     ) : (
-      <div data-testid="movie-list" className="movie-list">
-        {movies.map((movie) => (
-          <MovieCard key={movie.title} movie={movie} />
-        ))}
-      </div>
-    );
+        <div data-testid="movie-list" className="movie-list">
+          {movies.map((movie) => (
+            <MovieCard key={movie.title} movie={movie} />
+          ))}
+        </div>
+      );
   }
 }
 
