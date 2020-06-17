@@ -4,13 +4,14 @@ import PropTypes from 'prop-types';
 class MovieForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { ...props.movie };
+    this.state = { ...props.movie }; // props do EditMovie da linha 49;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit() {
-    const { onSubmit } = this.props;
-    onSubmit(this.state);
+  // pega a props que está no editMovie
+  handleSubmit() { // chama qnd aperto o submit, dai já mudei as info
+    const { onSubmit } = this.props; // só colocando info e nao renderi.
+    onSubmit(this.state);// depois de apertar o submit são novas info
   }
 
   updateMovie(field, newValue) {
@@ -153,5 +154,9 @@ class MovieForm extends React.Component {
     );
   }
 }
+
+MovieForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
 
 export default MovieForm;
