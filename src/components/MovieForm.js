@@ -154,4 +154,8 @@ class MovieForm extends React.Component {
   }
 }
 
+MovieForm.propTypes = {
+  movie: PropTypes.object
+};
+
 export default MovieForm;
