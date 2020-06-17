@@ -54,9 +54,9 @@ body {
 }
 
 .movie-card:hover {
-  opacity: 1;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05) inset,
     0px 0px 30px rgba(82, 168, 236, 0.6);
+    opacity: 1;
 }
 
 .movie-img {
@@ -75,14 +75,14 @@ body {
 }
 
 .movie-details {
-  text-decoration: none;
-  font-style: italic;
-  letter-spacing: 0.1em;
   background-color: rgb(20, 20, 20);
   border: 2px solid rgb(20, 20, 20);
-  padding: 5px;
   border-radius: 50px;
   color: rgba(161, 161, 248, 0.6);
+  font-style: italic;
+  letter-spacing: 0.1em;
+  padding: 5px;
+  text-decoration: none;
 }
 
 .movie-details:hover {
@@ -104,22 +104,22 @@ body {
 }
 
 .add-movie-div {
+  align-items: center;
   background-color: black;
+  border-radius: 50px;
   display: flex;
   justify-content: center;
-  align-items: center;
   margin: 15px auto;
-  width: 15%;
   padding: 10px;
-  border-radius: 50px;
+  width: 15%;
 }
 
 .add-movie-link {
-  text-decoration: none;
+  color: #ffa113;
   font-size: 20px;
   font-weight: 900;
   letter-spacing: 0.2em;
-  color: #ffa113;
+  text-decoration: none;
 }
 
 .add-movie-link:hover {
