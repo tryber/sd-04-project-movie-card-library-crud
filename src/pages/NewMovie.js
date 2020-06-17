@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from "react-router-dom";
+import { Redirect } from 'react-router-dom';
 
 import MovieForm from '../components/MovieForm';
 import * as movieAPI from '../services/movieAPI';
@@ -9,22 +9,23 @@ class NewMovie extends Component {
     super(props);
     this.state = {
       shouldRedirect: false,
-    }
+    };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(newMovie) {
-    movieAPI.createMovie(newMovie).then(response => { // para pegar resposta do update movies
-      if(response === 'OK') {
-        this.setState({ shouldRedirect: true })
-      }});
+    movieAPI.createMovie(newMovie).then((response) => { // para pegar resposta do update movies
+      if (response === 'OK') {
+        this.setState({ shouldRedirect: true });
+      }
+    });
   }
 
   render() {
     const { shouldRedirect } = this.state;
     if (shouldRedirect) { // criar no state
-      return <Redirect to="/" />
+      return <Redirect to="/" />;
     }
     return (
       <div data-testid="new-movie">
