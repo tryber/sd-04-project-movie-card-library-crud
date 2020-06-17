@@ -30,7 +30,7 @@ export const updateMovie = (updatedMovie) => {
     if (movie.id === parseInt(updatedMovie.id, 10)) {
       return { ...movie, ...updatedMovie };
     }
-    return movie;
+    return movie; 
   });
   saveMovies(movies);
 
