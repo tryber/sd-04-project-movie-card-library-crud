@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-//import movies from '../services/movieData';
 
 class MovieCard extends React.Component {
   render() {
     const { movie } = this.props;
     return (
       <div data-testid="movie-card">
-        <img src={movie.imagePath} />
+        <img src={movie.imagePath} alt=""/>
         <p>{movie.title}</p>
         <p>{movie.storyline}</p>
 
