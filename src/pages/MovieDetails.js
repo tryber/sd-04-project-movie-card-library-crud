@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { Loading } from '../components';
 import * as movieAPI from '../services/movieAPI';
+
 class MovieDetails extends Component {
   // Change the condition to check the state
   constructor(props) {
