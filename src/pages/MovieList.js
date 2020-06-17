@@ -19,15 +19,14 @@ class MovieList extends Component {
 
   render() {
     const { movies } = this.state;
-    return this.state.loading ? (
-      <Loading />
-    ) : (
-        <div data-testid="movie-list" className="movie-list">
-          {movies.map((movie) => (
-            <MovieCard key={movie.title} movie={movie} />
-          ))}
-        </div>
-      );
+    return this.state.loading ? <Loading /> : (
+      // prettier-ignore
+      <div data-testid="movie-list" className="movie-list">
+        {movies.map((movie) => (
+          <MovieCard key={movie.title} movie={movie} />
+        ))}
+      </div>
+    );
   }
 }
 
