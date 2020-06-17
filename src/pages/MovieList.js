@@ -5,7 +5,6 @@ import * as movieAPI from '../services/movieAPI';
 import Loading from '../components/Loading';
 
 
-
 class MovieList extends Component {
   constructor(props) {
     super(props);

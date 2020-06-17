@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { MovieForm, Loading } from '../components';
 import * as movieAPI from '../services/movieAPI';
-import PropTypes from 'prop-types';
 
 
 class EditMovie extends Component {
