@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
 
-import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
 import { Link } from 'react-router-dom';
+import * as movieAPI from '../services/movieAPI';
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -12,16 +12,16 @@ class MovieDetails extends Component {
 
     this.state = {
       movie: {
-        title:"",
-        storyline:"",
-        imagePath:"",
-        genre:"",
+        title: '',
+        storyline: '',
+        imagePath: '',
+        genre: '',
         rating: 0,
-        subtitle:"",
-        id:""
+        subtitle: '',
+        id: '',
       },
       isLoading: true,
-    }
+    };
   }
 
   componentDidMount() {
@@ -46,7 +46,7 @@ class MovieDetails extends Component {
         <p>{`Rating: ${rating}`}</p>
         <Link to={`/movies/${id}/edit`}>EDITAR</Link>
         <Link to="/">VOLTAR</Link>
-        <Link to="/" onClick={() => {movieAPI.deleteMovie(id)}}>DELETAR</Link>
+        <Link to="/" onClick={() => { movieAPI.deleteMovie(id) }}>DELETAR</Link>;
       </div>
     );
   }

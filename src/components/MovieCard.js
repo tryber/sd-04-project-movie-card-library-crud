@@ -1,10 +1,8 @@
+import PropTypes from "prop-types";
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class MovieCard extends React.Component {
-  constructor(props) {
-    super(props);  
-  }
+class MovieCard extends React.Component { 
   render() {
     const { movie } = this.props;
     const { id, imagePath, storyline, title } = movie;
@@ -17,6 +15,10 @@ class MovieCard extends React.Component {
       </div>
     );
   }
+}
+
+MovieCard.propTypes = {
+  movie: PropTypes.any
 }
 
 export default MovieCard;
