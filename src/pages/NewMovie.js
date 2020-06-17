@@ -9,7 +9,7 @@ class NewMovie extends Component {
     super(props);
     this.state = {
       shouldRedirect: false,
-    }
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -40,7 +40,7 @@ class NewMovie extends Component {
 NewMovie.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
-  }).isRequired
+  }).isRequired,
 };
 
 export default NewMovie;
