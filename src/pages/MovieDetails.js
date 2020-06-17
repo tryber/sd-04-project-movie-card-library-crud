@@ -20,7 +20,7 @@ class MovieDetails extends Component {
   render() {
     const { movie } = this.state;
     const { title, storyline, imagePath, genre, rating, subtitle } = movie;
-    const { id } = this.props;
+    const { id } = this.props.match.params;
     // Change the condition to check the state
     return this.state.loading ? <Loading /> : (
       <div data-testid="movie-details">
@@ -47,8 +47,6 @@ MovieDetails.propTypes = {
       id: PropTypes.string,
     }),
   }).isRequired,
-
-  id: PropTypes.string,
 };
 
 export default MovieDetails;
