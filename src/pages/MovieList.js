@@ -9,12 +9,12 @@ class MovieList extends Component {
   constructor(props) {
     super(props);
 
-  this.state = { movies: [], isLoading: true };
-}
+    this.state = { movies: [], isLoading: true };
+  }
 
-  componentDidMount(){
+  componentDidMount() {
     movieAPI.getMovies().then((movies) => this.setState({ movies, isLoading: false }));
-}
+  }
 
   render() {
     const { movies, isLoading } = this.state;
