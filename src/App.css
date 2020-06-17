@@ -7,7 +7,7 @@ body {
   align-items: center;
   background-color: black;
   display: flex;
-  height: 150px;
+  height: 100px;
   justify-content: center;
 }
 
@@ -19,22 +19,27 @@ body {
 }
 
 @keyframes glow {
+
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #daa803,
-      0 0 40px #ffa113, 0 0 50px #ffa113, 0 0 60px #ffa113, 0 0 70px #d1ce01;
+    text-shadow: 0 0 10px white, 0 0 20px white,
+      0 0 30px rgba(241, 200, 15, 0.6), 0 0 40px rgba(241, 200, 15, 0.6),
+      0 0 50px rgba(241, 200, 15, 0.6), 0 0 60px rgba(241, 200, 15, 0.6),
+      0 0 70px rgba(241, 200, 15, 0.6);
   }
+
   to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ffa113, 0 0 40px #ffa113,
-      0 0 50px #ffa113, 0 0 60px #ffa113, 0 0 70px #ffa113, 0 0 80px #ffa113;
+    text-shadow: 0 0 20px white, 0 0 30px rgba(241, 200, 15, 0.6),
+      0 0 40px rgba(241, 200, 15, 0.6), 0 0 50px rgba(241, 200, 15, 0.6),
+      0 0 60px rgba(241, 200, 15, 0.6), 0 0 70px rgba(241, 200, 15, 0.6),
+      0 0 80px rgba(241, 200, 15, 0.6);
   }
 }
 
 .movies-div {
-  background-color: rgb((150, 150, 150));
+  background-color: rgb(20, 20, 20);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-left: 30px;
   margin-top: 20px;
 }
 
@@ -54,9 +59,9 @@ body {
 }
 
 .movie-card:hover {
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05) inset,
-    0px 0px 30px rgba(82, 168, 236, 0.6);
-    opacity: 1;
+  box-shadow: 0.1px 1px 3px rgba(0.1, 0.1, 0.1, 0.05) inset,
+    0.1px 0.1px 30px rgba(82, 168, 236, 0.6);
+  opacity: 1;
 }
 
 .movie-img {
@@ -91,15 +96,20 @@ body {
 }
 
 @keyframes glow-details {
+
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #daa803,
+    text-shadow: 0 0 10px white, 0 0 20px white,
+      0 0 30px rgba(241, 200, 15, 0.6),
       0 0 40px rgba(161, 161, 248, 0.6);
   }
+
   to {
-    text-shadow: 0 0 20px #fff, 0 0 30px rgba(161, 161, 248, 0.6),
-      0 0 40px rgba(161, 161, 248, 0.6), 0 0 50px rgba(161, 161, 248, 0.6),
-      0 0 60px rgba(161, 161, 248, 0.6), 0 0 70px rgba(161, 161, 248, 0.6),
-      0 0 80px rgba(161, 161, 248, 0.6);
+    text-shadow: 0.5 0.5 20px white, 0.5 0.5 30px rgba(161, 161, 248, 0.6),
+      0.5 0.5 40px rgba(161, 161, 248, 0.6),
+      0.5 0.5 50px rgba(161, 161, 248, 0.6),
+      0.5 0.5 60px rgba(161, 161, 248, 0.6),
+      0.5 0.5 70px rgba(161, 161, 248, 0.6),
+      0.5 0.5 80px rgba(161, 161, 248, 0.6);
   }
 }
 
@@ -115,7 +125,7 @@ body {
 }
 
 .add-movie-link {
-  color: #ffa113;
+  color: rgba(241, 200, 15, 0.6);
   font-size: 20px;
   font-weight: 900;
   letter-spacing: 0.2em;
@@ -128,14 +138,15 @@ body {
 }
 
 @keyframes glow-add {
+  
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #daa803,
-      0 0 40px rgba(192, 159, 12, 0.6);
+    text-shadow: 0 0 10px white, 0 0 20px white,
+      0 0 30px rgba(192, 159, 12, 0.6), 0 0 40px rgba(192, 159, 12, 0.6);
   }
   to {
-    text-shadow: 0 0 20px #fff, 0 0 30px rgba(192, 159, 12, 0.6),
-      0 0 40px rgba(192, 159, 12, 0.6), 0 0 50px rgba(192, 159, 12, 0.6),
-      0 0 60px rgba(192, 159, 12, 0.6), 0 0 70px rgba(192, 159, 12, 0.6),
-      0 0 80px rgba(192, 159, 12, 0.6);
+    text-shadow: 0.5 0.5 20px white, 0.5 0.5 30px rgba(192, 159, 12, 0.6),
+      0.5 0.5 40px rgba(192, 159, 12, 0.6), 0.5 0.5 50px rgba(192, 159, 12, 0.6),
+      0.5 0.5 60px rgba(192, 159, 12, 0.6), 0.5 0.5 70px rgba(192, 159, 12, 0.6),
+      0.5 0.5 80px rgba(192, 159, 12, 0.6);
   }
 }
