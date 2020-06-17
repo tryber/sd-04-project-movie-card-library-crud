@@ -13,7 +13,7 @@ class MovieList extends Component {
 
   componentDidMount() {
     movieAPI
-      .getMovies(this.props.match.params.id)
+      .getMovies()
       .then((data) => this.setState({ movies: data, loading: false }));
   }
 
