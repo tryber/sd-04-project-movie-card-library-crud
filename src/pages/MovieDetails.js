@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Loading } from '../components';
 import { Link } from 'react-router-dom';
+import { Loading } from '../components';
 
 
 import * as movieAPI from '../services/movieAPI';
@@ -46,7 +46,7 @@ class MovieDetails extends Component {
         <p>{`Rating: ${rating}`}</p>
         <Link to={`/movies/${id}/edit`}>EDITAR</Link>
         <Link to="/">VOLTAR</Link>
-        <Link to="/" onClick={() => { movieAPI.deleteMovie(id) }}>DELETAR</Link>;
+        <Link to="/" onClick={() => { movieAPI.deleteMovie(id); }}>DELETAR</Link>;
       </div>
     );
   }
@@ -59,5 +59,5 @@ MovieDetails.propTypes = {
     params: PropTypes.shape({
       id: PropTypes.string,
     }),
-  }),
+  }).isRequired,
 };

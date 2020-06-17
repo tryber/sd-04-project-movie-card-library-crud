@@ -45,5 +45,5 @@ EditMovie.propTypes = {
     params: PropTypes.shape({
       id: PropTypes.number,
     }),
-  }),
+  }).isRequired,
 };
