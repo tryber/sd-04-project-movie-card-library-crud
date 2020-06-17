@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components'; // ele vai saber que é o index
@@ -11,8 +11,10 @@ class MovieDetails extends Component {
       movie: {},
       isLoaded: true,
       idEdit: '0', // para armazenar o id do movie que vem por url
+      shouldRedirect: false,
     };
     this.getMovieAPI = this.getMovieAPI.bind(this);
+    this.OnDeleteMovie = this.OnDeleteMovie.bind(this);
   }
 
   async componentDidMount() {
@@ -25,8 +27,21 @@ class MovieDetails extends Component {
     this.setState({ movie: movieResult, isLoaded: false, idEdit: id });
   }
 
+  OnDeleteMovie () {
+    const {idEdit} = this.state;
+    movieAPI.deleteMovie(idEdit).then(response => {
+      if (response.status === 'OK') {
+        this.setState({shouldRedirect: true});
+      }
+    });
+  }
+
   render() {
-    const { movie, isLoaded, idEdit } = this.state;
+    const { movie, isLoaded, idEdit, shouldRedirect } = this.state;
+    if (shouldRedirect) { // criar no state
+      return <Redirect to="/" />
+    }
+
     // Change the condition to check the state
     if (isLoaded) return <Loading />;
 
@@ -43,6 +58,7 @@ class MovieDetails extends Component {
         <p>{`Rating: ${rating}`}</p>
         <Link to={linkEdit} >EDITAR</Link>
         <Link to="/" >VOLTAR</Link>
+        <button onClick={this.OnDeleteMovie}>DELETAR</button>
       </div>
     );
   }
