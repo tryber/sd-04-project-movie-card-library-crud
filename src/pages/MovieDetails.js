@@ -27,11 +27,11 @@ class MovieDetails extends Component {
     this.setState({ movie: movieResult, isLoaded: false, idEdit: id });
   }
 
-  OnDeleteMovie () {
-    const {idEdit} = this.state;
-    movieAPI.deleteMovie(idEdit).then(response => {
+  OnDeleteMovie() {
+    const { idEdit } = this.state;
+    movieAPI.deleteMovie(idEdit).then((response) => {
       if (response.status === 'OK') {
-        this.setState({shouldRedirect: true});
+        this.setState({ shouldRedirect: true });
       }
     });
   }
@@ -39,7 +39,7 @@ class MovieDetails extends Component {
   render() {
     const { movie, isLoaded, idEdit, shouldRedirect } = this.state;
     if (shouldRedirect) { // criar no state
-      return <Redirect to="/" />
+      return <Redirect to="/" />;
     }
 
     // Change the condition to check the state

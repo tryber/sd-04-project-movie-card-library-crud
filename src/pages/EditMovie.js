@@ -27,7 +27,7 @@ class EditMovie extends Component {
 
   handleSubmit(updatedMovie) {
     console.log(updatedMovie);
-    movieAPI.updateMovie(updatedMovie).then(response => { // para pegar resposta do update movies
+    movieAPI.updateMovie(updatedMovie).then((response) => { // para pegar resposta do update movies
       if (response === 'OK') {
         this.setState({ shouldRedirect: true });
       }
