@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 class MovieCard extends React.Component {
   render() {
     const { movie } = this.props;
-    const { title, subtitle, imagePath, id } = movie;
+    const { title, storyline, imagePath, id } = movie;
     return (
       <div data-testid="movie-card" className="movie-card">
         <img
@@ -15,7 +15,7 @@ class MovieCard extends React.Component {
         />
         <div className="movie-card-body">
           <h4 className="movie-card-title">{title}</h4>
-          <h4 className="movie-card-subtitle">{subtitle}</h4>
+          <h4 className="movie-card-subtitle">{storyline}</h4>
         </div>
         <Link to={`/movies/${id}`} className="btn">
           VER DETALHES
