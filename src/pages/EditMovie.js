@@ -18,7 +18,7 @@ class EditMovie extends Component {
 
   componentDidMount() {
     movieAPI.getMovie(this.props.match.params.id)
-      .then(movie => this.setState({
+      .then((movie) => this.setState({
         status: 'loaded',
         movie,
       }));
@@ -40,7 +40,7 @@ class EditMovie extends Component {
       // render Loading
       return <Loading />;
     }
-    
+
     return (
       <div data-testid="edit-movie">
         <MovieForm movie={movie} onSubmit={this.handleSubmit} />
