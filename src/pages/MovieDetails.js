@@ -4,6 +4,22 @@ import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
 
 class MovieDetails extends Component {
+  constructor(){
+    super()
+    this.state = {
+      movie:{
+        title:'',
+        storyline:'',
+        imagePath:'',
+        genre:'',
+        rating:'',
+        subtitle:'',
+        id:'',
+      },
+      isLoaderd: false,
+      shouldRiderict:false,
+    }
+  }
   render() {
     // Change the condition to check the state
     if (true) return <Loading />;
