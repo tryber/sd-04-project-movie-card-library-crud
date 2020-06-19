@@ -16,7 +16,7 @@ function App() {
       <GlobalStyle />
       <BrowserRouter>
         <HeaderStyle>
-          Movie Library CreateReadUpdateDelete
+          Movie Library CRUD
           <Link to="/movies/new">ADICIONAR CARTÃO</Link>
         </HeaderStyle>
         <Switch>
