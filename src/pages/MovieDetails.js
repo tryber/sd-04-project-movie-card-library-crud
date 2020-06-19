@@ -57,7 +57,8 @@ class MovieDetails extends Component {
               onClick={() => {
                 movieAPI.deleteMovie(id);
                 this.setState({ redirect: true });
-              }}>
+              }}
+            >
               DELETAR
             </Link>
           </div>
