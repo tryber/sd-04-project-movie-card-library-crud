@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { Loading } from '../components';
 import * as movieAPI from '../services/movieAPI';
 
 class MovieDetails extends Component {
   constructor(props) {
-    super(props)
-    this.state = { movie: {}, loading: true };
+    super(props);
+    this.state = { movie: {}, loading: true, shouldRedirect: false };
+    this.deleteMovie = this.deleteMovie.bind(this);
   }
 
   componentDidMount() {
@@ -17,12 +18,20 @@ class MovieDetails extends Component {
       .then((data) => this.setState({ movie: data, loading: false }));
   }
 
+  deleteMovie(id) {
+    movieAPI.deleteMovie(id).then((data) => {
+      if (data.status === 'OK') this.setState({ shouldRedirect: true });
+    });
+  }
+
   render() {
     const { movie } = this.state;
     const { title, storyline, imagePath, genre, rating, subtitle } = movie;
     const { id } = this.props.match.params;
     // Change the condition to check the state
-    return this.state.loading ? <Loading /> : (
+    if (this.state.loading) return <Loading />;
+    if (this.state.shouldRedirect) return <Redirect to="/" />;
+    return (
       <div data-testid="movie-details">
         <img alt="Movie Cover" src={`../${imagePath}`} />
         <p>{`Title: ${title}`}</p>
@@ -35,6 +44,9 @@ class MovieDetails extends Component {
         </Link>
         <Link to="/" className="btn">
           VOLTAR
+        </Link>
+        <Link to="/" onClick={() => this.deleteMovie(id)} className="btn">
+          DELETAR
         </Link>
       </div>
     );
