@@ -44,9 +44,9 @@ class MovieDetails extends Component {
         <div className="md-body">
           <p className="md-title">{`Title: ${title}`}</p>
           <p className="md-subtitle">{`Subtitle: ${subtitle}`}</p>
-          <p className="md-storyline">{`Storyline: ${storyline}`}</p>
-          <p className="md-genre">{`Genre: ${genre}`}</p>
-          <p className="md-rating">{`Rating: ${rating}`}</p>
+          <p className="md-other">{`Storyline: ${storyline}`}</p>
+          <p className="md-other">{`Genre: ${genre}`}</p>
+          <p className="md-other">{`Rating: ${rating}`}</p>
           <div className="md-links">
             <Link to={`/movies/${id}/edit`}>EDITAR</Link>
             <Link to="/">VOLTAR</Link>
