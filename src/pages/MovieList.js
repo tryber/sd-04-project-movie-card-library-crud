@@ -30,7 +30,6 @@ class MovieList extends Component {
     if (load) {
       return (
         <div>
-          
           <div data-testid="movie-list" className="app">
             {movies.map((movie) => (
               <MovieCard key={movie.title} movie={movie} />
