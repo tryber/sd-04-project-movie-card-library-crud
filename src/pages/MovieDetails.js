@@ -17,21 +17,22 @@ class MovieDetails extends Component {
 
   componentDidMount() {
     // console.log(this.props.match.params);
-
     const movieId = this.props.match.params.id;
     movieAPI.getMovie(movieId).then((movie) => {
       this.setState({
         loading: false,
         movie,
       });
+      // console.log(movie);
     });
   }
 
   render() {
     const { loading, movie } = this.state;
+    // console.log(this.state.movie);
     if (loading === true) return <Loading />;
 
-    const { title, storyline, imagePath, genre, rating, subtitle } = this.state.movie;
+    const { id, title, storyline, imagePath, genre, rating, subtitle } = movie;
 
     return (
       <div data-testid="movie-details">
@@ -42,7 +43,7 @@ class MovieDetails extends Component {
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
         <div>
-          <Link to={`/movies/${movie.id}/edit`}>EDITAR</Link>
+          <Link to={`/movies/${id}/edit`}>EDITAR</Link>
         </div>
         <div>
           <Link to="/">VOLTAR</Link>
@@ -55,9 +56,9 @@ class MovieDetails extends Component {
 MovieDetails.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      id: PropTypes.string.isRequired
+      id: PropTypes.string,
     }),
-  }),
+  }).isRequired,
 };
 
 export default MovieDetails;
