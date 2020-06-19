@@ -1,0 +1,43 @@
+.md-card {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin: 5px;
+  overflow: hidden;
+  width: 700px;
+}
+
+.md-img {
+  width: 100%;
+}
+
+.md-body {
+  padding: 10px;
+}
+
+.md-title {
+  font-size: 26px;
+  font-weight: 500;
+  margin: 0 0 12px;
+}
+
+.md-subtitle {
+  color: silver;
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0 0 12px;
+}
+
+.md-storyline, .md-genre, .md-rating {
+  font-size: 17px;
+  margin: 0 0 12px;
+}
+
+.md-links {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+}
