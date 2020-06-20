@@ -1,13 +1,13 @@
 .teste {
   align-items: center;
   border-radius: 5px;
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
   cursor: pointer;
   display: flex;
   flex-direction: column;
   height: 310px;
   justify-content: flex-start;
-  margin: 1vh 1vw 1vh 1vw;
+  margin: 1vh 1vw;
   overflow: hidden;
   padding: 1px;
   transition: 0.3s;
@@ -20,6 +20,6 @@
 }
 
 .teste:hover {
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.7);
   transition: 0.3s;
 }
