@@ -1,6 +1,5 @@
 .movieListStyle {
   display: flex;
-  flex-direction: row;
   flex-flow: wrap;
   height: auto;
   justify-content: center;
