@@ -8,7 +8,7 @@ function App() {
       <div>
         <header>
           <h1>Movie Card Library CRUD</h1>
-          <Link to="/movies/new">Criar Novo Filme</Link>
+          <Link to="/movies/new">ADICIONAR CARTÃO</Link>
         </header>
         <main>
           <Switch>
