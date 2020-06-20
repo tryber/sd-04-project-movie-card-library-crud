@@ -20,19 +20,23 @@ class EditMovie extends Component {
         this.setState({ movie, status: 'true' });
       });
   }
+
   handleSubmit(updatedMovie) {
     movieAPI.updateMovie(updatedMovie);
     const id = this.props.match.params.id;
     this.setState({ shouldRedirect: `/movies/${id}` });
   }
+
   render() {
     const { status, shouldRedirect, movie } = this.state;
     if (shouldRedirect) {
       return <Redirect to={shouldRedirect} />;
     }
+
     if (status === 'loading') {
       return <Loading />;
     }
+
     return (
       <div data-testid="edit-movie">
         <MovieForm movie={movie} onSubmit={this.handleSubmit} />
@@ -41,12 +45,10 @@ class EditMovie extends Component {
   }
 }
 
-EditMovie.PropTypes = {
+EditMovie.propTypes = {
   match: PropTypes.shape({
-    params: PropTypes.shape({
-      id: PropTypes.number.isRequired,
-    }),
-  }),
+    params: PropTypes.shape({ id: PropTypes.number }),
+  }).isRequired,
 };
 
 
