@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import MovieForm from '../components/MovieForm';
 import * as movieAPI from '../services/movieAPI';
 
@@ -15,7 +14,6 @@ class NewMovie extends Component {
     await movieAPI.createMovie(newMovie);
     await this.setState({ redirect: true });
   }
-
   render() {
     const { redirect } = this.state;
     if (redirect) { return (<Redirect to={'/'} />); }

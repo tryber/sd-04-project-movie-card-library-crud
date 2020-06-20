@@ -9,21 +9,17 @@ class MovieList extends Component {
       movies: null,
       loading: true,
     };
-    this.deleteLoading = this.deleteLoading.bind(this)
+    this.deleteLoading = this.deleteLoading.bind(this);
   }
-
-
-
   async componentDidMount() {
     await movieAPI.getMovies()
       .then((data) => {
-        this.setState({ movies: data, });
+        this.setState({ movies: data });
       });
     await this.deleteLoading();
-
   }
   deleteLoading() {
-    this.setState({ loading: false })
+    this.setState({ loading: false });
   }
   render() {
     const { loading, movies } = this.state;
