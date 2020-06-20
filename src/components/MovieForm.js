@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Forms.css';
 
 class MovieForm extends React.Component {
   constructor(props) {
@@ -21,7 +22,8 @@ class MovieForm extends React.Component {
     const { title } = this.state;
 
     return (
-      <div>
+      <div className="formStyle">
+        <label htmlFor="movie_title">Título</label>
         <input
           placeholder="Insira o título"
           id="movie_title"
@@ -30,7 +32,6 @@ class MovieForm extends React.Component {
           value={title}
           onChange={(event) => this.updateMovie('title', event.target.value)}
         />
-        <label htmlFor="movie_title">Título</label>
       </div>
     );
   }
@@ -39,7 +40,8 @@ class MovieForm extends React.Component {
     const { subtitle } = this.state;
 
     return (
-      <div>
+      <div className="formStyle">
+        <label htmlFor="movie_subtitle">Subtítulo</label>
         <input
           placeholder="Insira o subtítulo"
           id="movie_subtitle"
@@ -47,7 +49,6 @@ class MovieForm extends React.Component {
           value={subtitle}
           onChange={(event) => this.updateMovie('subtitle', event.target.value)}
         />
-        <label htmlFor="movie_subtitle">Subtítulo</label>
       </div>
     );
   }
@@ -56,15 +57,17 @@ class MovieForm extends React.Component {
     const { imagePath } = this.state;
 
     return (
-      <div className="row">
+      <div className="formStyle">
+        <label htmlFor="movie_image">Imagem</label>
         <input
           placeholder="Insira o caminho da imagem"
           id="movie_image"
           type="text"
           value={imagePath}
-          onChange={(event) => this.updateMovie('imagePath', event.target.value)}
+          onChange={(event) =>
+            this.updateMovie('imagePath', event.target.value)
+          }
         />
-        <label htmlFor="movie_image">Imagem</label>
       </div>
     );
   }
@@ -73,13 +76,15 @@ class MovieForm extends React.Component {
     const { storyline } = this.state;
 
     return (
-      <div>
+      <div className="formStyle">
+        <label htmlFor="movie_storyline">Sinopse</label>
         <textarea
           id="movie_storyline"
           value={storyline}
-          onChange={(event) => this.updateMovie('storyline', event.target.value)}
+          onChange={(event) =>
+            this.updateMovie('storyline', event.target.value)
+          }
         />
-        <label htmlFor="movie_storyline">Sinopse</label>
       </div>
     );
   }
@@ -88,7 +93,7 @@ class MovieForm extends React.Component {
     const { genre } = this.state;
 
     return (
-      <div>
+      <div className="formStyle">
         <label htmlFor="movie_genre">Gênero</label>
         <select
           id="movie_genre"
@@ -108,7 +113,8 @@ class MovieForm extends React.Component {
     const { rating } = this.state;
 
     return (
-      <div>
+      <div className="formStyle">
+        <label htmlFor="movie_rating">Avaliação</label>
         <input
           placeholder="Dê a avaliação do filme"
           id="movie_rating"
@@ -119,18 +125,14 @@ class MovieForm extends React.Component {
           value={rating}
           onChange={(event) => this.updateMovie('rating', event.target.value)}
         />
-        <label htmlFor="movie_rating">Avaliação</label>
       </div>
     );
   }
 
   renderSubmitButton() {
     return (
-      <div>
-        <button
-          type="button"
-          onClick={this.handleSubmit}
-        >
+      <div className="formStyle">
+        <button type="button" onClick={this.handleSubmit}>
           Submit
         </button>
       </div>
@@ -139,7 +141,7 @@ class MovieForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="formStyle">
         <form>
           {this.renderTitleInput()}
           {this.renderSubtitleInput()}
@@ -153,5 +155,16 @@ class MovieForm extends React.Component {
     );
   }
 }
+
+MovieForm.defaultProps = {
+  movie: {
+    title: '',
+    subtitle: '',
+    imagePath: '',
+    storyline: '',
+    genre: '',
+    rating: '',
+  },
+};
 
 export default MovieForm;

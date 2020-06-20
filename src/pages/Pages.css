@@ -1,0 +1,37 @@
+.movieListStyle {
+  display: flex;
+  flex-flow: wrap;
+  height: auto;
+  justify-content: center;
+  margin: 5vh auto;
+  overflow: hidden;
+}
+
+.movieCardStyle {
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 1vh 1vw;
+  overflow: hidden;
+  padding: 1px;
+  transition: 0.3s;
+  width: 70vw;
+}
+
+.movieCardStyle article p {
+  height: 100px;
+}
+
+.movieCardStyle img {
+  border-radius: 5px;
+  width: 100%;
+}
+
+.movieCardStyle:hover {
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.7);
+  transition: 0.3s;
+}

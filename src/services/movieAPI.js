@@ -4,16 +4,16 @@ localStorage.setItem('movies', JSON.stringify(data));
 
 const readMovies = () => JSON.parse(localStorage.getItem('movies'));
 
-const saveMovies = (movies) => localStorage.setItem('movies', JSON.stringify(movies));
+const saveMovies = (movies) =>
+  localStorage.setItem('movies', JSON.stringify(movies));
 
-export const getMovies = () => (
+export const getMovies = () =>
   new Promise((resolve) => {
     setTimeout(() => {
       const movies = readMovies();
       resolve(movies);
     }, 2000);
-  })
-);
+  });
 
 export const getMovie = (movieId) => {
   const movie = readMovies().find((mov) => mov.id === parseInt(movieId, 10));
@@ -21,7 +21,7 @@ export const getMovie = (movieId) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(movie);
-    }, 2000);
+    }, 500);
   });
 };
 
@@ -43,7 +43,10 @@ export const updateMovie = (updatedMovie) => {
 
 export const createMovie = (movieData) => {
   let movies = readMovies();
-  const nextId = movies[movies.length - 1].id + 1;
+  let nextId = 1;
+  if (movies.length > 0) {
+    nextId = movies[movies.length - 1].id + 1;
+  }
   const newMovie = { ...movieData, id: nextId };
   movies = [...movies, newMovie];
   saveMovies(movies);
