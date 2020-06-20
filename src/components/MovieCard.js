@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { MovieCardStyle } from '../styles/styles';
+import './MovieCard.css';
 import Image from './cardComps/Image';
 
 class MovieCard extends React.Component {
@@ -9,14 +9,14 @@ class MovieCard extends React.Component {
     const { movie } = this.props;
     return (
       <div data-testid="movie-card">
-        <MovieCardStyle height={`${310}px`} width={`${300}px`}>
+        <div className="teste">
           <Image src={movie.imagePath} alt={movie.title} />
           <h2>{movie.title}</h2>
           <article>
             <p>{movie.storyline}</p>
           </article>
           <Link to={`/movies/${movie.id}`}>VER DETALHES</Link>
-        </MovieCardStyle>
+        </div>
       </div>
     );
   }

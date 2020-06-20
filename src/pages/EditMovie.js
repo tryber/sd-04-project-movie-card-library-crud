@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import { MovieForm, Loading } from '../components';
 import * as movieAPI from '../services/movieAPI';
-import { MovieCardStyle, MovieListStyle } from '../styles/styles';
+import './Pages.css';
 
 class EditMovie extends Component {
   constructor(props) {
@@ -29,11 +29,11 @@ class EditMovie extends Component {
     if (loading) return <Loading />;
     return (
       <div data-testid="edit-movie">
-        <MovieListStyle>
-          <MovieCardStyle width={`${70}vw`}>
+        <div className="movieListStyle">
+          <div className="movieCardStyle">
             <MovieForm movie={movie} onSubmit={this.handleSubmit} />
-          </MovieCardStyle>
-        </MovieListStyle>
+          </div>
+        </div>
       </div>
     );
   }

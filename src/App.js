@@ -7,18 +7,16 @@ import {
   NewMovie,
   NotFound,
 } from './pages';
-import { HeaderStyle } from './styles/styles';
-import GlobalStyle from './styles/global';
+import './App.css';
 // push do tunico
 function App() {
   return (
     <React.Fragment>
-      <GlobalStyle />
       <BrowserRouter>
-        <HeaderStyle>
+        <header>
           Movie Library CRUD
           <Link to="/movies/new">ADICIONAR CARTÃO</Link>
-        </HeaderStyle>
+        </header>
         <Switch>
           <Route path="/movies/new" component={NewMovie} />
           <Route path="/movies/:id/edit" component={EditMovie} />

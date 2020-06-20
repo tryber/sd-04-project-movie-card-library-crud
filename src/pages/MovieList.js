@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import MovieCard from '../components/MovieCard';
-import { MovieListStyle } from '../styles/styles';
 import * as movieAPI from '../services/movieAPI';
 import Loading from '../components/Loading';
 import NotFound from './NotFound';
+import './Pages.css';
 
 class MovieList extends Component {
   constructor(props) {
@@ -24,11 +24,11 @@ class MovieList extends Component {
     if (error) return <NotFound />;
     return (
       <div data-testid="movie-list">
-        <MovieListStyle>
+        <div className="movieListStyle">
           {movies.map((movie) => (
             <MovieCard key={movie.title} movie={movie} />
           ))}
-        </MovieListStyle>
+        </div>
       </div>
     );
   }

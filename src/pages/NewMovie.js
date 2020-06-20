@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import * as movieAPI from '../services/movieAPI';
 import MovieForm from '../components/MovieForm';
-import { MovieCardStyle, MovieListStyle } from '../styles/styles';
+import './Pages.css';
 
 class NewMovie extends Component {
   constructor(props) {
@@ -22,11 +22,11 @@ class NewMovie extends Component {
     if (shouldRedirect) return <Redirect to="/" />;
     return (
       <div data-testid="new-movie">
-        <MovieListStyle>
-          <MovieCardStyle width={`${70}vw`}>
+        <div className="movieListStyle">
+          <div className="movieCardStyle">
             <MovieForm onSubmit={this.handleSubmit} />
-          </MovieCardStyle>
-        </MovieListStyle>
+          </div>
+        </div>
       </div>
     );
   }

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
-import { MovieCardStyle, MovieListStyle } from '../styles/styles';
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
+import './Pages.css';
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -25,8 +25,8 @@ class MovieDetails extends Component {
     const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
     return (
       <div data-testid="movie-details">
-        <MovieListStyle>
-          <MovieCardStyle width={`${70}vw`}>
+        <div className="movieListStyle">
+          <div className="movieCardStyle">
             <img alt="Movie Cover" src={`../${imagePath}`} />
             <h2>{title}</h2>
             <p>{`Subtitle: ${subtitle}`}</p>
@@ -44,8 +44,8 @@ class MovieDetails extends Component {
               DELETAR
             </Link>
             <Link to="/">VOLTAR</Link>
-          </MovieCardStyle>
-        </MovieListStyle>
+          </div>
+        </div>
       </div>
     );
   }
