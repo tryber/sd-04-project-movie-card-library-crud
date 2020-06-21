@@ -3,15 +3,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const MovieCard = (props) => {
-  const { movie } = this.props;
+  const { movie } = props;
   return (
     <div data-testid="movie-card">
       <img src={movie.imagePath} alt="movie Card" />
       <div className="movie-screen">
-          <h4>{movie.title}</h4>
-          <h5>{movie.subtitle}</h5>
-          <p>{movie.storyline}</p>
-        </div>
+        <h4>{movie.title}</h4>
+        <h5>{movie.subtitle}</h5>
+        <p>{movie.storyline}</p>
+      </div>
       <Link to={`movie/${movie.id}`} >Ver detalhes</Link>
     </div>
   );
