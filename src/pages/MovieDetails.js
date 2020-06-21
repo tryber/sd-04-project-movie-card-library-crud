@@ -30,10 +30,10 @@ class MovieDetails extends Component {
 
   render() {
     const { movie, isLoaded, shouldRiderict } = this.state;
-    // if (shouldRiderict) return <Redirect to="/" />;
+     if (shouldRiderict) return <Redirect to="/" />;
     if (isLoaded) {
       const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
-      // const { match } = this.props;
+       const { match } = this.props;
       return (
         <div data-testid="movie-details">
           <Link to="/">VOLTAR</Link>
