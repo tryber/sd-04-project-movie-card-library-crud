@@ -9,6 +9,7 @@ class MovieDetails extends Component {
     super(props);
     this.state = {
       isLoaded: false,
+      movie: '',
     };
   }
 
@@ -27,7 +28,7 @@ class MovieDetails extends Component {
     if (!isLoaded) {
       return <Loading />;
     }
-    const { title, storyline, imagePath, genre, rating, subtitle } = movie;
+    const { id, title, storyline, imagePath, genre, rating, subtitle } = movie;
 
     return (
       <div data-testid="movie-details">
@@ -37,7 +38,7 @@ class MovieDetails extends Component {
         <p>{`Storyline: ${storyline}`}</p>
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
-        <Link to="/movies/:id/edit">EDITAR</Link>
+        <Link to={`/movies/${id}/edit`}>EDITAR</Link>
         <Link to="/">VOLTAR</Link>
       </div>
     );
