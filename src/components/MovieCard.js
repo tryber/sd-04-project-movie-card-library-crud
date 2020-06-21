@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 const MovieCard = (props) => {
   const { movie } = props;
-  console.log(props)
   return (
     <div data-testid="movie-card">
       <img src={movie.imagePath} alt="movie Card" />
@@ -18,13 +17,14 @@ const MovieCard = (props) => {
   );
 };
 
-MovieCard.prototype = {
+MovieCard.propTypes = {
   movie: PropTypes.shape({
-    imagePath: PropTypes.string,
-    title: PropTypes.string,
     id: PropTypes.number,
+    imagePath: PropTypes.string,
     storyline: PropTypes.string,
+    subtitle: PropTypes.string,
+    title: PropTypes.string,
   }).isRequired,
-};
+}
 
 export default MovieCard;
