@@ -32,7 +32,7 @@ class MovieDetails extends Component {
     const { movie, isLoaded, shouldRiderict } = this.state;
     if (shouldRiderict) return <Redirect to="/" />;
     if (isLoaded) {
-      const {title, storyline, imagePath, genre, rating, subtitle, id, } = movie;
+      const { title, storyline, imagePath, genre, rating, subtitle, id, } = movie;
       const { match } = this.props;
       return (
         <div data-testid="movie-details">
