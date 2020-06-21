@@ -10,21 +10,22 @@ class MovieList extends Component {
     this.state = {
       error: null,
       isLoaded: false,
-      movies,
+      movies: '',
     };
   }
 
   componentDidMount() {
     movieAPI.getMovies()
-    .then(() => {
+    .then((movies) => {
       this.setState({
         isLoaded: true,
+        movies,
       });
     });
   }
 
   render() {
-    const { isLoaded } = this.state;
+    const { movies, isLoaded } = this.state;
 
     // Render Loading here if the request is still happening
     if (!isLoaded) {
