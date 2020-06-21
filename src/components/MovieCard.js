@@ -25,6 +25,6 @@ MovieCard.propTypes = {
     subtitle: PropTypes.string,
     title: PropTypes.string,
   }).isRequired,
-}
+};
 
 export default MovieCard;
