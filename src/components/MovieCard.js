@@ -3,8 +3,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const MovieCard = (props) => {
-    const { movie } = this.props;
-    return (
+  const { movie } = this.props;
+  return (
       <div data-testid="movie-card">
         <img src={movie.imagePath} alt="movie Card" />
         <div className="movie-screen">
@@ -15,7 +15,7 @@ const MovieCard = (props) => {
         <Link to={`movie/${id}`} >Ver detalhes</Link>
       </div>
     );
-  }
+};
 
 MovieCard.prototype = {
   movie: PropTypes.shape({
