@@ -16,7 +16,7 @@ class MovieDetails extends Component {
         subtitle: '',
         id: '',
       },
-      isLoaderd: false,
+      isLoaded: false,
       shouldRiderict: false,
     };
   }
