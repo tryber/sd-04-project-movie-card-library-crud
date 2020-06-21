@@ -22,16 +22,18 @@ class MovieForm extends React.Component {
 
     return (
       <div>
-        <label className="input-label" htmlFor="movie_title">Título</label><br />
+        <label className="input-label" htmlFor="movie_title">
+          Título
+        </label>
+        <br />
         <input
-        className="input-title"
+          className="input-title"
           placeholder="Insira o título"
           id="movie_title"
           type="text"
           value={title}
           onChange={(event) => this.updateMovie('title', event.target.value)}
         />
-        
       </div>
     );
   }
@@ -41,16 +43,18 @@ class MovieForm extends React.Component {
 
     return (
       <div>
-         <label className="input-label" htmlFor="movie_subtitle">Subtítulo</label><br />
+        <label className="input-label" htmlFor="movie_subtitle">
+          Subtítulo
+        </label>
+        <br />
         <input
-        className="input-subtitle"
+          className="input-subtitle"
           placeholder="Insira o subtítulo"
           id="movie_subtitle"
           type="text"
           value={subtitle}
           onChange={(event) => this.updateMovie('subtitle', event.target.value)}
         />
-       
       </div>
     );
   }
@@ -60,16 +64,20 @@ class MovieForm extends React.Component {
 
     return (
       <div className="row">
-        <label className="input-label" htmlFor="movie_image">Imagem</label><br />
+        <label className="input-label" htmlFor="movie_image">
+          Imagem
+        </label>
+        <br />
         <input
-        className="input-imagePath"
+          className="input-imagePath"
           placeholder="Insira o caminho da imagem"
           id="movie_image"
           type="text"
           value={imagePath}
-          onChange={(event) => this.updateMovie('imagePath', event.target.value)}
+          onChange={(event) =>
+            this.updateMovie('imagePath', event.target.value)
+          }
         />
-        
       </div>
     );
   }
@@ -79,14 +87,18 @@ class MovieForm extends React.Component {
 
     return (
       <div>
-        <label className="input-label" htmlFor="movie_storyline">Sinopse</label><br />
+        <label className="input-label" htmlFor="movie_storyline">
+          Sinopse
+        </label>
+        <br />
         <textarea
-        className="input-storyline"
+          className="input-storyline"
           id="movie_storyline"
           value={storyline}
-          onChange={(event) => this.updateMovie('storyline', event.target.value)}
+          onChange={(event) =>
+            this.updateMovie('storyline', event.target.value)
+          }
         />
-        
       </div>
     );
   }
@@ -96,9 +108,12 @@ class MovieForm extends React.Component {
 
     return (
       <div>
-        <label className="input-label" htmlFor="movie_genre">Gênero</label><br />
+        <label className="input-label" htmlFor="movie_genre">
+          Gênero
+        </label>
+        <br />
         <select
-        className="input-select"
+          className="input-select"
           id="movie_genre"
           value={genre}
           onChange={(event) => this.updateMovie('genre', event.target.value)}
@@ -117,9 +132,12 @@ class MovieForm extends React.Component {
 
     return (
       <div>
-        <label className="input-label" htmlFor="movie_rating">Avaliação</label><br />
+        <label className="input-label" htmlFor="movie_rating">
+          Avaliação
+        </label>
+        <br />
         <input
-        className="input-rating"
+          className="input-rating"
           placeholder="Dê a avaliação do filme"
           id="movie_rating"
           type="number"
@@ -129,7 +147,6 @@ class MovieForm extends React.Component {
           value={rating}
           onChange={(event) => this.updateMovie('rating', event.target.value)}
         />
-        
       </div>
     );
   }
@@ -138,7 +155,7 @@ class MovieForm extends React.Component {
     return (
       <div>
         <button
-        className="input-submit"
+          className="input-submit"
           type="button"
           onClick={this.handleSubmit}
         >

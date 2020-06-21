@@ -60,24 +60,22 @@ body {
 }
 
 .movie-card {
+  align-items: center;
   background-color: rgb(200, 200, 200);
   border: 5px groove black;
-  box-shadow: 0.1px 1px 3px rgba(0.1, 0.1, 0.1, 0.05) inset,
-    0.1px 0.1px 15px rgba(82, 168, 236, 0.6);
+  box-shadow: 0.1px 1px 3px inset, 0.1px 0.1px 15px rgba(82, 168, 236, 0.6);
+  display: flex;
+  flex-direction: column;
   height: 500px;
   justify-content: space-between;
   margin: 30px 30px;
   max-width: 18%;
   opacity: 0.6;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 }
 
 .movie-card:hover {
   background-image: linear-gradient(rgb(195, 195, 195), rgb(243, 223, 108));
-  box-shadow: 0.1px 1px 3px rgba(0.1, 0.1, 0.1, 0.05) inset,
-    0.1px 0.1px 30px rgba(241, 200, 15, 0.6);
+  box-shadow: 0.1px 1px 3px inset, 0.1px 0.1px 30px rgba(241, 200, 15, 0.6);
   opacity: 1;
   transition: all 0.4s;
 }
@@ -91,7 +89,7 @@ body {
 
 .movie-title {
   font-size: 30px;
-  margin-bottom: 10px;
+  margin: 10px 20px;
   text-decoration: underline;
 }
 
@@ -199,8 +197,7 @@ body {
   background-color: rgb(200, 200, 200);
   border-radius: 50px;
   border: 7px groove rgb(20, 20, 20);
-  box-shadow: 0.1px 1px 3px rgba(0.1, 0.1, 0.1, 0.05) inset,
-  0.1px 0.1px 30px rgba(192, 159, 12, 0.6);
+  box-shadow: 0.1px 1px 3px inset, 0.1px 0.1px 30px rgba(192, 159, 12, 0.6);
   display: flex;
   flex-direction: column;
   margin: 30px auto;
@@ -280,9 +277,7 @@ body {
   background-color: rgb(102, 24, 24);
 }
 
-.movie-details-back:hover,
-.movie-details-edit:hover,
-.movie-details-delete:hover {
+.movie-details-back:hover, .movie-details-edit:hover, .movie-details-delete:hover {
   font-weight: 900;
 }
 /* MOVIE DETAILS PAGE -----------------------------------------------------------*/
@@ -314,11 +309,16 @@ body {
   margin-left: 3px;
 }
 
-.input-title,
-.input-subtitle,
-.input-imagePath,
-.input-storyline,
-.input-select,
+.input-title, .input-subtitle, .input-imagePath, .input-storyline, .input-select {
+  background-color: rgb(226, 226, 226);
+  border: 3px solid rgb(20, 20, 20);
+  border-radius: 50px;
+  height: 25px;
+  margin: 20px 3px;
+  padding: 10px;
+  width: 500px;
+}
+
 .input-rating {
   background-color: rgb(226, 226, 226);
   border: 3px solid rgb(20, 20, 20);
@@ -329,12 +329,12 @@ body {
   width: 500px;
 }
 
-.input-title:focus,
-.input-subtitle:focus,
-.input-imagePath:focus,
-.input-storyline:focus,
-.input-select:focus,
-.input-rating:focus {
+.input-title:focus, .input-subtitle:focus, .input-imagePath:focus, .input-storyline:focus {
+  background-color: whitesmoke;
+  outline: none;
+}
+
+.input-select:focus, .input-rating:focus {
   background-color: whitesmoke;
   outline: none;
 }
@@ -365,8 +365,7 @@ body {
 }
 
 .input-submit:hover {
-  box-shadow: 0.1px 1px 3px rgba(0.1, 0.1, 0.1, 0.05) inset,
-  0.1px 0.1px 80px rgba(32, 202, 16, 0.6);
+  box-shadow: 0.1px 1px 3px inset, 0.1px 0.1px 80px rgba(32, 202, 16, 0.6);
   cursor: pointer;
   transition: all 0.2s;
 }
