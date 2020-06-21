@@ -23,12 +23,9 @@ class EditMovie extends React.Component {
   }
 
   handleSubmit(updatedMovie) {
-    movieAPI.updateMovie(updatedMovie).then((movie) =>
-      this.setState({
-        movie: updatedMovie,
-        shouldRedirect: true,
-      }),
-    );
+    movieAPI.updateMovie(updatedMovie).then(() => this.setState({
+      shouldRedirect: true,
+    }));
   }
 
   render() {
