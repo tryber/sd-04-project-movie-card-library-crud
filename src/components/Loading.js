@@ -5,7 +5,7 @@ class Loading extends Component {
     function carregar() {
       return <div>Carregando...</div>;
     }
-    return <div>{carregando()}</div>;
+    return <div>{carregar()}</div>;
   }
 }
 

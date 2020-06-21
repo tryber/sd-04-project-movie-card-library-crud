@@ -8,31 +8,31 @@ class MovieDetails extends Component {
     super();
     this.state = {
       movie: {
-        title: "",
-        storyline: "",
-        imagePath: "",
-        genre: "",
-        rating: "",
-        subtitle: "",
-        id: "",
+        title: '',
+        storyline: '',
+        imagePath: '',
+        genre: '',
+        rating: '',
+        subtitle: '',
+        id: '',
       },
       isLoaderd: false,
       shouldRiderict: false,
     };
   }
+  componentDidMount() {
+    const { match } = this.props;
+    movieAPI.getMovie(match.params.id).then((movie) => {
+      const isLoaded = true;
+      this.setState({ movie, isLoaded });
+    });
+  }
+
   render() {
     const { movie, isLoaded, shouldRiderict } = this.state;
     if (shouldRiderict) return <Redirect to="/" />;
     if (isLoaded) {
-      const {
-        title,
-        storyline,
-        imagePath,
-        genre,
-        rating,
-        subtitle,
-        id,
-      } = movie;
+      const {title, storyline, imagePath, genre, rating, subtitle, id, } = movie;
       const { match } = this.props;
       return (
         <div data-testid="movie-details">
