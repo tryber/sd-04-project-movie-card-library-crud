@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
 
@@ -30,7 +30,7 @@ class MovieDetails extends Component {
 
   render() {
     const { movie, isLoaded, shouldRiderict } = this.state;
-    if (shouldRiderict) return <Redirect to="/" />;
+    // if (shouldRiderict) return <Redirect to="/" />;
     if (isLoaded) {
       const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
       // const { match } = this.props;
