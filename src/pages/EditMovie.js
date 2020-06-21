@@ -9,7 +9,7 @@ class EditMovie extends Component {
     super(props);
     this.state = {
       movie: '',
-      status: false,
+      status: 'loading',
       shouldRedirect: false,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,7 +17,9 @@ class EditMovie extends Component {
 
   componentDidMount() {
     const { match } = this.props;
-    movieAPI.getMovies(match.params.id).then((movie) => this.setState({ movie, status: true }));
+    movieAPI
+      .getMovies(match.params.id)
+      .then((movie) => this.setState({ movie, status: 'isLoaded' }));
   }
 
   handleSubmit(updatedMovie) {
