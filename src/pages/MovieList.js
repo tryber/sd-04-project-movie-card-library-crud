@@ -25,12 +25,7 @@ class MovieList extends Component {
   render() {
     const { movies, loading } = this.state;
 
-    if (loading)
-      return (
-        <div className="loadingDiv">
-          <Loading />
-        </div>
-      );
+    if (loading) return (<div className="loadingDiv"><Loading /></div>);
     return (
       <div>
         <div className="add-movie-div">

@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(20, 20, 20);
+  background-color: rgb(20 , 20 , 20);
   box-sizing: border-box;
 }
 
@@ -19,7 +19,7 @@ body {
 }
 
 .loadingTitle {
-  color: rgb(3, 1, 1);
+  color: rgb(3 , 1 , 1);
   font-size: 60px;
 }
 
@@ -31,28 +31,29 @@ body {
 }
 
 @keyframes glow {
+
   from {
     text-shadow: 0.1px 0.1px 10px white, 0.1px 0.1px 20px white,
-      0.1px 0.1px 30px rgba(241, 200, 15, 0.6),
-      0.1px 0.1px 40px rgba(241, 200, 15, 0.6),
-      0.1px 0.1px 50px rgba(241, 200, 15, 0.6),
-      0.1px 0.1px 60px rgba(241, 200, 15, 0.6),
-      0.1px 0.1px 70px rgba(241, 200, 15, 0.6);
+      0.1px 0.1px 30px rgba(241 , 200 , 15 , 0.6),
+      0.1px 0.1px 40px rgba(241 , 200 , 15 , 0.6),
+      0.1px 0.1px 50px rgba(241 , 200 , 15 , 0.6),
+      0.1px 0.1px 60px rgba(241 , 200 , 15 , 0.6),
+      0.1px 0.1px 70px rgba(241 , 200 , 15 , 0.6);
   }
 
   to {
     text-shadow: 0.1px 0.1px 20px white,
-      0.1px 0.1px 30px rgba(241, 200, 15, 0.6),
-      0.1px 0.1px 40px rgba(241, 200, 15, 0.6),
-      0.1px 0.1px 50px rgba(241, 200, 15, 0.6),
-      0.1px 0.1px 60px rgba(241, 200, 15, 0.6),
-      0.1px 0.1px 70px rgba(241, 200, 15, 0.6),
-      0.1px 0.1px 80px rgba(241, 200, 15, 0.6);
+      0.1px 0.1px 30px rgba(241 , 200 , 15 , 0.6),
+      0.1px 0.1px 40px rgba(241 , 200 , 15 , 0.6),
+      0.1px 0.1px 50px rgba(241 , 200 , 15 , 0.6),
+      0.1px 0.1px 60px rgba(241 , 200 , 15 , 0.6),
+      0.1px 0.1px 70px rgba(241 , 200 , 15 , 0.6),
+      0.1px 0.1px 80px rgba(241 , 200 , 15 , 0.6);
   }
 }
 
 .movies-div {
-  background-color: rgb(20, 20, 20);
+  background-color: rgb(20 , 20 , 20);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -61,27 +62,27 @@ body {
 
 .movie-card {
   align-items: center;
-  background-color: rgb(200, 200, 200);
+  background-color: rgb(200 , 200 , 200);
   border: 5px groove black;
-  box-shadow: 0.1px 1px 3px inset, 0.1px 0.1px 15px rgba(82, 168, 236, 0.6);
+  box-shadow: 0.1px 1px 3px inset, 0.1px 0.1px 15px rgba(82 , 168 , 236 , 0.6);
   display: flex;
   flex-direction: column;
   height: 500px;
   justify-content: space-between;
-  margin: 30px 30px;
+  margin: 30px;
   max-width: 18%;
   opacity: 0.6;
 }
 
 .movie-card:hover {
-  background-image: linear-gradient(rgb(195, 195, 195), rgb(243, 223, 108));
-  box-shadow: 0.1px 1px 3px inset, 0.1px 0.1px 30px rgba(241, 200, 15, 0.6);
+  background-image: linear-gradient(rgb(195 , 195 , 195), rgb(243 , 223 , 108));
+  box-shadow: 0.1px 1px 3px inset, 0.1px 0.1px 30px rgba(241 , 200 , 15 , 0.6);
   opacity: 1;
   transition: all 0.4s;
 }
 
 .movie-img {
-  border: 1px solid rgb(20, 20, 20);
+  border: 1px solid rgb(20 , 20 , 20);
   margin: 0;
   padding: 0;
   width: 100%;
@@ -94,9 +95,9 @@ body {
 }
 
 .movie-subtitle {
-  margin: 20px;
   font-size: 20px;
   font-weight: 700;
+  margin: 20px;
 }
 
 .movie-storyline {
@@ -106,7 +107,7 @@ body {
 
 .details-div {
   align-items: center;
-  background-color: rgb(20, 20, 20);
+  background-color: rgb(20 , 20 , 20);
   display: flex;
   height: 50px;
   justify-content: flex-end;
@@ -114,7 +115,7 @@ body {
 }
 .movie-details {
   border-radius: 50px;
-  color: rgba(161, 161, 248, 0.6);
+  color: rgba(161 , 161 , 248 , 0.6);
   font-style: italic;
   letter-spacing: 0.1em;
   padding: 5px;
@@ -127,20 +128,21 @@ body {
 }
 
 @keyframes glow-details {
+
   from {
     text-shadow: 0.5px 0.5px 10px white, 0.5px 0.5px 20px white,
-      0.5px 0.5px 30px rgba(241, 200, 15, 0.6),
-      0.5px 0.5px 40px rgba(161, 161, 248, 0.6);
+      0.5px 0.5px 30px rgba(241 , 200 , 15 , 0.6),
+      0.5px 0.5px 40px rgba(161 , 161 , 248 , 0.6);
   }
 
   to {
     text-shadow: 0.5px 0.5px 20px white,
-      0.5px 0.5px 30px rgba(161, 161, 248, 0.6),
-      0.5px 0.5px 40px rgba(161, 161, 248, 0.6),
-      0.5px 0.5px 50px rgba(161, 161, 248, 0.6),
-      0.5px 0.5px 60px rgba(161, 161, 248, 0.6),
-      0.5px 0.5px 70px rgba(161, 161, 248, 0.6),
-      0.5px 0.5px 80px rgba(161, 161, 248, 0.6);
+      0.5px 0.5px 30px rgba(161 , 161 , 248 , 0.6),
+      0.5px 0.5px 40px rgba(161 , 161 , 248 , 0.6),
+      0.5px 0.5px 50px rgba(161 , 161 , 248 , 0.6),
+      0.5px 0.5px 60px rgba(161 , 161 , 248 , 0.6),
+      0.5px 0.5px 70px rgba(161 , 161 , 248 , 0.6),
+      0.5px 0.5px 80px rgba(161 , 161 , 248 , 0.6);
   }
 }
 
@@ -156,7 +158,7 @@ body {
 }
 
 .add-movie-link {
-  color: rgba(241, 200, 15, 0.6);
+  color: rgba(241 , 200 , 15 , 0.6);
   font-size: 20px;
   font-weight: 900;
   letter-spacing: 0.2em;
@@ -169,35 +171,37 @@ body {
 }
 
 @keyframes glow-add {
+
   from {
     text-shadow: 0.1px 0.1px 10px white, 0.1px 0.1px 20px white,
-      0.1px 0.1px 30px rgba(192, 159, 12, 0.6),
-      0.1px 0.1px 40px rgba(192, 159, 12, 0.6);
+      0.1px 0.1px 30px rgba(192 , 159 , 12 , 0.6),
+      0.1px 0.1px 40px rgba(192 , 159 , 12 , 0.6);
   }
+
   to {
     text-shadow: 0.5px 0.5px 20px white,
-      0.5px 0.5px 30px rgba(192, 159, 12, 0.6),
-      0.5px 0.5px 40px rgba(192, 159, 12, 0.6),
-      0.5px 0.5px 50px rgba(192, 159, 12, 0.6),
-      0.5px 0.5px 60px rgba(192, 159, 12, 0.6),
-      0.5px 0.5px 70px rgba(192, 159, 12, 0.6),
-      0.5px 0.5px 80px rgba(192, 159, 12, 0.6);
+      0.5px 0.5px 30px rgba(192 , 159 , 12 , 0.6),
+      0.5px 0.5px 40px rgba(192 , 159 , 12 , 0.6),
+      0.5px 0.5px 50px rgba(192 , 159 , 12 , 0.6),
+      0.5px 0.5px 60px rgba(192 , 159 , 12 , 0.6),
+      0.5px 0.5px 70px rgba(192 , 159 , 12 , 0.6),
+      0.5px 0.5px 80px rgba(192 , 159 , 12 , 0.6);
   }
 }
 
-/* MOVIE DETAILS PAGE -----------------------------------------------------------*/
 .movie-details-divzona {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .movie-detail-div {
   align-items: center;
-  background-color: rgb(200, 200, 200);
+  background-color: rgb(200 , 200 , 200);
+  border: 7px groove rgb(20 , 20 , 20);
   border-radius: 50px;
-  border: 7px groove rgb(20, 20, 20);
-  box-shadow: 0.1px 1px 3px inset, 0.1px 0.1px 30px rgba(192, 159, 12, 0.6);
+  box-shadow: 0.1px 1px 3px inset, 0.1px 0.1px 30px rgba(192 , 159 , 12 , 0.6);
   display: flex;
   flex-direction: column;
   margin: 30px auto;
@@ -205,7 +209,7 @@ body {
 }
 
 .movie-detail-img {
-  border: 3px groove rgb(20, 20, 20);
+  border: 3px groove rgb(20 , 20 , 20);
   border-radius: 30px;
   margin-top: 25px;
   width: 600px;
@@ -254,19 +258,17 @@ body {
   padding: 10px;
 }
 
-.movie-details-back,
-.movie-details-edit,
-.movie-details-delete {
-  border: 5px groove rgb(20, 20, 20);
+.movie-details-back, .movie-details-edit, .movie-details-delete {
+  border: 5px groove rgb(20 , 20 , 20);
   border-radius: 50px;
-  color: rgb(20, 20, 20);
+  color: rgb(20 , 20 , 20);
   margin: 10px 30px;
   padding: 15px;
   text-decoration: none;
 }
 
 .movie-details-back {
-  background-color: rgb(200, 200, 200);
+  background-color: rgb(200 , 200 , 200);
 }
 
 .movie-details-edit {
@@ -274,15 +276,12 @@ body {
 }
 
 .movie-details-delete {
-  background-color: rgb(102, 24, 24);
+  background-color: rgb(102 , 24 , 24);
 }
 
 .movie-details-back:hover, .movie-details-edit:hover, .movie-details-delete:hover {
   font-weight: 900;
 }
-/* MOVIE DETAILS PAGE -----------------------------------------------------------*/
-
-/* NEW MOVIE PAGE -----------------------------------------------------------*/
 
 .form-div {
   align-items: center;
@@ -294,8 +293,8 @@ body {
 
 .new-movie-form {
   align-items: center;
-  background-image: linear-gradient(rgb(200, 200, 200), rgb(100, 100, 100));
-  border: 5px solid rgb(5, 5, 5);
+  background-image: linear-gradient(rgb(200 , 200 , 200), rgb(100 , 100 , 100));
+  border: 5px solid rgb(5 , 5 , 5);
   border-radius: 40px;
   display: flex;
   flex-direction: column;
@@ -310,33 +309,13 @@ body {
 }
 
 .input-title, .input-subtitle, .input-imagePath, .input-storyline, .input-select {
-  background-color: rgb(226, 226, 226);
-  border: 3px solid rgb(20, 20, 20);
+  background-color: rgb(226 , 226 , 226);
+  border: 3px solid rgb(20 , 20 , 20);
   border-radius: 50px;
   height: 25px;
   margin: 20px 3px;
   padding: 10px;
   width: 500px;
-}
-
-.input-rating {
-  background-color: rgb(226, 226, 226);
-  border: 3px solid rgb(20, 20, 20);
-  border-radius: 50px;
-  height: 25px;
-  margin: 20px 3px;
-  padding: 10px;
-  width: 500px;
-}
-
-.input-title:focus, .input-subtitle:focus, .input-imagePath:focus, .input-storyline:focus {
-  background-color: whitesmoke;
-  outline: none;
-}
-
-.input-select:focus, .input-rating:focus {
-  background-color: whitesmoke;
-  outline: none;
 }
 
 .input-storyline {
@@ -354,9 +333,8 @@ body {
 }
 
 .input-submit {
-  animation: submit-glow 1s ease-in-out infinite alternate;
-  background-image: linear-gradient(to right, rgb(169, 197, 125), rgb(40, 202, 0));
-  border: 3px solid rgb(20, 20, 20);
+  background-image: linear-gradient(rgb(169 , 197 , 125), rgb(40 , 202 , 0));
+  border: 3px solid rgb(20 , 20 , 20);
   border-radius: 50px;
   font-size: 30px;
   font-weight: 800;
@@ -364,10 +342,28 @@ body {
   width: 200px;
 }
 
+.input-rating {
+  background-color: rgb(226 , 226 , 226);
+  border: 3px solid rgb(20 , 20 , 20);
+  border-radius: 50px;
+  height: 25px;
+  margin: 20px 3px;
+  padding: 10px;
+  width: 500px;
+}
+
+.input-title:focus, .input-subtitle:focus, .input-imagePath:focus {
+  background-color: whitesmoke;
+  outline: none;
+}
+
+.input-select:focus, .input-rating:focus, .input-storyline:focus {
+  background-color: whitesmoke;
+  outline: none;
+}
+
 .input-submit:hover {
-  box-shadow: 0.1px 1px 3px inset, 0.1px 0.1px 80px rgba(32, 202, 16, 0.6);
+  box-shadow: 0.1px 1px 3px inset, 0.1px 0.1px 80px rgba(32 , 202 , 16 , 0.6);
   cursor: pointer;
   transition: all 0.2s;
 }
-
-/* NEW MOVIE PAGE -----------------------------------------------------------*/
