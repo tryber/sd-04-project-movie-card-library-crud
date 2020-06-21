@@ -59,7 +59,7 @@ class MovieDetails extends Component {
         <p>{`Rating: ${rating}`}</p>
         <Link to={linkEdit} >EDITAR</Link>
         <Link to="/" >VOLTAR</Link>
-        <button onClick={(() => { this.OnDeleteMovie(); })}>DELETAR</button>
+        <Link to="/" onClick={(() => { this.OnDeleteMovie(); })}>DELETAR</Link>
       </div>
     );
   }
