@@ -6,14 +6,14 @@ const MovieCard = (props) => {
   const { movie } = this.props;
   return (
     <div data-testid="movie-card">
-        <img src={movie.imagePath} alt="movie Card" />
-        <div className="movie-screen">
+      <img src={movie.imagePath} alt="movie Card" />
+      <div className="movie-screen">
           <h4>{movie.title}</h4>
           <h5>{movie.subtitle}</h5>
           <p>{movie.storyline}</p>
         </div>
-        <Link to={`movie/${movie.id}`} >Ver detalhes</Link>
-      </div>
+      <Link to={`movie/${movie.id}`} >Ver detalhes</Link>
+    </div>
   );
 };
 
