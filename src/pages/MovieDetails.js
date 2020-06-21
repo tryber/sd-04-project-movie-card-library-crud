@@ -9,21 +9,20 @@ class MovieDetails extends Component {
     super(props);
 
     this.state = {
-      movie: '',
-      loading: true,
+      movie: null,
     };
   }
 
   componentDidMount() {
     const { match } = this.props;
-    movieAPI.getMovies(match.params.id).then((movie) => this.setState({ movie, loading: false }));
+    movieAPI.getMovies(match.params.id).then((movie) => this.setState({ movie }));
   }
 
   render() {
-    const { movie, loading } = this.state;
-    if (loading || !movie) return <Loading />;
+    const { movie } = this.state;
+    if (!movie) return <Loading />;
     const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
-
+    // console.log(movie);
     return (
       <div data-testid="movie-details">
         <img alt="Movie Cover" src={`../${imagePath}`} />
