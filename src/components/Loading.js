@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 
 class Loading extends Component {
   render() {
-    return (
-      <div>Carregando...</div>
-    );
+    function carregar(){
+    return <div>Carregando...</div>
+      }
+      return <div>{carregando()}</div>
   }
 }
 

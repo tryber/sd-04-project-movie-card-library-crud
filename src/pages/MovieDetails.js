@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom'
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
 
@@ -21,21 +21,35 @@ class MovieDetails extends Component {
     }
   }
   render() {
-    // Change the condition to check the state
-    if (true) return <Loading />;
+    const { movie, isLoaded, shouldRiderict } = this.state;
+      if(shouldRiderict) return <Redirect to="/" />
+      if(isLoaded) {
+        const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
+        const { match } = this.props;
+        return (
+          <div data-testid="movie-details">
+            <Link to="/">VOLTAR</Link>
+            <img alt="Movie Cover" src={`../${imagePath}`} />
+            <p>{`Title: ${title}`}</p>
+            <p>{`Title: ${subtitle}`}</p>
+            <p>{`Title: ${storyline}`}</p>
+            <p>{`Title: ${genre}`}</p>
+            <p>{`Title: ${rating}`}</p>
+            <Link to={`/movies/${id}/edit`}>EDITAR</Link>
+            <Link to="/" onClick={() => {
+              movieAPI.deleteMovie(id);
+              this.setState({ shouldRiderict: true })
+            }}>
+              DELETAR
+            </Link>
 
-    const { title, storyline, imagePath, genre, rating, subtitle } = movie;
+          </div>
+        )
 
-    return (
-      <div data-testid="movie-details">
-        <img alt="Movie Cover" src={`../${imagePath}`} />
-        <p>{`Subtitle: ${subtitle}`}</p>
-        <p>{`Storyline: ${storyline}`}</p>
-        <p>{`Genre: ${genre}`}</p>
-        <p>{`Rating: ${rating}`}</p>
-      </div>
-    );
+      }
+      return <Loading />
+    }
+
   }
-}
 
 export default MovieDetails;
