@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 class MovieForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { ...props.movie };
+    this.state = { ...props.movie }; // props do EditMovie da linha 49;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -153,5 +153,9 @@ class MovieForm extends React.Component {
     );
   }
 }
+
+MovieForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
 
 export default MovieForm;
