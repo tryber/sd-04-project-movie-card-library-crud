@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
 
@@ -16,7 +15,6 @@ class MovieDetails extends Component {
   }
 
   componentDidMount() {
-    // console.log(this.props.match.params.id);
     movieAPI.getMovie(this.props.match.params.id).then((arrMovie) =>
     this.setState({
       isLoading: false,
@@ -26,12 +24,9 @@ class MovieDetails extends Component {
 
 
   render() {
-    // console.log(this.props);
     const { isLoading, movie } = this.state;
     if (isLoading) return <Loading />;
-
     const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
-
     return (
       <div data-testid="movie-details">
         <img alt="Movie Cover" src={`../${imagePath}`} />
