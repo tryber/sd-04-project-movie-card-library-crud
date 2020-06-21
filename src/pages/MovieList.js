@@ -25,11 +25,18 @@ class MovieList extends Component {
   render() {
     const { movies, loading } = this.state;
 
-    if (loading) return <Loading />;
+    if (loading)
+      return (
+        <div className="loadingDiv">
+          <Loading />
+        </div>
+      );
     return (
       <div>
         <div className="add-movie-div">
-          <Link className="add-movie-link" to="/movies/new">ADICIONAR CARTÃO</Link>
+          <Link className="add-movie-link" to="/movies/new">
+            ADICIONAR CARTÃO
+          </Link>
         </div>
         <div data-testid="movie-list" className="movies-div">
           {movies.map((movie) => (

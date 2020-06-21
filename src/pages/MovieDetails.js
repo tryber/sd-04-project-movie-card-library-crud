@@ -30,19 +30,27 @@ class MovieDetails extends Component {
     if (loading || !movie) return <Loading />;
 
     return (
-      <div>
-        <div data-testid="movie-details">
-          <img alt="Movie Cover" src={`../${imagePath}`} />
-          <p>{`Title: ${title}`}</p>
-          <p>{`Subtitle: ${subtitle}`}</p>
-          <p>{`Storyline: ${storyline}`}</p>
-          <p>{`Genre: ${genre}`}</p>
-          <p>{`Rating: ${rating}`}</p>
+      <div className="movie-details-divzona">
+        <div data-testid="movie-details" className="movie-detail-div">
+          <img
+            className="movie-detail-img"
+            alt="Movie Cover"
+            src={`../${imagePath}`}
+          />
+          <p className="movie-detail-title">{`${title}`}</p>
+          <p className="movie-detail-subtitle">{`${subtitle}`}</p>
+          <p className="movie-detail-storyline">{`${storyline}`}</p>
+          <p className="movie-detail-genre">{`Genre: ${genre}`}</p>
+          <p className="movie-detail-rating">{`Rating: ${rating}`}</p>
         </div>
         <div>
-          <Link to={`/movies/${id}/edit`}>EDITAR</Link>
-          <Link to="/">VOLTAR</Link>
-          <Link to="/" onClick={() => movieAPI.deleteMovie(id)}>DELETAR</Link>
+          <Link className="movie-details-back" to="/">VOLTAR</Link>
+          <Link className="movie-details-edit" to={`/movies/${id}/edit`}>EDITAR</Link>
+          <Link
+            className="movie-details-delete" to="/" onClick={() => movieAPI.deleteMovie(id)}
+          >
+            DELETAR
+          </Link>
         </div>
       </div>
     );
