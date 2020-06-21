@@ -17,25 +17,25 @@ class EditMovie extends Component {
 
   componentDidMount() {
     movieAPI.getMovie(this.props.match.params.id)
-    .then((movie) => 
+    .then((movie) =>
     this.setState({
       isLoaded: true,
       movie,
-    }))
+    }));
   }
 
   handleSubmit(updatedMovie) {
-    movieAPI.updateMovie(updatedMovie).then(() => this.setState({shouldRedirect: true}));
+    movieAPI.updateMovie(updatedMovie).then(() => this.setState({ shouldRedirect: true }));
   }
 
   render() {
     const { isLoaded, shouldRedirect, movie } = this.state;
     if (shouldRedirect) {
-      return <Redirect to="/" />
+      return <Redirect to="/" />;
     }
 
     if (!isLoaded) {
-      return <Loading />
+      return <Loading />;
     }
 
     return (
