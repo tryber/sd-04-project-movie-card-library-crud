@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
+import PropTypes from 'prop-types';
 
 class MovieDetails extends Component {
   constructor() {
@@ -58,6 +59,12 @@ class MovieDetails extends Component {
     }
     return <Loading />;
   }
+}
+
+MovieDetails.propTypes = {
+  match: PropTypes.shape({
+      id: PropTypes.number
+    }).isRequired,
 }
 
 export default MovieDetails;
