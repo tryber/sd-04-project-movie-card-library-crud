@@ -10,27 +10,26 @@ class EditMovie extends Component {
     this.state = {
       movie: '',
       status: 'loading',
-      shouldRedirect: '',
+      shouldRedirect: false,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   async componentDidMount() {
     await movieAPI.getMovie(this.props.match.params.id)
       .then((movie) => {
-        this.setState({ movie, status: 'true' });
+        this.setState({ movie, status: true });
       });
   }
 
   handleSubmit(updatedMovie) {
-    movieAPI.updateMovie(updatedMovie);
-    const id = this.props.match.params.id;
-    this.setState({ shouldRedirect: `/movies/${id}` });
+    console.log(updatedMovie);
+    movieAPI.updateMovie(updatedMovie).then(() => this.setState({ shouldRedirect: true }))
   }
 
   render() {
     const { status, shouldRedirect, movie } = this.state;
     if (shouldRedirect) {
-      return <Redirect to={shouldRedirect} />;
+      return <Redirect to={'/'} />;
     }
 
     if (status === 'loading') {

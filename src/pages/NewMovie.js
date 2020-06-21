@@ -9,9 +9,9 @@ class NewMovie extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = ({ redirect: false });
   }
-  async handleSubmit(newMovie) {
-    await movieAPI.createMovie(newMovie);
-    await this.setState({ redirect: true });
+  handleSubmit(newMovie) {
+    movieAPI.createMovie(newMovie);
+    this.setState({ redirect: true });
   }
   render() {
     const { redirect } = this.state;
