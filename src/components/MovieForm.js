@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class MovieForm extends React.Component {
   constructor(props) {
@@ -88,19 +89,17 @@ class MovieForm extends React.Component {
 
     return (
       <div>
-        <label htmlFor="movie_genre">
-          Gênero
-          <select
-            id="movie_genre"
-            value={genre}
-            onChange={(event) => this.updateMovie('genre', event.target.value)}
-          >
-            <option value="action">Ação</option>
-            <option value="comedy">Comédia</option>
-            <option value="thriller">Suspense</option>
-            <option value="fantasy">Fantasia</option>
-          </select>
-        </label>
+        <label htmlFor="movie_genre">Gênero</label>
+        <select
+          id="movie_genre"
+          value={genre}
+          onChange={(event) => this.updateMovie('genre', event.target.value)}
+        >
+          <option value="action">Ação</option>
+          <option value="comedy">Comédia</option>
+          <option value="thriller">Suspense</option>
+          <option value="fantasy">Fantasia</option>
+        </select>
       </div>
     );
   }
@@ -155,15 +154,8 @@ class MovieForm extends React.Component {
   }
 }
 
-export default MovieForm;
-
-MovieForm.defaultProps = {
-  movie: {
-    title: '',
-    subtitle: '',
-    imagePath: '',
-    storyline: '',
-    genre: '',
-    rating: 0,
-  },
+MovieForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
 };
+
+export default MovieForm;

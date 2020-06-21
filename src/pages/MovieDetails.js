@@ -1,62 +1,56 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import * as movieAPI from '../services/movieAPI';
-import { Loading } from '../components';
+import Loading from '../components/Loading';
 
-class MovieDetails extends Component {
+class MovieDetails extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      movie: {},
-      loading: true,
-    };
-  }
-  componentDidMount() {
-    movieAPI.getMovie(this.props.match.params.id).then((resp) => {
-      this.setState({
-        movie: resp,
-        loading: false,
-      });
-    });
+    this.state = { movie: null };
+    this.handleClick = this.handleClick.bind(this);
   }
 
+  componentDidMount() {
+    const { id } = this.props.match.params;
+    movieAPI.getMovie(id).then((movie) =>
+      this.setState({ movie }),
+    );
+  }
+
+  handleClick() {
+    const { id } = this.props.match.params;
+    movieAPI.deleteMovie(id);
+  }
 
   render() {
-    if (this.state.loading) return <Loading />;
+    const { movie } = this.state;
+    if (movie === null) return <Loading />;
 
-    const { id, title, storyline, imagePath, genre, rating, subtitle } = this.state.movie;
+    const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
 
     return (
       <div data-testid="movie-details">
-        <h1>{title}</h1>
         <img alt="Movie Cover" src={`../${imagePath}`} />
+        <p>{title}</p>
         <p>{`Subtitle: ${subtitle}`}</p>
         <p>{`Storyline: ${storyline}`}</p>
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
-        <Link to={`/movies/${id}/edit`}>EDITAR</Link>
-        <Link to="/">VOLTAR</Link>
-        <Link to="/" onClick={() => movieAPI.deleteMovie(id)}>DELETAR</Link>
+        <Link to={`/movies/${id}/edit`} >EDITAR</Link>
+        <Link to={'/'} >VOLTAR</Link>
+        <Link to={'/'} onClick={this.handleClick}>DELETAR</Link>
       </div>
     );
   }
 }
 
-export default MovieDetails;
-
-MovieDetails.defaultProps = {
-  match: {
-    params: {
-      id: '',
-    },
-  },
-};
-
 MovieDetails.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string.isRequired,
-    }),
-  }),
+    }).isRequired,
+  }).isRequired,
 };
+
+export default MovieDetails;
