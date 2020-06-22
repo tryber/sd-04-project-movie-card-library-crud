@@ -32,13 +32,14 @@ class MovieDetails extends Component {
     if (redirect) return <Redirect to="/" />;
 
     return (
-      <div data-testid="movie-details">
+      <div data-testid="movie-details" className="movie-card-big">
         <img alt="Movie Cover" src={`../${imagePath}`} />
         <p>{`Title: ${title}`}</p>
         <p>{`Subtitle: ${subtitle}`}</p>
         <p>{`Storyline: ${storyline}`}</p>
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
+        <hr />
         <Link to={`/movies/${movie.id}/edit`}>EDITAR&nbsp;</Link>
         <Link
           to="/"

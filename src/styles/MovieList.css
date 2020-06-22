@@ -22,21 +22,35 @@ body {
 .movie-list {
   display: flex;
   flex-flow: row wrap;
-  padding: 48px 30px;
+  padding: 30px;
 }
 
 .movie-card {
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 3px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   height: 450px;
-  margin: 5px;
+  margin: 30px;
   overflow: hidden;
   width: 300px;
 }
 
+.movie-card-big {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  height: 720px;
+  margin: 30px;
+  overflow: hidden;
+  padding: 10px;
+  width: 700px;
+}
 
 .movie-card-image {
   width: 100%;
