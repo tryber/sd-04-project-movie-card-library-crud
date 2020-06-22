@@ -11,7 +11,6 @@ class EditMovie extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  
   componentDidMount() {
     movieAPI.getMovie(this.props.match.params.id).then((movie) => {
       const isLoaded = true;
@@ -27,7 +26,7 @@ class EditMovie extends Component {
     const { isLoaded, shouldRedirect, movie } = this.state;
     if (shouldRedirect) {
       // Redirect
-      return <Redirect to="/" />
+      return <Redirect to="/" />;
     }
 
     if (isLoaded) {
@@ -38,7 +37,7 @@ class EditMovie extends Component {
         </div>
       );
     }
-    return <Loading />
+    return <Loading />;
   }
 }
 
