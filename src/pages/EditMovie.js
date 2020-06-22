@@ -30,7 +30,6 @@ class EditMovie extends Component {
     }
 
     if (isLoaded) {
-      // render Loading
       return (
         <div data-testid="edit-movie">
           <MovieForm movie={movie} onSubmit={this.handleSubmit} />
