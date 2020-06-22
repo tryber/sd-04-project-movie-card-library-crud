@@ -13,7 +13,7 @@ function App() {
   return (
     <BrowserRouter>
       <header>
-        Movie Library CRUD
+        Movie Library CRUD <br />
         <Link to="/movies/new">ADICIONAR CARTÃO</Link>
       </header>
       <Switch>
