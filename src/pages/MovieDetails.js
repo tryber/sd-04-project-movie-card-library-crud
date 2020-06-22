@@ -40,7 +40,12 @@ class MovieDetails extends Component {
     );
   }
 }
+
 MovieDetails.propTypes = {
   match: PropTypes.shape({ params: PropTypes.shape({ id: PropTypes.number }) }),
+};
+
+MovieDetails.defaultProps = {
+  match: { params: { id: 100 } },
 };
 export default MovieDetails;
