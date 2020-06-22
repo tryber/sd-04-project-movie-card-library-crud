@@ -1,6 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import { NotFound, MovieList, NewMovie, EditMovie, MovieDetails } from './pages';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { NewMovie, MovieDetails, EditMovie, MovieList, NotFound } from './pages';
 
 function App() {
   return (
@@ -8,15 +8,15 @@ function App() {
       <div>
         <header>
           <h1>Movie Card Library CRUD</h1>
-          <Link to="/movies/new">Adicionar Cartão</Link>
+          <Link to="/movies/new">ADICIONAR CARTÃO</Link>
         </header>
         <main>
           <Switch>
-            <Route component={NotFound} />
-            <Route path="/" component={MovieList} />
+            <Route exact path="/" component={MovieList} />
             <Route exact path="/movies/new" component={NewMovie} />
-            <Route exact path="/movies/:id/edit" component={EditMovie} />
             <Route exact path="/movies/:id" component={MovieDetails} />
+            <Route exact path="/movies/:id/edit" component={EditMovie} />
+            <Route path="/" component={NotFound} />
           </Switch>
         </main>
       </div>
