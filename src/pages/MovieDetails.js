@@ -12,11 +12,16 @@ class MovieDetails extends Component {
     };
   }
 
-  // componentDidMount() {
-  // movieAPI.getMovie(match.params.id).then((movie) => {
-  // this.setState({ movie, success: true });
-  // });
-  // }
+  componentDidMount() {
+    const {
+      match: {
+        params: { id },
+      },
+    } = this.props;
+    movieAPI.getMovie(id).then((movie) => {
+      this.setState({ movie, success: true });
+    });
+  }
 
   render() {
     const { movie, success } = this.state;

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 function MovieCard(props) {
   const {
@@ -13,7 +14,7 @@ function MovieCard(props) {
         <h5 className="movie-card-subtitle">{subtitle}</h5>
         <p className="movie-card-storyline">{storyline}</p>
         <p className="rating">{rating}</p>
-        <a href={`/movies/${id}`}>VER DETALHES</a>
+        <Link to={`/movies/${id}`}>VER DETALHES</Link>
       </div>
     </div>
   );
