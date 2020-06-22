@@ -1,4 +1,4 @@
-import React, { Component } from  'react';
+import React, { Component } from 'react';
 import MovieCard from '../components/MovieCard';
 import Loading from '../components/Loading';
 
@@ -14,7 +14,7 @@ class MovieList extends Component {
   }
   componentDidMount() {
     movieAPI.getMovies().then((movies) => {
-      this.state({
+      this.setState({
         iSLoaded: true,
         movies,
       });

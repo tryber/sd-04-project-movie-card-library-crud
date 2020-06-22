@@ -14,13 +14,15 @@ class MovieDetails extends Component {
     };
   }
   componentDidMount() {
-    movieAPI.getMovie(this.props.match.params.id).then((movie) =>
+    movieAPI.getMovie(this.props.match.params.id)
+    .then((movie) => {
       this.setState({
-        isLoading: true,
+        isLoaded: true,
         movie,
-      })
-    );
+      });
+    });
   }
+
   render() {
     // Change the condition to check the state
     const { isLoading, movie } = this.state;
