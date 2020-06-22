@@ -12,13 +12,13 @@ class NewMovie extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(newMovie) {
-    movieAPI.createMovie(newMovie).then((status) => this.setState({ status }));
+  handleSubmit(newItem) {
+    movieAPI.createMovie(newItem).then((status) => this.setState({ status }));
   }
 
   render() {
     const { status } = this.state;
-    if (!status) return <Redirect to="/" />;
+    if (status === 'OK') return <Redirect to="/" />;
     return (
       <div data-testid="new-movie">
         <MovieForm onSubmit={this.handleSubmit} />
