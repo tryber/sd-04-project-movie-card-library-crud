@@ -7,7 +7,7 @@ import {
   NewMovie,
   NotFound,
 } from './pages';
-import './pages/MovieList.css';
+import './styles/MovieList.css';
 
 function App() {
   return (
