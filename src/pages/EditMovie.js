@@ -2,8 +2,6 @@ import { Redirect } from 'react-router-dom';
 import React, { Component } from 'react';
 import { MovieForm, Loading } from '../components';
 import PropTypes from 'prop-types';
-import moduleName from '../components/Loading';
-import moduleName from '../components/MovieForm';
 import * as movieAPI from '../services/movieAPI';
 
 class EditMovie extends Component {
