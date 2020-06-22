@@ -8,7 +8,7 @@ class MovieList extends Component {
     super(props);
     this.state = {
       isLoaded: false,
-      movies: '',
+      movies: null,
     };
   }
 
