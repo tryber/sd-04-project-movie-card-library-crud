@@ -51,9 +51,3 @@ body {
 .movie-card-details {
   color: #d1821b;
 }
-
-.new-card-link {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 32px;
-}
