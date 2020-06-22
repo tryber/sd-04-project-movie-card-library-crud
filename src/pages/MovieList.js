@@ -17,15 +17,13 @@ class MovieList extends Component {
 
   componentDidMount() {
     movieAPI.getMovies()
-      .then((movies,) => {
-        this.setState({  movies, loading: false})
-      })
+      .then((movies) => this.setState({  movies, loading: false}))
   }
 
   render() {
     const { movies, loading } = this.state;
 
-    if (loading) return ( <Loading /> )
+    if (loading) return <Loading />
     return (
       <div>
         <Link to="/movies/new">Add Card</Link>
