@@ -8,7 +8,7 @@ class EditMovie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoaded: false,
+      isLoaded: true,
       shouldRedirect: false,
       movie: null,
     };
@@ -19,7 +19,7 @@ class EditMovie extends Component {
     movieAPI.getMovie(this.props.match.params.id)
     .then((movie) =>
     this.setState({
-      isLoaded: true,
+      isLoaded: false,
       movie,
     }));
   }
@@ -35,7 +35,7 @@ class EditMovie extends Component {
       return <Redirect to="/" />;
     }
 
-    if (!isLoaded) {
+    if (isLoaded) {
       return <Loading />;
     }
 
