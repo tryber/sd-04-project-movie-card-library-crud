@@ -1,45 +1,42 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import * as movieAPI from '../services/movieAPI';
-import Loading from '../components/Loading';
+import { Loading } from '../components';
 
-class MovieDetails extends React.Component {
+
+class MovieDetails extends Component {
   constructor(props) {
     super(props);
-    this.state = { movie: null };
-    this.handleClick = this.handleClick.bind(this);
+    this.state = {
+      isLoading: true,
+      movie: null,
+    };
   }
 
   componentDidMount() {
-    const { id } = this.props.match.params;
-    movieAPI.getMovie(id).then((movie) =>
-      this.setState({ movie }),
-    );
+    movieAPI.getMovie(this.props.match.params.id).then((arrMovie) =>
+    this.setState({
+      isLoading: false,
+      movie: arrMovie,
+    }));
   }
 
-  handleClick() {
-    const { id } = this.props.match.params;
-    movieAPI.deleteMovie(id);
-  }
 
   render() {
-    const { movie } = this.state;
-    if (movie === null) return <Loading />;
-
+    const { isLoading, movie } = this.state;
+    if (isLoading) return <Loading />;
     const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
-
     return (
       <div data-testid="movie-details">
         <img alt="Movie Cover" src={`../${imagePath}`} />
-        <p>{title}</p>
+        <p>{`Title: ${title}`}</p>
         <p>{`Subtitle: ${subtitle}`}</p>
         <p>{`Storyline: ${storyline}`}</p>
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
-        <Link to={`/movies/${id}/edit`} >EDITAR</Link>
-        <Link to={'/'} >VOLTAR</Link>
-        <Link to={'/'} onClick={this.handleClick}>DELETAR</Link>
+        <Link to={`/movies/${id}/edit`}>EDITAR</Link>
+        <Link to="/">VOLTAR</Link>
       </div>
     );
   }
@@ -48,7 +45,7 @@ class MovieDetails extends React.Component {
 MovieDetails.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      id: PropTypes.string.isRequired,
+      id: PropTypes.number,
     }).isRequired,
   }).isRequired,
 };

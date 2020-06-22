@@ -4,15 +4,14 @@ import PropTypes from 'prop-types';
 
 class MovieCard extends React.Component {
   render() {
-    const { title, storyline, imagePath, id } = this.props.movie;
+    const { movie } = this.props;
+    const { title, storyline, id, imagePath } = movie;
     return (
       <div data-testid="movie-card">
-        <img src={imagePath} alt="Movie Cover" />
-        <p>{title}</p>
+        <h4>{title}</h4>
+        <img src={`../${imagePath}`} alt={title} />
         <p>{storyline}</p>
-        <Link to={`/movies/${id}`}>
-          VER DETALHES
-        </Link>
+        <Link to={`/movies/${id}`}>VER DETALHES</Link>
       </div>
     );
   }
@@ -23,7 +22,6 @@ MovieCard.propTypes = {
     title: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
     storyline: PropTypes.string.isRequired,
-    imagePath: PropTypes.string.isRequired,
   }).isRequired,
 };
 
