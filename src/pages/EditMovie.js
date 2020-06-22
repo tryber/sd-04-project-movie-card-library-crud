@@ -8,10 +8,15 @@ class EditMovie extends Component {
     super(props);
     this.state = {
       movie: [],
-      loading: false,
+      loading: true,
       shouldRedirect: false,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    const { id } = this.props.match.params;
+    movieAPI.getMovie(id).then((movie) => this.setState({ movie, loading: false }))
   }
 
   handleSubmit(updatedMovie) {
@@ -25,8 +30,10 @@ class EditMovie extends Component {
       return <Redirect to="/" />;
     }
 
-    if (!loading) {
-      return <Loading />;
+    if (loading) {
+      return (
+        <Loading />
+      );
     }
 
     return (
