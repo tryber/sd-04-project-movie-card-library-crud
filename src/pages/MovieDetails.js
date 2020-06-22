@@ -29,7 +29,7 @@ class MovieDetails extends Component {
     // Change the condition to check the state
     const { movie } = this.state;
 
-    if (!movie) return <Loading />;
+    if (!movie.id) return <Loading />;
 
     const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
 
