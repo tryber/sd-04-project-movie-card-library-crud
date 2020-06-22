@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function MovieCard(props) {
   const {
@@ -17,5 +18,27 @@ function MovieCard(props) {
     </div>
   );
 }
+
+MovieCard.propTypes = {
+  movie: PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string,
+    subtitle: PropTypes.string,
+    storyline: PropTypes.string,
+    rating: PropTypes.number,
+    imagePath: PropTypes.string,
+  }),
+};
+
+MovieCard.defaultProps = {
+  movie: {
+    id: 100,
+    title: 'Somemovie',
+    subtitle: 'Some sub',
+    storyline: 'Some story',
+    rating: 5,
+    imagePath: '/img.jpg',
+  },
+};
 
 export default MovieCard;
