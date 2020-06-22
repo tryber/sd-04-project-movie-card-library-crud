@@ -1,9 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 function MovieCard(props) {
-  const { movie } = props;
-  const { title, subtitle, storyline, rating, imagePath, id } = movie;
+  const {
+    movie: { title, subtitle, storyline, rating, imagePath, id },
+  } = props;
   return (
     <div data-testid="movie-card" className="movie-card">
       <img alt="Movie Cover" className="movie-card-image" src={imagePath} />
@@ -17,21 +17,5 @@ function MovieCard(props) {
     </div>
   );
 }
-
-MovieCard.propTypes = {
-  movie: PropTypes.object,
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
-  storyline: PropTypes.string,
-  imagePath: PropTypes.string,
-};
-
-MovieCard.defaultProps = {
-  movie: {},
-  title: 'Some Movie',
-  subtitle: 'The Movie',
-  storyline: 'This is a movie',
-  imagePath: './img.jpeg',
-};
 
 export default MovieCard;

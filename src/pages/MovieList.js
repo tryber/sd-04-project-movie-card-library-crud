@@ -14,10 +14,10 @@ class MovieList extends Component {
     };
   }
 
-  async componentDidMount() {
-    const results = await movieAPI.getMovies();
-    await this.setState({ movies: results });
-    this.setState({ success: true });
+  componentDidMount() {
+    movieAPI.getMovies().then((movies) => {
+      this.setState({ movies, success: true });
+    });
   }
 
   render() {

@@ -12,12 +12,11 @@ class MovieDetails extends Component {
     };
   }
 
-  async componentDidMount() {
-    const { match } = this.props;
-    const results = await movieAPI.getMovie(match.params.id);
-    await this.setState({ movie: results });
-    this.setState({ success: true });
-  }
+  // componentDidMount() {
+  // movieAPI.getMovie(match.params.id).then((movie) => {
+  // this.setState({ movie, success: true });
+  // });
+  // }
 
   render() {
     const { movie, success } = this.state;
@@ -27,6 +26,7 @@ class MovieDetails extends Component {
     return (
       <div data-testid="movie-details">
         <img alt="Movie Cover" src={`../${imagePath}`} />
+        <p>{`Title: ${title}`}</p>
         <p>{`Subtitle: ${subtitle}`}</p>
         <p>{`Storyline: ${storyline}`}</p>
         <p>{`Genre: ${genre}`}</p>
