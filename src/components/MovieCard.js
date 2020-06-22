@@ -3,18 +3,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class MovieCard extends React.Component {
-  constructor(props) {
-    super(props);
-    const { id, title, storyline, imagePath } = this.props.movie;
-    this.state = {
-      id,
-      title,
-      storyline,
-      imagePath,
-    };
-  }
   render() {
-    const { id, title, imagePath, storyline } = this.state;
+    const { id, title, imagePath, storyline } = this.props.movie;
     return (
       <div data-testid="movie-card" className="movie-card">
         <img alt={title} className="movie-card-image" src={imagePath} />

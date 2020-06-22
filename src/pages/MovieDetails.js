@@ -18,7 +18,7 @@ class MovieDetails extends Component {
     .then((movie) => {
       this.setState({
         isLoaded: true,
-        movie,
+        movie: movie,
       });
     });
   }
