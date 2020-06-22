@@ -1,36 +1,37 @@
-import React, { Component } from 'react';
-import MovieCard from '../components/MovieCard';
-import Loading from '../components/Loading'
+import React, { Component } from "react";
+import MovieCard from "../components/MovieCard";
+import Loading from "../components/Loading";
 
-import * as movieAPI from '../services/movieAPI';
+import * as movieAPI from "../services/movieAPI";
 
 class MovieList extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      isLoaded:false,
-      movies:null,
-    }
+      isLoaded: false,
+      movies: null,
+    };
   }
   componentDidMount() {
-    movieAPI.getMovies()
-      .then((movies) => {
-        this.state({
-          iSLoaded:true,
-          movies:movies,
-        })
-      })
+    movieAPI.getMovies().then((movies) => {
+      this.state({
+        iSLoaded: true,
+        movies,
+      });
+    });
   }
   render() {
     const { movies, isLoaded } = this.state;
 
     // Render Loading here if the request is still happening
-    if(!isloaded) {
-      <Loading />
+    if (!isLoaded) {
+      return <Loading />;
     }
     return (
       <div data-testid="movie-list">
-        {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
+        {movies.map((movie) => (
+          <MovieCard key={movie.title} movie={movie} />
+        ))}
       </div>
     );
   }
