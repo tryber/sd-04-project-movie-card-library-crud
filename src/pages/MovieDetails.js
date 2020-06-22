@@ -28,7 +28,7 @@ class MovieDetails extends Component {
       this.setState({ movie, isLoaded });
     });
   }
-
+  // render
   render() {
     const { movie, isLoaded, shouldRiderict } = this.state;
     if (shouldRiderict) return <Redirect to="/" />;
