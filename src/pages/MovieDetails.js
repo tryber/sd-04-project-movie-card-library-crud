@@ -14,19 +14,19 @@ class MovieDetails extends Component {
   }
   componentDidMount() {
     movieAPI.getMovie(this.props.match.params.id)
-    .then((movie) => {
+    .then((data) => {
       this.setState({
         isLoaded: true,
-        movie,
+        movie: data,
       });
     });
   }
 
   render() {
     // Change the condition to check the state
-    const { isLoading, movie } = this.state;
+    const { isLoaded, movie } = this.state;
 
-    if (!isLoading) return <Loading />;
+    if (!isLoaded) return <Loading />;
 
     const { id, title, storyline, imagePath, genre, rating, subtitle } = movie;
 
