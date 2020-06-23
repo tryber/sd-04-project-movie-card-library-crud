@@ -10,21 +10,20 @@ class MovieDetails extends Component {
 
     this.state = {
       movie: '',
-      loading: true,
+      isLoad: true,
     };
   }
 
   componentDidMount() {
     const { id } = this.props.match.params;
-    movieAPI.getMovie(id)
-      .then((movie) => this.setState({ movie, loading: false }));
+    movieAPI.getMovie(id).then((movie) => this.setState({ movie, isLoad: false }));
   }
 
   render() {
-    const { movie, loading } = this.state;
+    const { movie, isLoad } = this.state;
     const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
 
-    if (loading) return <Loading />;
+    if (isLoad) return <Loading />;
     return (
       <div data-testid="movie-details">
         <img alt="Movie Cover" src={`../${imagePath}`} />
@@ -47,6 +46,6 @@ MovieDetails.propTypes = {
       id: PropTypes.number,
     }),
   }).isRequired,
-}
+};
 
 export default MovieDetails;
