@@ -6,7 +6,7 @@ import { Loading } from '../components';
 class MovieDetails extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       movie: '',
       loading: true,
@@ -16,7 +16,7 @@ class MovieDetails extends Component {
   componentDidMount() {
     const { id } = this.props.match.params;
     movieAPI.getMovie(id)
-      .then((movie) => this.setState({ movie, loading: false, }))
+      .then((movie) => this.setState({ movie, loading: false }));
   }
 
   render() {

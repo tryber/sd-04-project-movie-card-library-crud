@@ -1,10 +1,11 @@
 import React from 'react';
-import { EditMovie, MovieDetails, MovieList, NewMovie, NotFound } from './pages';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from 'react-router-dom';
+import { EditMovie, MovieDetails, MovieList, NewMovie, NotFound } from './pages';
+
 
 class App extends React.Component {
   render() {
