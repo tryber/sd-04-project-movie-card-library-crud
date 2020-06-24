@@ -9,8 +9,8 @@ class MovieCard extends React.Component {
       <div data-testid="movie-card">
         <img alt="Movie Cover" src={imagePath} />
         <h2>{title}</h2>
-        <p>{`Subtitle: ${subtitle}`}</p>
-        <p>{`Storyline: ${storyline}`}</p>
+        <p>{subtitle}</p>
+        <p>{storyline}</p>
         <Link to={`/movies/${id}`}>VER DETALHES</Link>
       </div>
     );
