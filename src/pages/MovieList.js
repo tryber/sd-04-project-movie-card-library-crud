@@ -11,13 +11,13 @@ class MovieList extends Component {
 
     this.state = {
       movies: [],
-      load: true,
+      loading: true,
     };
   }
 
   componentDidMount() {
     movieAPI.getMovies()
-      .then((movies) => this.setState({ movies, load: false }));
+      .then((movies) => this.setState({ movies, loading: false }));
   }
 
   render() {
