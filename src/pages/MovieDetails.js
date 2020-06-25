@@ -5,15 +5,15 @@ import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
 
 class MovieDetails extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       movie: {
         title: '',
         storyline: '',
         imagePath: '',
         genre: '',
-        rating: '',
+        rating: 0,
         subtitle: '',
         id: '',
       },
