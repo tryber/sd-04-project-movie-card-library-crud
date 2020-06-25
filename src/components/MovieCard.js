@@ -7,8 +7,8 @@ const MovieCard = (props) => {
   return (
     <div data-testid="movie-card">
       <img src={movie.imagePath} alt="movie Card" />
-        <p>{movie.title}</p>
-        <p>{movie.storyline}</p>
+      <p>{movie.title}</p>
+      <p>{movie.storyline}</p>
       <Link to={`movie/${movie.id}`} >Ver detalhes</Link>
     </div>
   );
