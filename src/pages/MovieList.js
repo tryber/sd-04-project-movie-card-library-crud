@@ -7,7 +7,7 @@ import * as movieAPI from '../services/movieAPI';
 class MovieList extends Component {
   constructor(props) {
     super(props);
-    this.state = { movies: '' };
+    this.state = { movies: "" };
   }
 
   componentDidMount() {
@@ -19,11 +19,11 @@ class MovieList extends Component {
     const { movies } = this.state;
 
     // Render Loading here if the request is still happening
-    if (movies === '') return <Loading />;
+    if (movies === "") return <Loading />;
 
     return (
       <div data-testid="movie-list">
-        <Link to={'/movies/new'}>ADICIONAR CARTÃO</Link>
+        <Link to={"/movies/new"}>ADICIONAR CARTÃO</Link>
         {movies.map((movie) => (
           <MovieCard key={movie.title} movie={movie} />
         ))}

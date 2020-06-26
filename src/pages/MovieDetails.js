@@ -1,25 +1,27 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import * as movieAPI from "../services/movieAPI";
-import { Loading } from "../components";
+import * as movieAPI from '../services/movieAPI';
+import { Loading } from '../components';
 
 class MovieDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: ''
+      id: "",
+      movie: "",
     };
   }
 
   componentDidMount() {
-    movieAPI.getMovies().then((movie) => {
-      this.setState( movie.title );
+    movieAPI.getMovie().then((id) => {
+      this.setState(id);
     });
   }
   render() {
-    const { movie } = this.state
+    const { id } = this.props;
+    const { movie } = this.state;
     // Change the condition to check the state
-    if (movie === '') return <Loading />;
+    if (id === "") return <Loading />;
 
     const { title, storyline, imagePath, genre, rating, subtitle } = movie;
 
@@ -30,8 +32,8 @@ class MovieDetails extends Component {
         <p>{`Storyline: ${storyline}`}</p>
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
-        <Link to={'/movies/:id/edit'}>EDITAR</Link>
-        <Link to={'/'}>VOLTAR</Link>
+        <Link to={`/movies/${id}/edit`}>EDITAR</Link>
+        <Link to={"/"}>VOLTAR</Link>
       </div>
     );
   }
