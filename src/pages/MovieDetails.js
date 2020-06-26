@@ -27,19 +27,19 @@ class MovieDetails extends Component {
     const { movie, loading } = this.state;
     if (loading) return <Loading />;
     const { storyline, imagePath, genre, rating, subtitle } = movie;
-      return (
-        <div data-testid="movie-details">
-          <img alt="Movie Cover" src={`../${imagePath}`} />
-          <h1>{movie.title}</h1>
-          <p>{subtitle}</p>
-          <p>{storyline}</p>
-          <p>{genre}</p>
-          <p>{rating}</p>
-          <button type="button"><Link to={`/movies/${movie.id}/edit`}>EDITAR</Link></button>
-          <button type="button" onClick={() => this.delete()}><Link to="/">DELETAR</Link></button>
-          <button type="button"><Link to="/">VOLTAR</Link></button>
-        </div>
-      );
+    return (
+      <div data-testid="movie-details">
+        <img alt="Movie Cover" src={`../${imagePath}`} />
+        <h1>{movie.title}</h1>
+        <p>{subtitle}</p>
+        <p>{storyline}</p>
+        <p>{genre}</p>
+        <p>{rating}</p>
+        <button type="button"><Link to={`/movies/${movie.id}/edit`}>EDITAR</Link></button>
+        <button type="button" onClick={() => this.delete()}><Link to="/">DELETAR</Link></button>
+        <button type="button"><Link to="/">VOLTAR</Link></button>
+      </div>
+    );
   }
 }
 
