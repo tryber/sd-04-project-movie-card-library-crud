@@ -9,7 +9,7 @@ const MovieCard = (props) => {
       <img src={movie.imagePath} alt="movie Card" />
       <p>{movie.title}</p>
       <p>{movie.storyline}</p>
-      <Link to={`movie/${movie.id}`} >Ver detalhes</Link>
+      <Link to={`/movies/${movie.id}`} >VER DETALHES</Link>
     </div>
   );
 };

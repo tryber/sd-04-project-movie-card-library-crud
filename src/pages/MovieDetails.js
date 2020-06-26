@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
+import * as movieAPI from '../services/movieAPI';
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -21,6 +21,7 @@ class MovieDetails extends Component {
       shouldRiderict: false,
     };
   }
+
   componentDidMount() {
     const { match } = this.props;
     movieAPI.getMovie(match.params.id).then((movie) => {
@@ -28,7 +29,7 @@ class MovieDetails extends Component {
       this.setState({ movie, isLoaded });
     });
   }
-  // render
+
   render() {
     const { movie, isLoaded, shouldRiderict } = this.state;
     if (shouldRiderict) return <Redirect to="/" />;
