@@ -10,16 +10,15 @@ class MovieDetails extends Component {
   }
 
   componentDidMount() {
-    movieAPI.getMovie(this.props.match.params.id).then((movie) => {
+    const { match } = this.props
+    movieAPI.getMovie(match.params.id).then((movie) => {
       this.setState({ movie: [movie], loading: false });
-      console.log('montei');
     });
   }
 
   render() {
     const { movie, loading } = this.state;
     if (loading) return <Loading />;
-    console.log(movie);
     const { title, storyline, imagePath, genre, rating, subtitle } = movie[0];
     return (
       <div data-testid="movie-details">
