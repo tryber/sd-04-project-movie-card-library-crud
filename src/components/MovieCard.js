@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 class MovieCard extends React.Component {
   render() {
-    const { movie } = this.props;
+    const movie = this.props.movie;
     return (
       <div className="movie-card" data-testid="movie-card">
         <Link to={`/movies/${movie.id}`}>Ver Detalhes</Link>
