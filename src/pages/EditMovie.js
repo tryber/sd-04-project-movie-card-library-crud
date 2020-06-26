@@ -8,7 +8,7 @@ import * as movieAPI from '../services/movieAPI';
 class EditMovie extends Component {
   constructor(props) {
     super(props);
-    this.state = { status: 'loading', shouldRedirect: false, movie: ''};
+    this.state = { status: 'loading', shouldRedirect: false, movie: '' };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -20,7 +20,7 @@ class EditMovie extends Component {
 
   handleSubmit(updatedMovie) {
     movieAPI.updateMovie(updatedMovie)
-    .then(() => this.setState({ shouldRedirect: true }))
+    .then(() => this.setState({ shouldRedirect: true }));
   }
 
   render() {

@@ -7,7 +7,7 @@ import * as movieAPI from '../services/movieAPI';
 class MovieList extends Component {
   constructor(props) {
     super(props);
-    this.state = { movies: '', };
+    this.state = { movies: '' };
   }
   componentDidMount() {
     movieAPI.getMovies().then((movies) => this.setState({ movies }));
