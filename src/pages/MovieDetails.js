@@ -9,19 +9,20 @@ class MovieDetails extends Component {
     super(props);
     this.state = {
       movie: '',
+      loading: true,
     };
   }
 
   componentDidMount() {
     const { id } = this.props.match.params;
     movieAPI.getMovie(id).then((movie) => {
-      this.setState({ movie });
+      this.setState({ movie, loading: false });
     });
   }
   render() {
-    const { movie } = this.state;
+    const { movie, loading } = this.state;
     // Change the condition to check the state
-    if (movie === '') return <Loading />;
+    if (loading === true) return <Loading />;
 
     const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
 
@@ -45,11 +46,5 @@ MovieDetails.propTypes = {
     params: PropTypes.any,
   }).isRequired,
 };
-
-MovieDetails.propTypes = {
-  movie: PropTypes.shape({
-    root: PropTypes.string,
-  }).isRequired,
-}
 
 export default MovieDetails;
