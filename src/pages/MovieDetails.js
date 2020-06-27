@@ -47,7 +47,9 @@ MovieDetails.propTypes = {
 };
 
 MovieDetails.propTypes = {
-  movie: PropTypes.any,
+  movie: PropTypes.shape({
+    root: PropTypes.string,
+  }).isRequired,
 }
 
 export default MovieDetails;
