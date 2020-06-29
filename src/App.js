@@ -5,18 +5,20 @@ import './App.css';
 import MovieDetails from './pages/MovieDetails';
 import EditMovie from './pages/EditMovie';
 import NewMovie from './pages/NewMovie';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
     <div>
       <header>Movie Library CRUD</header>
       <BrowserRouter>
-      <Link to="/movies/newgit" >Adicionar Filme</Link>
+      <Link to="/movies/new" >Adicionar Filme</Link>
         <Switch>
-          <Route path="/" exact component={MovieList} />
-          <Route path="/movies/:id" component={MovieDetails} />
-          <Route path="/movies/:id/edit" component={EditMovie} />
           <Route path="/movies/new" component={NewMovie} />
+          <Route path="/movies/:id/edit" component={EditMovie} />
+          <Route path="/movies/:id" component={MovieDetails} />
+          <Route path="/" exact component={MovieList} />
+          <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
     </div>
