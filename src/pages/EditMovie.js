@@ -28,7 +28,7 @@ class EditMovie extends Component {
       return <Redirect to="/" />;
     }
 
-    if (loading === 'loading') {
+    if (loading) {
       return <Loading />;
     }
 
