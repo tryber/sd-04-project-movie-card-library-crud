@@ -12,7 +12,7 @@ function App() {
     <div>
       <header>Movie Library CRUD</header>
       <BrowserRouter>
-      <Link to="/movies/new" >Adicionar Filme</Link>
+      <Link to="/movies/new" >ADICIONAR CARTÃO</Link>
         <Switch>
           <Route path="/movies/new" component={NewMovie} />
           <Route path="/movies/:id/edit" component={EditMovie} />

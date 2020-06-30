@@ -17,6 +17,7 @@ class MovieDetails extends Component {
     });
   }
 
+
   render() {
     const { movie, loading } = this.state;
     if (loading) return <Loading />;
@@ -39,6 +40,7 @@ class MovieDetails extends Component {
         <p>{`Rating: ${rating}`}</p>
         <Link to={`/movies/${id}/edit`}>EDITAR</Link>
         <Link to="/">VOLTAR</Link>
+        <button>DELETAR</button>
       </div>
     );
   }
