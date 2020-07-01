@@ -7,21 +7,18 @@ import { Loading } from '../components';
 class MovieDetails extends Component {
   constructor(props) {
     super(props);
-    this.state = { movie: null, loading: true, shouldRedirect: false };
+    this.state = { movie: null, loading: true };
   }
 
   componentDidMount() {
     const { match } = this.props;
     movieAPI.getMovie(match.params.id).then((movie) => {
-      this.setState({ movie: [movie], loading: false, shouldRedirect: false });
+      this.setState({ movie: [movie], loading: false });
     });
   }
 
   render() {
-    const { movie, loading, shouldRedirect } = this.state;
-    if (shouldRedirect) {
-      return <Redirect to="/" />;
-    }
+    const { movie, loading } = this.state;
     if (loading) return <Loading />;
     const {
       id,
@@ -42,7 +39,14 @@ class MovieDetails extends Component {
         <p>{`Rating: ${rating}`}</p>
         <Link to={`/movies/${id}/edit`}>EDITAR</Link>
         <Link to="/">VOLTAR</Link>
-        <button onClick={() => movieAPI.deleteMovie(id)}>DELETAR</button>
+        <Link
+          to="/"
+          onClick={() => {
+            movieAPI.deleteMovie(id);
+          }}
+        >
+          DELETAR
+        </Link>
       </div>
     );
   }
