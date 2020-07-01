@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
@@ -39,14 +39,7 @@ class MovieDetails extends Component {
         <p>{`Rating: ${rating}`}</p>
         <Link to={`/movies/${id}/edit`}>EDITAR</Link>
         <Link to="/">VOLTAR</Link>
-        <Link
-          to="/"
-          onClick={() => {
-            movieAPI.deleteMovie(id);
-          }}
-        >
-          DELETAR
-        </Link>
+        <Link to="/" onClick={() => { movieAPI.deleteMovie(id) }} >DELETAR</Link>
       </div>
     );
   }
