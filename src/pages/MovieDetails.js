@@ -9,7 +9,7 @@ class MovieDetails extends Component {
     if (true) return <Loading />;
 
     return (
-      <div/>
+      <div />
     );
 
     /*  const movie = movieAPI.getMovie(this.props.movie);
