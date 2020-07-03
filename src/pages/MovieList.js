@@ -6,7 +6,7 @@ import * as movieAPI from '../services/movieAPI';
 
 class MovieList extends Component {
   constructor(props) {
-    super (props);
+    super(props);
     this.state = { movies: [], load: true };
   }
 
@@ -20,17 +20,16 @@ class MovieList extends Component {
     const { movies } = this.state;
 
     // Render Loading here if the request is still happening
-    if(this.state.load) {
+    if (this.state.load) {
       return (
         <Loading />
       );
-    } else {
-      return (
-        <div data-testid="movie-list">
-          {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
-        </div>
-      );
-    }
+    } 
+    return (
+      <div data-testid="movie-list">
+        {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
+      </div>
+    );
   }
 }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import * as movieAPI from '../services/movieAPI';
+//  import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
 
 class MovieDetails extends Component {
@@ -8,7 +8,7 @@ class MovieDetails extends Component {
     // Change the condition to check the state
     if (true) return <Loading />;
 
-    const movie = movieAPI.getMovie(this.props.movie);
+    /*  const movie = movieAPI.getMovie(this.props.movie);
     const { title, storyline, imagePath, genre, rating, subtitle } = movie;
 
     return (
@@ -19,7 +19,7 @@ class MovieDetails extends Component {
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
       </div>
-    );
+    );  */
   }
 }
 
