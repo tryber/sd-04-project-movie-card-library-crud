@@ -8,6 +8,10 @@ class MovieDetails extends Component {
     // Change the condition to check the state
     if (true) return <Loading />;
 
+    return (
+      <div></div>
+    );
+
     /*  const movie = movieAPI.getMovie(this.props.movie);
     const { title, storyline, imagePath, genre, rating, subtitle } = movie;
 
