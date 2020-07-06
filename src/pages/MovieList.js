@@ -22,11 +22,15 @@ class MovieList extends Component {
 
     // Render Loading here if the request is still happening
 
-    return movies !== [] ? (
-      <div data-testid="movie-list">
-        {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
+    return (
+      <div>
+        {!movies.length ? (<Loading />) : (
+          <div data-testid="movie-list">
+            {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
+          </div>
+        )}
       </div>
-    ) : (<Loading />);
+    )
   }
 }
 
