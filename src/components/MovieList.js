@@ -13,6 +13,22 @@ class MovieList extends Component {
     this.state = { movies: [], isLoaded: false };
   }
 
+  render() {
+    const { movies, isLoaded } = this.state;
+    if (isLoaded) {
+      return (
+        <React.Fragment>
+          <Link to="/movies/new">ADICIONAR CARTÃO</Link>
+          <div data-testid="movie-list">
+          </div>
+        </React.Fragment>
+      );
+    }
+    return <Loading />;
+  }
+}
+
+
 
 }
 
