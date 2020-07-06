@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class MovieCard extends React.Component {
   render() {
     const { movie } = this.props;
-    const { title, storyline, imagePath, genre, rating, subtitle } = movie;
+    const { id, title, storyline, imagePath, genre, rating, subtitle } = movie;
 
     return (
       <div data-testid="movie-card">
@@ -14,7 +14,7 @@ class MovieCard extends React.Component {
         <p>{`Storyline: ${storyline}`}</p>
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
-        <Link path={`/movies/${title}`}>VER DETALHES</Link>
+        <Link to={`/movies/${id}`}>VER DETALHES</Link>
       </div>
     );
   }

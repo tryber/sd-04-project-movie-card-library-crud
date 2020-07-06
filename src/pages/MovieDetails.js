@@ -21,9 +21,9 @@ class MovieDetails extends Component {
 
   render() {
     const movie = this.state.movie;
-    const { title, storyline, imagePath, genre, rating, subtitle } = movie;
+    const { id, title, storyline, imagePath, genre, rating, subtitle } = movie;
 
-    return movie !== [] ? (
+    return id ? (
       <div data-testid="movie-details">
         <img alt="Movie Cover" src={`../${imagePath}`} />
         <p>{`Title: ${title}`}</p>
@@ -31,10 +31,10 @@ class MovieDetails extends Component {
         <p>{`Storyline: ${storyline}`}</p>
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
-        <section>
-          <Link path={`movies/${title}/edit`}>EDITAR</Link>
-          <Link path="/">VOLTAR</Link>
-        </section>
+        <div>
+          <Link to={`movies/${id}/edit`}>EDITAR</Link>
+          <Link to="/">VOLTAR</Link>
+        </div>
       </div>
     ) : (<Loading />);
   }
