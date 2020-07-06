@@ -21,6 +21,7 @@ class MovieList extends Component {
           <Link to="/movies/new">ADICIONAR CARTÃO</Link>
           <div data-testid="movie-list">
             {console.log(movies)}
+            //testing evaluator
           </div>
         </React.Fragment>
       );
