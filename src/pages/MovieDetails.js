@@ -1,19 +1,25 @@
 import React, { Component } from 'react';
 
-//  import * as movieAPI from '../services/movieAPI';
+import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
 
 class MovieDetails extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { movie: [], load: true };
+  }
+
+  componentDidMount() {
+    movieAPI
+    .getMovie(this.props.match.params.id)
+    .then((mov) => this.setState({ movie: mov, load: false }));
+  }
+
   render() {
     // Change the condition to check the state
-    if (true) return <Loading />;
+    if (this.state.load) return <Loading />;
 
-    return (
-      <div />
-    );
-
-    /*  const movie = movieAPI.getMovie(this.props.movie);
-    const { title, storyline, imagePath, genre, rating, subtitle } = movie;
+    const { title, storyline, imagePath, genre, rating, subtitle } = this.state.movie;
 
     return (
       <div data-testid="movie-details">
@@ -23,7 +29,7 @@ class MovieDetails extends Component {
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
       </div>
-    );  */
+    );
   }
 }
 
