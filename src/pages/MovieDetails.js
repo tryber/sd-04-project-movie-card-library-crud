@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { Loading } from '../components';
-import * as movieAPI from '../services/movieAPI';
+import { getMovie as getMovieDetails } from '../services/movieAPI';
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class MovieDetails extends Component {
   componentDidMount() {
     const { id } = this.props.match.params;
 
-    movieAPI.getMovie(id)
+    getMovieDetails(id)
       .then((movie) => this.setState({ movie }));
   }
 
