@@ -13,7 +13,11 @@ class MovieList extends Component {
   render() {
     const { movies, isLoaded } = this.state;
     if (isLoaded) {
-      return (movies);
+      return (
+      <div data-testid="movie-list">
+        {movies}
+      </div>
+      );
     }
     return <Loading />;
   }
