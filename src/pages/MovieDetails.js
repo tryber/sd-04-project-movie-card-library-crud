@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { Loading } from '../components';
-import { getMovie as getMovieDetails } from '../services/movieAPI';
+import { getMovie as getMovieDetails, deleteMovie } from '../services/movieAPI';
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -35,6 +35,7 @@ class MovieDetails extends Component {
         <div>
           <Link to={`/movies/${id}/edit`}>EDITAR</Link>
           <Link to="/">VOLTAR</Link>
+          <Link to="/" onClick={() => deleteMovie(id)}>DELETAR</Link>
         </div>
       </div>
     ) : (<Loading />);
