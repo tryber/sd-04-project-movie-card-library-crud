@@ -4,6 +4,7 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
+import { EditMovie, MovieDetails, MovieList, NewMovie, NotFound } from './pages';
 
 function App() {
   return (
@@ -11,7 +12,11 @@ function App() {
       <h1>Movie Card Library CRUD</h1>
       <BrowserRouter>
         <Switch>
-          <Route />
+          <Route exact path="/" component={MovieList} />
+          <Route path="/movies/new" component={NewMovie} />
+          <Route path="/movies/:id" component={MovieDetails} />
+          <Route path="/movies/:id/edit" component={EditMovie} />
+          <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
     </div>
