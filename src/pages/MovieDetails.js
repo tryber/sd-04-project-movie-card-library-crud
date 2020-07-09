@@ -33,7 +33,7 @@ class MovieDetails extends Component {
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
         <div>
-          <Link to={`${id}/edit`}>EDITAR</Link>
+          <Link to={`/movies/${id}/edit`}>EDITAR</Link>
           <Link to="/">VOLTAR</Link>
         </div>
       </div>
@@ -42,7 +42,7 @@ class MovieDetails extends Component {
 }
 
 MovieDetails.propTypes = {
-  match: PropTypes.number.isRequired,
+  match: PropTypes.object.isRequired,
 };
 
 export default MovieDetails;
