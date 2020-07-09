@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 // import MovieCard from '../components/MovieCard';
 import Loading from '../components/Loading';
 // import * as movieAPI from '../services/movieAPI';
@@ -13,16 +13,8 @@ class MovieList extends Component {
   render() {
     const { movies, isLoaded } = this.state;
     if (isLoaded) {
-      return (
-        <React.Fragment>
-          <Link to="/movies/new">ADICIONAR CARTÃO</Link>
-          <div data-testid="movie-list">
-          </div>
-        </React.Fragment>
-      );
+      return (movies);
     }
-    {console.log(movies)}
-    { /*  testing evaluator */ }
     return <Loading />;
   }
 }
