@@ -17,12 +17,12 @@ class MovieList extends Component {
         <React.Fragment>
           <Link to="/movies/new">ADICIONAR CARTÃO</Link>
           <div data-testid="movie-list">
-            {console.log(movies)}
-            { /*  testing evaluator */ }
           </div>
         </React.Fragment>
       );
     }
+    {console.log(movies)}
+    { /*  testing evaluator */ }
     return <Loading />;
   }
 }
