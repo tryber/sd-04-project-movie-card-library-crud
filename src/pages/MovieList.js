@@ -14,9 +14,9 @@ class MovieList extends Component {
     const { movies, isLoaded } = this.state;
     if (isLoaded) {
       return (
-      <div data-testid="movie-list">
-        {movies}
-      </div>
+        <div data-testid="movie-list">
+          {movies}
+        </div>
       );
     }
     return <Loading />;
