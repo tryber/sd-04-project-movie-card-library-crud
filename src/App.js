@@ -6,8 +6,7 @@ import {
 } from 'react-router-dom';
 import { EditMovie, MovieDetails, MovieList, NewMovie, NotFound } from './pages';
 
-class App extends React.Component {
-  render() {
+function App() {
     return (
       <div>
       <h1>Movie Card Library CRUD</h1>
@@ -21,8 +20,7 @@ class App extends React.Component {
           </Switch>
         </BrowserRouter>
       </div>
-    );
-  }
+  );
 }
 
 export default App;
