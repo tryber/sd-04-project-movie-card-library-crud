@@ -42,7 +42,7 @@ class MovieDetails extends Component {
 }
 
 MovieDetails.propTypes = {
-  match: PropTypes.object.isRequired,
+  match: PropTypes.shape(PropTypes.object.isRequired),
 };
 
 export default MovieDetails;
