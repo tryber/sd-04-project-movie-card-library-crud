@@ -20,7 +20,7 @@ class EditMovie extends Component {
   }
 
   render() {
-    const { 
+    const {
       // status,
        shouldRedirect, movie } = this.state;
     if (shouldRedirect) {

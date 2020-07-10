@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import * as movieAPI from '../services/movieAPI';
+import { getMovie  as getMovieDetails } from '../services/movieAPI';
 import { Loading } from '../components';
 
 class MovieDetails extends Component {
@@ -14,7 +14,7 @@ class MovieDetails extends Component {
   componentDidMount() {
     const { id } = this.props.match.params;
 
-    movieAPI.getMovie(id)
+    getMovieDetails(id)
       .then((movie) => this.setState({ movie }));
   }
 
@@ -24,7 +24,9 @@ class MovieDetails extends Component {
 
     const movie = this.state.movie;
 
-    const { id, title, storyline, imagePath, genre, rating, subtitle } = movie;
+    const {
+      // id, title,
+      storyline, imagePath, genre, rating, subtitle } = movie;
 
     return (
       <div data-testid="movie-details">
