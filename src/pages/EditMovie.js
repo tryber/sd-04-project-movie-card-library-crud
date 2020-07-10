@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Loading from '../components/Loading'
 import PropTypes from 'prop-types';
+import Loading from '../components/Loading';
 import { MovieForm } from '../components';
 import * as movieAPI from '../services/movieAPI';
 
@@ -24,7 +24,7 @@ class EditMovie extends Component {
       // status,
       // shouldRedirect,
        movie } = this.state;
-       const { id } = movie;
+    const { id } = movie;
     // if (shouldRedirect) {
       // Redirect
     // }
