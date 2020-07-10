@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import Loading from '../components/Loading'
+import Loading from '../components/Loading'
 import PropTypes from 'prop-types';
 import { MovieForm } from '../components';
 import * as movieAPI from '../services/movieAPI';
@@ -24,6 +24,7 @@ class EditMovie extends Component {
       // status,
       // shouldRedirect,
        movie } = this.state;
+       const { id } = movie;
     // if (shouldRedirect) {
       // Redirect
     // }
@@ -32,12 +33,11 @@ class EditMovie extends Component {
       // render Loading
     //   <Loading />
     // }
-
-    return (
+    return id ? (
       <div data-testid="edit-movie">
         <MovieForm movie={movie} onSubmit={this.handleSubmit} />
       </div>
-    );
+    ) : (<Loading />);
   }
 }
 
