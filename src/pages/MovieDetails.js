@@ -24,7 +24,9 @@ class MovieDetails extends Component {
 
     const movie = this.state.movie;
 
-    const { id, title, storyline, imagePath, genre, rating, subtitle } = movie;
+    const {
+      // id, title,
+      storyline, imagePath, genre, rating, subtitle } = movie;
 
     return (
       <div data-testid="movie-details">
