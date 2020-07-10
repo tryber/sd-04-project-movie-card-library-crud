@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Loading from '../components/Loading'
+// import Loading from '../components/Loading'
+import PropTypes from 'prop-types';
 import { MovieForm } from '../components';
 import * as movieAPI from '../services/movieAPI';
 
@@ -7,7 +8,7 @@ class EditMovie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: {}
+      movie: {},
     };
   }
 
@@ -19,7 +20,9 @@ class EditMovie extends Component {
   }
 
   render() {
-    const { status, shouldRedirect, movie } = this.state;
+    const { 
+      // status,
+       shouldRedirect, movie } = this.state;
     if (shouldRedirect) {
       // Redirect
     }
@@ -36,5 +39,9 @@ class EditMovie extends Component {
     );
   }
 }
+
+EditMovie.propTypes = {
+  match: PropTypes.shape(PropTypes.object.isRequired).isRequired,
+};
 
 export default EditMovie;
