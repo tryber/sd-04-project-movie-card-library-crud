@@ -12,11 +12,12 @@ class MovieDetails extends Component {
   }
 
   componentDidMount() {
-    const { id } = this.props.match.params;
-    console.log(id);
-
-    getMovieDetails(id)
-      .then((movie) => this.setState({ movie }));
+    const { match } = this.props;
+    console.log(match);
+    getMovieDetails(match.params.id).then((movie) => {
+      this.setState({ movie: movie });
+      console.log(movie);
+    });
   }
 
   render() {
@@ -25,12 +26,10 @@ class MovieDetails extends Component {
 
     const movie = this.state.movie;
 
-    const {
-      // id, title,
-      storyline, imagePath, genre, rating, subtitle } = movie;
+    const { id, title, storyline, imagePath, genre, rating, subtitle } = movie;
 
     return (
-      <div data-testid="movies-details">
+      <div data-testid="movie-details">
         <img alt="Movie Cover" src={`../${imagePath}`} />
         <p>{`Subtitle: ${subtitle}`}</p>
         <p>{`Storyline: ${storyline}`}</p>
