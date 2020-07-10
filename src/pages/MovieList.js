@@ -7,7 +7,7 @@ import Loading from '../components/Loading';
 class MovieList extends Component {
   constructor(props) {
     super(props);
-    this.state = { movies: [], isLoaded: false };
+    this.state = { movies: [], isLoaded: true };
   }
 
   render() {
