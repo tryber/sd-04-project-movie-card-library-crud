@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { getMovie as getMovieDetails } from '../services/movieAPI';
@@ -28,14 +28,16 @@ class MovieDetails extends Component {
     const { id, title, storyline, imagePath, genre, rating, subtitle } = movie;
 
     return (
-      <div data-testid="movie-details">
-        <img alt="Movie Cover" src={`../${imagePath}`} />
-        <p>{`Subtitle: ${subtitle}`}</p>
-        <p>{`Storyline: ${storyline}`}</p>
-        <p>{`Genre: ${genre}`}</p>
-        <p>{`Rating: ${rating}`}</p>
-        <Link to={`/movies/${id}/edit`}>EDITAR</Link>
-      </div>
+      <Fragment.React>
+        <div data-testid="movie-details">
+          <img alt="Movie Cover" src={`../${imagePath}`} />
+          <p>{`Subtitle: ${subtitle}`}</p>
+          <p>{`Storyline: ${storyline}`}</p>
+          <p>{`Genre: ${genre}`}</p>
+          <p>{`Rating: ${rating}`}</p>
+          <Link to={`/movies/${id}/edit`}>EDITAR</Link>
+        </div>
+      </Fragment.React>
     );
   }
 }
