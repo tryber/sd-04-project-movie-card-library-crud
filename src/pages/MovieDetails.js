@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { getMovie  as getMovieDetails } from '../services/movieAPI';
+import { getMovie as getMovieDetails } from '../services/movieAPI';
 import { Loading } from '../components';
 
 class MovieDetails extends Component {
