@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 
 class MovieCard extends React.Component {
   render() {
-    const { title, subtitle, storyline, imagePath, id } = this.props.movie;
+    const { movie } = this.props;
+    const { title, subtitle, storyline, imagePath, id } = movie;
     return (
       <div data-testid="movie-card">
         <img src={imagePath} alt="Capa do Filme" />
