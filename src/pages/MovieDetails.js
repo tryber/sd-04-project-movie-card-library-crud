@@ -28,15 +28,15 @@ class MovieDetails extends Component {
     const { id, title, storyline, imagePath, genre, rating, subtitle } = movie;
 
     return id ? (
-        <div data-testid="movie-details">
-          <img alt="Movie Cover" src={`../${imagePath}`} />
-          <p>{`Subtitle: ${subtitle}`}</p>
-          <p>{`Storyline: ${storyline}`}</p>
-          <p>{`Genre: ${genre}`}</p>
-          <p>{`Rating: ${rating}`}</p>
-          <Link to={`/movies/${id}/edit`}>EDITAR</Link>
-        </div>
-    ) : <Loading/>;
+      <div data-testid="movie-details">
+        <img alt="Movie Cover" src={`../${imagePath}`} />
+        <p>{`Subtitle: ${subtitle}`}</p>
+        <p>{`Storyline: ${storyline}`}</p>
+        <p>{`Genre: ${genre}`}</p>
+        <p>{`Rating: ${rating}`}</p>
+        <Link to={`/movies/${id}/edit`}>EDITAR</Link>
+     </div>
+    ) : <Loading />;
   }
 }
 
