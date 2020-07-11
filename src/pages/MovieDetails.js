@@ -34,7 +34,7 @@ class MovieDetails extends Component {
             <p className="card-text">{`Storyline: ${storyline}`}</p>
             <p className="card-text">{`Genre: ${genre}`}</p>
             <h4>
-              <span className="card-text badge badge-pill badge-primary align-top">
+              <span className="card-text badge badge-pill badge-primary">
                 {rating}
               </span>
             </h4>
