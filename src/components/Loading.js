@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 
 class Loading extends Component {
   render() {
+    console.log('LOUDOU');
     return (
-      <div>Loading message</div>
+      <div>Carregando...</div>
     );
   }
 }

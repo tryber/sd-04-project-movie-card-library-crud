@@ -154,4 +154,16 @@ class MovieForm extends React.Component {
   }
 }
 
+MovieForm.defaultProps = {
+  movie: {
+    title: 'Title',
+    subtitle: 'Subtitle',
+    storyline: 'Story',
+    rating: 0,
+    imagePath: 'Path',
+    bookmarked: false,
+    genre: 'Action',
+  },
+};
+
 export default MovieForm;
