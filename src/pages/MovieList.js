@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { PlusIcon } from '@primer/octicons-react';
 
 import { MovieCard, Loading } from '../components';
 import * as movieAPI from '../services/movieAPI';
@@ -25,11 +26,17 @@ class MovieList extends Component {
 
     return (
       <div className="container">
-        <ul className="nav mt-4">
-          <li className="nav-item">
-            <Link to="/movies/new" className="nav-link active">ADICIONAR CARTÃO</Link>
-          </li>
-        </ul>
+        <nav className="navbar navbar-light bg-light mt-4">
+          <span className="navbar-brand font-weight-light">Movie Library CRUD</span>
+          <Link to="/movies/new" className="nav-link d-flex align-items-center">
+            <PlusIcon
+              className="mr-1"
+              size={14}
+              verticalAlign="middle"
+            />
+            ADICIONAR CARTÃO
+          </Link>
+        </nav>
         <div data-testid="movie-list" className="d-flex p-5">
           <div className="card-deck">
             {movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
