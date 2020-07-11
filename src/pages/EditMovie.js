@@ -21,7 +21,6 @@ class EditMovie extends Component {
   }
 
   changeRedirect(status) {
-    console.log(status);
     if (status === 'OK') {
       this.setState({ shouldRedirect: true });
     }
