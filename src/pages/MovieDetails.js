@@ -22,7 +22,7 @@ class MovieDetails extends Component {
     const { movie, load } = this.state;
     const { title, storyline, imagePath, genre, rating, subtitle } = movie;
     const { id } = this.props.match.params;
-    
+
     return load ? (
       <Loading />
     ) : (

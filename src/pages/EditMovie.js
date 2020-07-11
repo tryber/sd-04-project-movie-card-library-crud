@@ -9,7 +9,7 @@ import Loading from '../components/Loading';
 class EditMovie extends Component {
   constructor(props) {
     super(props);
-    this.state = { status: 'loading', movie: '', shouldRedirect: false, };
+    this.state = { status: 'loading', movie: '', shouldRedirect: false };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -36,11 +36,11 @@ class EditMovie extends Component {
   render() {
     const { status, shouldRedirect, movie } = this.state;
     if (shouldRedirect) {
-      return <Redirect Push to="/"/>
+      return <Redirect Push to="/" />;
     }
 
     if (status === 'loading') {
-      return <Loading />
+      return <Loading />;
     }
 
     return (
