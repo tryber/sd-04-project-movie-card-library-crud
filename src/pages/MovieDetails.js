@@ -42,7 +42,9 @@ class MovieDetails extends Component {
             <div className="row ml-1 mt-3">
               <Link className="card-link position-relative" to="/">VOLTAR</Link>
               <Link className="card-link position-relative" to={`/movies/${id}/edit`}>EDITAR</Link>
-              <Link className="card-link position-relative" to="/" onClick={() => deleteMovie(id)}>DELETAR</Link>
+              <Link className="card-link position-relative" to="/" onClick={() => deleteMovie(id)}>
+                DELETAR
+              </Link>
             </div>
           </div>
         </div>
