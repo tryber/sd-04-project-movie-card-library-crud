@@ -21,7 +21,11 @@ class NewMovie extends Component {
 
     return !shouldRedirect ? (
       <div data-testid="new-movie">
-        <MovieForm onSubmit={this.handleSubmit} />
+        <MovieForm
+          onSubmit={this.handleSubmit}
+          formTitle="New Movie"
+          returnPagePath={`/`}
+        />
       </div>
     ) : (<Redirect to="/" />);
   }

@@ -34,7 +34,12 @@ class EditMovie extends Component {
 
     return id ? (
       <div data-testid="edit-movie">
-        <MovieForm movie={movie} onSubmit={this.handleSubmit} />
+        <MovieForm
+          movie={movie}
+          onSubmit={this.handleSubmit}
+          formTitle="Edit Movie"
+          returnPagePath={`/movies/${id}`}
+        />
       </div>
     ) : (<Loading />);
   }

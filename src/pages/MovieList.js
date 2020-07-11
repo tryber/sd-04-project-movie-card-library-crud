@@ -29,11 +29,7 @@ class MovieList extends Component {
         <nav className="navbar navbar-light bg-light mt-4">
           <span className="navbar-brand font-weight-light">Movie Library CRUD</span>
           <Link to="/movies/new" className="nav-link d-flex align-items-center">
-            <PlusIcon
-              className="mr-1"
-              size={14}
-              verticalAlign="middle"
-            />
+            <PlusIcon className="mr-1" size={14} />
             ADICIONAR CARTÃO
           </Link>
         </nav>
