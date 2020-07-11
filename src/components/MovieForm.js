@@ -177,6 +177,8 @@ class MovieForm extends React.Component {
 MovieForm.propTypes = {
   movie: PropTypes.shape(PropTypes.object.isRequired),
   onSubmit: PropTypes.func.isRequired,
+  formTitle: PropTypes.string.isRequired,
+  returnPagePath: PropTypes.string.isRequired,
 };
 
 MovieForm.defaultProps = {

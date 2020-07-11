@@ -24,7 +24,7 @@ class NewMovie extends Component {
         <MovieForm
           onSubmit={this.handleSubmit}
           formTitle="New Movie"
-          returnPagePath={`/`}
+          returnPagePath="/"
         />
       </div>
     ) : (<Redirect to="/" />);
