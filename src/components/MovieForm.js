@@ -163,12 +163,7 @@ MovieForm.defaultProps = {
     imagePath: 'Path',
     bookmarked: false,
     genre: 'Action',
-  }
-};
-
-MovieForm.propTypes = {
-  movie: PropTypes.object,
-  onSubmit: PropTypes.func.isRequired,
+  },
 };
 
 export default MovieForm;
