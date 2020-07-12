@@ -1,10 +1,9 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import { MovieList, MovieDetails, NewMovie, EditMovie, NotFound } from './pages/index'
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { MovieList, MovieDetails, NewMovie, EditMovie, NotFound } from './pages/index';
 
-function App() {
-  render()
-  {
+class App extends React.Component {
+  render() {
     return (
       <BrowserRouter>
         <Switch>
