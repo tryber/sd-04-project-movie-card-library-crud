@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 class MovieForm extends React.Component {
   constructor(props) {
@@ -138,8 +139,10 @@ class MovieForm extends React.Component {
   }
 
   render() {
+    const { formTitle, returnPagePath } = this.props;
     return (
       <div>
+        <span>{ formTitle }</span>
         <form>
           {this.renderTitleInput()}
           {this.renderSubtitleInput()}
@@ -149,9 +152,29 @@ class MovieForm extends React.Component {
           {this.renderRatingInput()}
           {this.renderSubmitButton()}
         </form>
+        <Link to={returnPagePath}>VOLTAR</Link>
       </div>
     );
   }
 }
+
+MovieForm.propTypes = {
+  movie: PropTypes.shape(PropTypes.object.isRequired),
+  onSubmit: PropTypes.func.isRequired,
+  formTitle: PropTypes.string.isRequired,
+  returnPagePath: PropTypes.string.isRequired,
+};
+
+MovieForm.defaultProps = {
+  movie: {
+    title: '',
+    subtitle: '',
+    storyline: '',
+    rating: 0,
+    imagePath: '',
+    bookmarked: false,
+    genre: '',
+  },
+};
 
 export default MovieForm;
