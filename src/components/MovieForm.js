@@ -141,6 +141,8 @@ class MovieForm extends React.Component {
     return (
       <div>
         <form>
+          <span>{formTitle}</span>
+          <Link to={returnPagePath}>VOLTAR</Link>
           {this.renderTitleInput()}
           {this.renderSubtitleInput()}
           {this.renderImagePathInput()}
