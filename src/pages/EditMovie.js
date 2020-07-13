@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 import Loading from '../components/Loading';
 import { MovieForm } from '../components';
 import * as movieAPI from '../services/movieAPI';
@@ -32,7 +33,7 @@ class EditMovie extends Component {
       movie } = this.state;
     const { id } = movie;
     
-    if (shouldRedirect) return (<Redirect to="/" />);
+    if (redirect) return (<Redirect to="/" />);
 
     return id ? (
       <div data-testid="edit-movie">
