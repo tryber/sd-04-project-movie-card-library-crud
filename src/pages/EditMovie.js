@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { MovieForm } from '../components';
-import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
+import * as movieAPI from '../services/movieAPI';
 
 class EditMovie extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
     this.state = {
       isLoaded: false,
       shouldRedirect: false,
@@ -20,11 +19,11 @@ class EditMovie extends Component {
   componentDidMount() {
     const id = this.props.match.params.id;
     movieAPI.getMovie(id)
-    .then((movie) => this.setState({ movie, isloaded: true }));
+      .then((movie) => this.setState({ movie, isLoaded: true }));
   }
 
-  handleSubmit(updateMovie) {
-    movieAPI.updateMovie(updateMovie)
+  handleSubmit(updatedMovie) {
+    movieAPI.updateMovie(updatedMovie)
       .then(() => this.setState({ shouldRedirect: true }));
   }
 
