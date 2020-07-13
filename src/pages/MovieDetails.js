@@ -30,7 +30,7 @@ class MovieDetails extends Component {
     return id ? (
       <div data-testid="movie-details">
         <img alt="Movie Cover" src={`../${imagePath}`} />
-        <p>{`Title: ${title}`</p>
+        <p>{`Title: ${title}`}</p>
         <p>{`Subtitle: ${subtitle}`}</p>
         <p>{`Storyline: ${storyline}`}</p>
         <p>{`Genre: ${genre}`}</p>
