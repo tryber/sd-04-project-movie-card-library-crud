@@ -154,7 +154,7 @@ class MovieForm extends React.Component {
   }
 }
 
-MovieForm.propTypes = {
+MovieForm.PropTypes = {
   movie: PropTypes.isRequired,
 };
 
