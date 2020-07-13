@@ -13,9 +13,9 @@ class EditMovie extends Component {
       isLoaded: false,
       shouldRedirect: false,
       movie: null,
-    }
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
-  };
+  }
 
   componentDidMount() {
     const id = this.props.match.params.id;
@@ -25,7 +25,7 @@ class EditMovie extends Component {
 
   handleSubmit(updateMovie) {
     movieAPI.updateMovie(updateMovie)
-      .then(() => this.setState({ shouldRedirect: true}));
+      .then(() => this.setState({ shouldRedirect: true }));
   }
 
   render() {
