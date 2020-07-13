@@ -14,10 +14,10 @@ class EditMovie extends Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  
+
   componentDidMount() {
     const { id } = this.props.match.params;
-    
+
     movieAPI.getMovie(id)
     .then((movie) => this.setState({ movie }));
   }
@@ -32,7 +32,7 @@ class EditMovie extends Component {
       redirect,
       movie } = this.state;
     const { id } = movie;
-    
+
     if (redirect) return (<Redirect to="/" />);
 
     return id ? (
