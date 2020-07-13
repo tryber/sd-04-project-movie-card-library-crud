@@ -17,15 +17,12 @@ class MovieList extends Component {
 
   render() {
     const { movies, isLoaded } = this.state;
-    if (isLoaded) {
-      return (
+    return isLoaded ? (
         <div data-testid="movie-list">
           {movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
           <Link to="/movies/new">ADICIONAR CARTÃO</Link>
         </div>
-      );
-    }
-    return <Loading />;
+    ) : <Loading />
   }
 }
 
