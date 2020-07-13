@@ -42,7 +42,7 @@ class EditMovie extends Component {
           onSubmit={this.handleSubmit}
           formTitle="Edit Movie"
           returnPagePath={`/movies/${id}`}
-         />
+        />
       </div>
     ) : (<Loading />);
   }
