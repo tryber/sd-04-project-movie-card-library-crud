@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom';
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
 
@@ -20,9 +20,8 @@ class MovieDetails extends Component {
 
   render() {
     if (!this.state.isLoaded) return <Loading />;
-
     const { title, storyline, imagePath, genre, rating, subtitle } = this.state.movie;
-    const id = this.props.match.params.id;
+    const id = this.props.match.params.id
 
     return (
       <div data-testid="movie-details">
