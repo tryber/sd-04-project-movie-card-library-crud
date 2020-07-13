@@ -139,9 +139,10 @@ class MovieForm extends React.Component {
   }
 
   render() {
+    const { formTitle, returnPagePath } = this.props;
     return (
       <div>
-          <span>{ formTitle }</span>
+        <span>{ formTitle }</span>
         <form>
           {this.renderTitleInput()}
           {this.renderSubtitleInput()}
@@ -151,7 +152,7 @@ class MovieForm extends React.Component {
           {this.renderRatingInput()}
           {this.renderSubmitButton()}
         </form>
-          <Link to = { returnPagePath }>VOLTAR</Link>
+        <Link to={returnPagePath}>VOLTAR</Link>
       </div>
     );
   }
