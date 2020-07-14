@@ -36,7 +36,7 @@ class NewMovie extends Component {
   }
 }
 
-NewMovie.protoType = {
+NewMovie.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
