@@ -22,4 +22,6 @@ MovieCard.prototype = {
   }).isRequired,
 };
 
+//teste
+
 export default MovieCard;
