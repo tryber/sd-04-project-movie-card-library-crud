@@ -12,6 +12,7 @@ class MovieList extends Component {
       isLoading: false,
       movies: null,
     };
+    this.componentDidMount = this.componentDidMount.bind(this);
   }
 
   componentDidMount() {
@@ -24,10 +25,11 @@ class MovieList extends Component {
   render() {
     const { movies, isLoading } = this.state;
 
+    if (!isLoading) return <Loading />
+
     return (
       <div data-testid="movie-list">
-        { !isLoading && <Loading /> }
-        {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
+        { movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
         <div>
           <Link to="/movie/new">ADICIONAR CARTÂO</Link>
         </div>
