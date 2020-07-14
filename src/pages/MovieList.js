@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import MovieCard from '../components/MovieCard';
-
-import * as movieAPI from '../services/movieAPI';
 import { Link } from 'react-router-dom';
+
+import MovieCard from '../components/MovieCard';
+import * as movieAPI from '../services/movieAPI';
 import Loading from '../components/Loading';
 
 class MovieList extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       isLoading: false,
@@ -16,7 +16,7 @@ class MovieList extends Component {
   }
 
   componentDidMount() {
-    movieAPI.getMovies().then( movies => this.setState({
+    movieAPI.getMovies().then((movies) => this.setState({
       isLoading: true,
       movies,
     }));
@@ -25,7 +25,7 @@ class MovieList extends Component {
   render() {
     const { movies, isLoading } = this.state;
 
-    if (!isLoading) return <Loading />
+    if (!isLoading) return <Loading />;
 
     return (
       <div data-testid="movie-list">
