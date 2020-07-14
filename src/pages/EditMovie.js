@@ -23,16 +23,14 @@ class EditMovie extends Component {
       this.setState({
         status: 'loaded',
         movie,
-      })
-    );
+      }));
   }
 
   handleSubmit(updatedMovie) {
     movieAPI.updateMovie(updatedMovie).then(() =>
       this.setState({
         shouldRedirect: true,
-      })
-    );
+      }));
   }
 
   render() {
