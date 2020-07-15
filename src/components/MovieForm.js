@@ -39,7 +39,7 @@ class MovieForm extends React.Component {
           id="movie_subtitle"
           type="text"
           value={subtitle}
-          onChange={(event) => this.updateMovie("subtitle", event.target.value)}
+          onChange={(event) => this.updateMovie('subtitle', event.target.value)}
         />
         <label htmlFor="movie_subtitle">Subtítulo</label>
       </div>

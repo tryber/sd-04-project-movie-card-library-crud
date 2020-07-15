@@ -23,8 +23,8 @@ class EditMovie extends Component {
       this.setState({
         movie: res,
         status: 'notLoading',
-      })
-    );
+      }),
+    )
   }
 
   handleSubmit(updatedMovie) {
