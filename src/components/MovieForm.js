@@ -24,7 +24,7 @@ class MovieForm extends React.Component {
           type="text"
           className="validate"
           value={title}
-          onChange={(event) => this.updateMovie("title", event.target.value)}
+          onChange={(event) => this.updateMovie('title', event.target.value)}
         />
         <label htmlFor="movie_title">Título</label>
       </div>
@@ -55,7 +55,7 @@ class MovieForm extends React.Component {
           type="text"
           value={imagePath}
           onChange={(event) =>
-            this.updateMovie("imagePath", event.target.value)
+            this.updateMovie('imagePath', event.target.value)
           }
         />
         <label htmlFor="movie_image">Imagem</label>
@@ -70,7 +70,7 @@ class MovieForm extends React.Component {
           id="movie_storyline"
           value={storyline}
           onChange={(event) =>
-            this.updateMovie("storyline", event.target.value)
+            this.updateMovie('storyline', event.target.value)
           }
         />
         <label htmlFor="movie_storyline">Sinopse</label>
@@ -86,7 +86,7 @@ class MovieForm extends React.Component {
         <select
           id="movie_genre"
           value={genre}
-          onChange={(event) => this.updateMovie("genre", event.target.value)}
+          onChange={(event) => this.updateMovie('genre', event.target.value)}
         >
           <option value="action">Ação</option>
           <option value="comedy">Comédia</option>
@@ -108,7 +108,7 @@ class MovieForm extends React.Component {
           min={0}
           max={5}
           value={rating}
-          onChange={(event) => this.updateMovie("rating", event.target.value)}
+          onChange={(event) => this.updateMovie('rating', event.target.value)}
         />
         <label htmlFor="movie_rating">Avaliação</label>
       </div>

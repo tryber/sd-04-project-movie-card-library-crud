@@ -11,7 +11,7 @@ class EditMovie extends Component {
 
     this.state = {
       movie: {},
-      status: "loading",
+      status: 'loading',
       shouldRedirect: false,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,7 +22,7 @@ class EditMovie extends Component {
     movieAPI.getMovie(match.params.id).then((res) =>
       this.setState({
         movie: res,
-        status: "notLoading",
+        status: 'notLoading',
       })
     );
   }
@@ -32,7 +32,7 @@ class EditMovie extends Component {
     movieAPI.updateMovie(updatedMovie).then(
       this.setState({
         shouldRedirect: true,
-        route: history.push("/"),
+        route: history.push('/'),
       })
     );
   }
@@ -44,7 +44,7 @@ class EditMovie extends Component {
       return <Redirect to={route} />;
     }
 
-    if (status === "loading") {
+    if (status === 'loading') {
       return <Loading />;
     }
 
