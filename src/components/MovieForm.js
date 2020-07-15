@@ -7,19 +7,15 @@ class MovieForm extends React.Component {
     this.state = { ...props.movie };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
   handleSubmit() {
     const { onSubmit } = this.props;
     onSubmit(this.state);
   }
-
   updateMovie(field, newValue) {
     this.setState({ [field]: newValue });
   }
-
   renderTitleInput() {
     const { title } = this.state;
-
     return (
       <div>
         <input
@@ -28,16 +24,14 @@ class MovieForm extends React.Component {
           type="text"
           className="validate"
           value={title}
-          onChange={(event) => this.updateMovie('title', event.target.value)}
+          onChange={(event) => this.updateMovie("title", event.target.value)}
         />
         <label htmlFor="movie_title">Título</label>
       </div>
     );
   }
-
   renderSubtitleInput() {
     const { subtitle } = this.state;
-
     return (
       <div>
         <input
@@ -45,16 +39,14 @@ class MovieForm extends React.Component {
           id="movie_subtitle"
           type="text"
           value={subtitle}
-          onChange={(event) => this.updateMovie('subtitle', event.target.value)}
+          onChange={(event) => this.updateMovie("subtitle", event.target.value)}
         />
         <label htmlFor="movie_subtitle">Subtítulo</label>
       </div>
     );
   }
-
   renderImagePathInput() {
     const { imagePath } = this.state;
-
     return (
       <div className="row">
         <input
@@ -62,28 +54,29 @@ class MovieForm extends React.Component {
           id="movie_image"
           type="text"
           value={imagePath}
-          onChange={(event) => this.updateMovie('imagePath', event.target.value)}
+          onChange={(event) =>
+            this.updateMovie("imagePath", event.target.value)
+          }
         />
         <label htmlFor="movie_image">Imagem</label>
       </div>
     );
   }
-
   renderStorylineInput() {
     const { storyline } = this.state;
-
     return (
       <div>
         <textarea
           id="movie_storyline"
           value={storyline}
-          onChange={(event) => this.updateMovie('storyline', event.target.value)}
+          onChange={(event) =>
+            this.updateMovie("storyline", event.target.value)
+          }
         />
         <label htmlFor="movie_storyline">Sinopse</label>
       </div>
     );
   }
-
   renderGenreSelection() {
     const { genre } = this.state;
 
@@ -93,7 +86,7 @@ class MovieForm extends React.Component {
         <select
           id="movie_genre"
           value={genre}
-          onChange={(event) => this.updateMovie('genre', event.target.value)}
+          onChange={(event) => this.updateMovie("genre", event.target.value)}
         >
           <option value="action">Ação</option>
           <option value="comedy">Comédia</option>
@@ -103,10 +96,8 @@ class MovieForm extends React.Component {
       </div>
     );
   }
-
   renderRatingInput() {
     const { rating } = this.state;
-
     return (
       <div>
         <input
@@ -117,26 +108,21 @@ class MovieForm extends React.Component {
           min={0}
           max={5}
           value={rating}
-          onChange={(event) => this.updateMovie('rating', event.target.value)}
+          onChange={(event) => this.updateMovie("rating", event.target.value)}
         />
         <label htmlFor="movie_rating">Avaliação</label>
       </div>
     );
   }
-
   renderSubmitButton() {
     return (
       <div>
-        <button
-          type="button"
-          onClick={this.handleSubmit}
-        >
+        <button type="button" onClick={this.handleSubmit}>
           Submit
         </button>
       </div>
     );
   }
-
   render() {
     return (
       <div>
@@ -153,5 +139,17 @@ class MovieForm extends React.Component {
     );
   }
 }
+
+MovieForm.propTypes = {
+  movie: PropTypes.shape({
+    title: PropTypes.string,
+    subtitle: PropTypes.string,
+    storyline: PropTypes.string,
+    rating: PropTypes.number,
+    imagePath: PropTypes.string,
+    genre: PropTypes.string,
+  }).isRequired,
+  onSubmit: PropTypes.func.isRequired,
+};
 
 export default MovieForm;
