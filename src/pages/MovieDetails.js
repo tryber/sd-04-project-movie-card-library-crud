@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import * as movieAPI from "../services/movieAPI";
-import { Loading } from "../components";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import * as movieAPI from '../services/movieAPI';
+import { Loading } from '../components';
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class MovieDetails extends Component {
         isLoading: false,
         id: this.props.match.params.id,
       }));
-    }
+  }
 
   deleteCard() {
     const { id } = this.state;
