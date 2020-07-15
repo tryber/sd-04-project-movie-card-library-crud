@@ -23,7 +23,7 @@ class MovieDetails extends Component {
         id: this.props.match.params.id,
       })
     );
-  }
+  };
 
   deleteCard() {
     const { id } = this.state;
